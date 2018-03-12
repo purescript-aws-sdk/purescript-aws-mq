@@ -20,92 +20,124 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "MQ" :: String
-
 
 -- | Creates a broker. Note: This API is asynchronous.
 createBroker :: forall eff. CreateBrokerRequest -> Aff (exception :: EXCEPTION | eff) CreateBrokerResponse
-createBroker = Request.request serviceName "createBroker" 
+createBroker = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "createBroker"
 
 
 -- | Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version). Note: If the configuration name already exists, Amazon MQ doesn't create a configuration.
 createConfiguration :: forall eff. CreateConfigurationRequest -> Aff (exception :: EXCEPTION | eff) CreateConfigurationResponse
-createConfiguration = Request.request serviceName "createConfiguration" 
+createConfiguration = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "createConfiguration"
 
 
 -- | Creates an ActiveMQ user.
 createUser :: forall eff. CreateUserRequest -> Aff (exception :: EXCEPTION | eff) CreateUserResponse
-createUser = Request.request serviceName "createUser" 
+createUser = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "createUser"
 
 
 -- | Deletes a broker. Note: This API is asynchronous.
 deleteBroker :: forall eff. DeleteBrokerRequest -> Aff (exception :: EXCEPTION | eff) DeleteBrokerResponse
-deleteBroker = Request.request serviceName "deleteBroker" 
+deleteBroker = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "deleteBroker"
 
 
 -- | Deletes an ActiveMQ user.
 deleteUser :: forall eff. DeleteUserRequest -> Aff (exception :: EXCEPTION | eff) DeleteUserResponse
-deleteUser = Request.request serviceName "deleteUser" 
+deleteUser = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "deleteUser"
 
 
 -- | Returns information about the specified broker.
 describeBroker :: forall eff. DescribeBrokerRequest -> Aff (exception :: EXCEPTION | eff) DescribeBrokerResponse
-describeBroker = Request.request serviceName "describeBroker" 
+describeBroker = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "describeBroker"
 
 
 -- | Returns information about the specified configuration.
 describeConfiguration :: forall eff. DescribeConfigurationRequest -> Aff (exception :: EXCEPTION | eff) DescribeConfigurationResponse
-describeConfiguration = Request.request serviceName "describeConfiguration" 
+describeConfiguration = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "describeConfiguration"
 
 
 -- | Returns the specified configuration revision for the specified configuration.
 describeConfigurationRevision :: forall eff. DescribeConfigurationRevisionRequest -> Aff (exception :: EXCEPTION | eff) DescribeConfigurationRevisionResponse
-describeConfigurationRevision = Request.request serviceName "describeConfigurationRevision" 
+describeConfigurationRevision = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "describeConfigurationRevision"
 
 
 -- | Returns information about an ActiveMQ user.
 describeUser :: forall eff. DescribeUserRequest -> Aff (exception :: EXCEPTION | eff) DescribeUserResponse
-describeUser = Request.request serviceName "describeUser" 
+describeUser = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "describeUser"
 
 
 -- | Returns a list of all brokers.
 listBrokers :: forall eff. ListBrokersRequest -> Aff (exception :: EXCEPTION | eff) ListBrokersResponse
-listBrokers = Request.request serviceName "listBrokers" 
+listBrokers = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "listBrokers"
 
 
 -- | Returns a list of all revisions for the specified configuration.
 listConfigurationRevisions :: forall eff. ListConfigurationRevisionsRequest -> Aff (exception :: EXCEPTION | eff) ListConfigurationRevisionsResponse
-listConfigurationRevisions = Request.request serviceName "listConfigurationRevisions" 
+listConfigurationRevisions = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "listConfigurationRevisions"
 
 
 -- | Returns a list of all configurations.
 listConfigurations :: forall eff. ListConfigurationsRequest -> Aff (exception :: EXCEPTION | eff) ListConfigurationsResponse
-listConfigurations = Request.request serviceName "listConfigurations" 
+listConfigurations = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "listConfigurations"
 
 
 -- | Returns a list of all ActiveMQ users.
 listUsers :: forall eff. ListUsersRequest -> Aff (exception :: EXCEPTION | eff) ListUsersResponse
-listUsers = Request.request serviceName "listUsers" 
+listUsers = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "listUsers"
 
 
 -- | Reboots a broker. Note: This API is asynchronous.
 rebootBroker :: forall eff. RebootBrokerRequest -> Aff (exception :: EXCEPTION | eff) RebootBrokerResponse
-rebootBroker = Request.request serviceName "rebootBroker" 
+rebootBroker = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "rebootBroker"
 
 
 -- | Adds a pending configuration change to a broker.
 updateBroker :: forall eff. UpdateBrokerRequest -> Aff (exception :: EXCEPTION | eff) UpdateBrokerResponse
-updateBroker = Request.request serviceName "updateBroker" 
+updateBroker = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "updateBroker"
 
 
 -- | Updates the specified configuration.
 updateConfiguration :: forall eff. UpdateConfigurationRequest -> Aff (exception :: EXCEPTION | eff) UpdateConfigurationResponse
-updateConfiguration = Request.request serviceName "updateConfiguration" 
+updateConfiguration = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "updateConfiguration"
 
 
 -- | Updates the information for an ActiveMQ user.
 updateUser :: forall eff. UpdateUserRequest -> Aff (exception :: EXCEPTION | eff) UpdateUserResponse
-updateUser = Request.request serviceName "updateUser" 
+updateUser = Request.request service method  where
+    service = Request.ServiceName "MQ"
+    method = Request.MethodName "updateUser"
 
 
 -- | Returns information about an error.
