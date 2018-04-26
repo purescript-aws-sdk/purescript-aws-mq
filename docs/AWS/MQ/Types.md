@@ -10,7 +10,7 @@ options :: Options
 
 ``` purescript
 newtype BadRequestException
-  = BadRequestException { "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) }
+  = BadRequestException { "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) }
 ```
 
 Returns information about an error.
@@ -35,7 +35,7 @@ Constructs BadRequestException from required parameters
 #### `newBadRequestException'`
 
 ``` purescript
-newBadRequestException' :: ({ "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) } -> { "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) }) -> BadRequestException
+newBadRequestException' :: ({ "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) } -> { "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) }) -> BadRequestException
 ```
 
 Constructs BadRequestException's fields from required parameters
@@ -44,7 +44,7 @@ Constructs BadRequestException's fields from required parameters
 
 ``` purescript
 newtype BrokerInstance
-  = BrokerInstance { "ConsoleURL" :: NullOrUndefined (String), "Endpoints" :: NullOrUndefined (ListOf__string) }
+  = BrokerInstance { "ConsoleURL" :: Maybe (String), "Endpoints" :: Maybe (ListOf__string) }
 ```
 
 Returns information about all brokers.
@@ -69,7 +69,7 @@ Constructs BrokerInstance from required parameters
 #### `newBrokerInstance'`
 
 ``` purescript
-newBrokerInstance' :: ({ "ConsoleURL" :: NullOrUndefined (String), "Endpoints" :: NullOrUndefined (ListOf__string) } -> { "ConsoleURL" :: NullOrUndefined (String), "Endpoints" :: NullOrUndefined (ListOf__string) }) -> BrokerInstance
+newBrokerInstance' :: ({ "ConsoleURL" :: Maybe (String), "Endpoints" :: Maybe (ListOf__string) } -> { "ConsoleURL" :: Maybe (String), "Endpoints" :: Maybe (ListOf__string) }) -> BrokerInstance
 ```
 
 Constructs BrokerInstance's fields from required parameters
@@ -96,7 +96,7 @@ Encode BrokerState
 
 ``` purescript
 newtype BrokerSummary
-  = BrokerSummary { "BrokerArn" :: NullOrUndefined (String), "BrokerId" :: NullOrUndefined (String), "BrokerName" :: NullOrUndefined (String), "BrokerState" :: NullOrUndefined (BrokerState), "DeploymentMode" :: NullOrUndefined (DeploymentMode), "HostInstanceType" :: NullOrUndefined (String) }
+  = BrokerSummary { "BrokerArn" :: Maybe (String), "BrokerId" :: Maybe (String), "BrokerName" :: Maybe (String), "BrokerState" :: Maybe (BrokerState), "DeploymentMode" :: Maybe (DeploymentMode), "HostInstanceType" :: Maybe (String) }
 ```
 
 The Amazon Resource Name (ARN) of the broker.
@@ -121,7 +121,7 @@ Constructs BrokerSummary from required parameters
 #### `newBrokerSummary'`
 
 ``` purescript
-newBrokerSummary' :: ({ "BrokerArn" :: NullOrUndefined (String), "BrokerId" :: NullOrUndefined (String), "BrokerName" :: NullOrUndefined (String), "BrokerState" :: NullOrUndefined (BrokerState), "DeploymentMode" :: NullOrUndefined (DeploymentMode), "HostInstanceType" :: NullOrUndefined (String) } -> { "BrokerArn" :: NullOrUndefined (String), "BrokerId" :: NullOrUndefined (String), "BrokerName" :: NullOrUndefined (String), "BrokerState" :: NullOrUndefined (BrokerState), "DeploymentMode" :: NullOrUndefined (DeploymentMode), "HostInstanceType" :: NullOrUndefined (String) }) -> BrokerSummary
+newBrokerSummary' :: ({ "BrokerArn" :: Maybe (String), "BrokerId" :: Maybe (String), "BrokerName" :: Maybe (String), "BrokerState" :: Maybe (BrokerState), "DeploymentMode" :: Maybe (DeploymentMode), "HostInstanceType" :: Maybe (String) } -> { "BrokerArn" :: Maybe (String), "BrokerId" :: Maybe (String), "BrokerName" :: Maybe (String), "BrokerState" :: Maybe (BrokerState), "DeploymentMode" :: Maybe (DeploymentMode), "HostInstanceType" :: Maybe (String) }) -> BrokerSummary
 ```
 
 Constructs BrokerSummary's fields from required parameters
@@ -148,7 +148,7 @@ Encode ChangeType
 
 ``` purescript
 newtype Configuration
-  = Configuration { "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String) }
+  = Configuration { "Arn" :: Maybe (String), "Description" :: Maybe (String), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String) }
 ```
 
 Returns information about all configurations.
@@ -173,7 +173,7 @@ Constructs Configuration from required parameters
 #### `newConfiguration'`
 
 ``` purescript
-newConfiguration' :: ({ "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String) } -> { "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String) }) -> Configuration
+newConfiguration' :: ({ "Arn" :: Maybe (String), "Description" :: Maybe (String), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String) } -> { "Arn" :: Maybe (String), "Description" :: Maybe (String), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String) }) -> Configuration
 ```
 
 Constructs Configuration's fields from required parameters
@@ -182,7 +182,7 @@ Constructs Configuration's fields from required parameters
 
 ``` purescript
 newtype ConfigurationId
-  = ConfigurationId { "Id" :: NullOrUndefined (String), "Revision" :: NullOrUndefined (Int) }
+  = ConfigurationId { "Id" :: Maybe (String), "Revision" :: Maybe (Int) }
 ```
 
 A list of information about the configuration.
@@ -207,7 +207,7 @@ Constructs ConfigurationId from required parameters
 #### `newConfigurationId'`
 
 ``` purescript
-newConfigurationId' :: ({ "Id" :: NullOrUndefined (String), "Revision" :: NullOrUndefined (Int) } -> { "Id" :: NullOrUndefined (String), "Revision" :: NullOrUndefined (Int) }) -> ConfigurationId
+newConfigurationId' :: ({ "Id" :: Maybe (String), "Revision" :: Maybe (Int) } -> { "Id" :: Maybe (String), "Revision" :: Maybe (Int) }) -> ConfigurationId
 ```
 
 Constructs ConfigurationId's fields from required parameters
@@ -216,7 +216,7 @@ Constructs ConfigurationId's fields from required parameters
 
 ``` purescript
 newtype ConfigurationRevision
-  = ConfigurationRevision { "Description" :: NullOrUndefined (String), "Revision" :: NullOrUndefined (Int) }
+  = ConfigurationRevision { "Description" :: Maybe (String), "Revision" :: Maybe (Int) }
 ```
 
 Returns information about the specified configuration revision.
@@ -241,7 +241,7 @@ Constructs ConfigurationRevision from required parameters
 #### `newConfigurationRevision'`
 
 ``` purescript
-newConfigurationRevision' :: ({ "Description" :: NullOrUndefined (String), "Revision" :: NullOrUndefined (Int) } -> { "Description" :: NullOrUndefined (String), "Revision" :: NullOrUndefined (Int) }) -> ConfigurationRevision
+newConfigurationRevision' :: ({ "Description" :: Maybe (String), "Revision" :: Maybe (Int) } -> { "Description" :: Maybe (String), "Revision" :: Maybe (Int) }) -> ConfigurationRevision
 ```
 
 Constructs ConfigurationRevision's fields from required parameters
@@ -250,7 +250,7 @@ Constructs ConfigurationRevision's fields from required parameters
 
 ``` purescript
 newtype Configurations
-  = Configurations { "Current" :: NullOrUndefined (ConfigurationId), "History" :: NullOrUndefined (ListOfConfigurationId), "Pending" :: NullOrUndefined (ConfigurationId) }
+  = Configurations { "Current" :: Maybe (ConfigurationId), "History" :: Maybe (ListOfConfigurationId), "Pending" :: Maybe (ConfigurationId) }
 ```
 
 Broker configuration information
@@ -275,7 +275,7 @@ Constructs Configurations from required parameters
 #### `newConfigurations'`
 
 ``` purescript
-newConfigurations' :: ({ "Current" :: NullOrUndefined (ConfigurationId), "History" :: NullOrUndefined (ListOfConfigurationId), "Pending" :: NullOrUndefined (ConfigurationId) } -> { "Current" :: NullOrUndefined (ConfigurationId), "History" :: NullOrUndefined (ListOfConfigurationId), "Pending" :: NullOrUndefined (ConfigurationId) }) -> Configurations
+newConfigurations' :: ({ "Current" :: Maybe (ConfigurationId), "History" :: Maybe (ListOfConfigurationId), "Pending" :: Maybe (ConfigurationId) } -> { "Current" :: Maybe (ConfigurationId), "History" :: Maybe (ListOfConfigurationId), "Pending" :: Maybe (ConfigurationId) }) -> Configurations
 ```
 
 Constructs Configurations's fields from required parameters
@@ -284,7 +284,7 @@ Constructs Configurations's fields from required parameters
 
 ``` purescript
 newtype ConflictException
-  = ConflictException { "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) }
+  = ConflictException { "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) }
 ```
 
 Returns information about an error.
@@ -309,7 +309,7 @@ Constructs ConflictException from required parameters
 #### `newConflictException'`
 
 ``` purescript
-newConflictException' :: ({ "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) } -> { "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) }) -> ConflictException
+newConflictException' :: ({ "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) } -> { "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) }) -> ConflictException
 ```
 
 Constructs ConflictException's fields from required parameters
@@ -318,7 +318,7 @@ Constructs ConflictException's fields from required parameters
 
 ``` purescript
 newtype CreateBrokerInput
-  = CreateBrokerInput { "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "BrokerName" :: NullOrUndefined (String), "Configuration" :: NullOrUndefined (ConfigurationId), "CreatorRequestId" :: NullOrUndefined (String), "DeploymentMode" :: NullOrUndefined (DeploymentMode), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "HostInstanceType" :: NullOrUndefined (String), "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime), "PubliclyAccessible" :: NullOrUndefined (Boolean), "SecurityGroups" :: NullOrUndefined (ListOf__string), "SubnetIds" :: NullOrUndefined (ListOf__string), "Users" :: NullOrUndefined (ListOfUser) }
+  = CreateBrokerInput { "AutoMinorVersionUpgrade" :: Maybe (Boolean), "BrokerName" :: Maybe (String), "Configuration" :: Maybe (ConfigurationId), "CreatorRequestId" :: Maybe (String), "DeploymentMode" :: Maybe (DeploymentMode), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "HostInstanceType" :: Maybe (String), "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime), "PubliclyAccessible" :: Maybe (Boolean), "SecurityGroups" :: Maybe (ListOf__string), "SubnetIds" :: Maybe (ListOf__string), "Users" :: Maybe (ListOfUser) }
 ```
 
 Required. The time period during which Amazon MQ applies pending updates or patches to the broker.
@@ -343,7 +343,7 @@ Constructs CreateBrokerInput from required parameters
 #### `newCreateBrokerInput'`
 
 ``` purescript
-newCreateBrokerInput' :: ({ "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "BrokerName" :: NullOrUndefined (String), "Configuration" :: NullOrUndefined (ConfigurationId), "CreatorRequestId" :: NullOrUndefined (String), "DeploymentMode" :: NullOrUndefined (DeploymentMode), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "HostInstanceType" :: NullOrUndefined (String), "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime), "PubliclyAccessible" :: NullOrUndefined (Boolean), "SecurityGroups" :: NullOrUndefined (ListOf__string), "SubnetIds" :: NullOrUndefined (ListOf__string), "Users" :: NullOrUndefined (ListOfUser) } -> { "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "BrokerName" :: NullOrUndefined (String), "Configuration" :: NullOrUndefined (ConfigurationId), "CreatorRequestId" :: NullOrUndefined (String), "DeploymentMode" :: NullOrUndefined (DeploymentMode), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "HostInstanceType" :: NullOrUndefined (String), "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime), "PubliclyAccessible" :: NullOrUndefined (Boolean), "SecurityGroups" :: NullOrUndefined (ListOf__string), "SubnetIds" :: NullOrUndefined (ListOf__string), "Users" :: NullOrUndefined (ListOfUser) }) -> CreateBrokerInput
+newCreateBrokerInput' :: ({ "AutoMinorVersionUpgrade" :: Maybe (Boolean), "BrokerName" :: Maybe (String), "Configuration" :: Maybe (ConfigurationId), "CreatorRequestId" :: Maybe (String), "DeploymentMode" :: Maybe (DeploymentMode), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "HostInstanceType" :: Maybe (String), "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime), "PubliclyAccessible" :: Maybe (Boolean), "SecurityGroups" :: Maybe (ListOf__string), "SubnetIds" :: Maybe (ListOf__string), "Users" :: Maybe (ListOfUser) } -> { "AutoMinorVersionUpgrade" :: Maybe (Boolean), "BrokerName" :: Maybe (String), "Configuration" :: Maybe (ConfigurationId), "CreatorRequestId" :: Maybe (String), "DeploymentMode" :: Maybe (DeploymentMode), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "HostInstanceType" :: Maybe (String), "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime), "PubliclyAccessible" :: Maybe (Boolean), "SecurityGroups" :: Maybe (ListOf__string), "SubnetIds" :: Maybe (ListOf__string), "Users" :: Maybe (ListOfUser) }) -> CreateBrokerInput
 ```
 
 Constructs CreateBrokerInput's fields from required parameters
@@ -352,7 +352,7 @@ Constructs CreateBrokerInput's fields from required parameters
 
 ``` purescript
 newtype CreateBrokerOutput
-  = CreateBrokerOutput { "BrokerArn" :: NullOrUndefined (String), "BrokerId" :: NullOrUndefined (String) }
+  = CreateBrokerOutput { "BrokerArn" :: Maybe (String), "BrokerId" :: Maybe (String) }
 ```
 
 Returns information about the created broker.
@@ -377,7 +377,7 @@ Constructs CreateBrokerOutput from required parameters
 #### `newCreateBrokerOutput'`
 
 ``` purescript
-newCreateBrokerOutput' :: ({ "BrokerArn" :: NullOrUndefined (String), "BrokerId" :: NullOrUndefined (String) } -> { "BrokerArn" :: NullOrUndefined (String), "BrokerId" :: NullOrUndefined (String) }) -> CreateBrokerOutput
+newCreateBrokerOutput' :: ({ "BrokerArn" :: Maybe (String), "BrokerId" :: Maybe (String) } -> { "BrokerArn" :: Maybe (String), "BrokerId" :: Maybe (String) }) -> CreateBrokerOutput
 ```
 
 Constructs CreateBrokerOutput's fields from required parameters
@@ -386,7 +386,7 @@ Constructs CreateBrokerOutput's fields from required parameters
 
 ``` purescript
 newtype CreateBrokerRequest
-  = CreateBrokerRequest { "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "BrokerName" :: NullOrUndefined (String), "Configuration" :: NullOrUndefined (ConfigurationId), "CreatorRequestId" :: NullOrUndefined (String), "DeploymentMode" :: NullOrUndefined (DeploymentMode), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "HostInstanceType" :: NullOrUndefined (String), "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime), "PubliclyAccessible" :: NullOrUndefined (Boolean), "SecurityGroups" :: NullOrUndefined (ListOf__string), "SubnetIds" :: NullOrUndefined (ListOf__string), "Users" :: NullOrUndefined (ListOfUser) }
+  = CreateBrokerRequest { "AutoMinorVersionUpgrade" :: Maybe (Boolean), "BrokerName" :: Maybe (String), "Configuration" :: Maybe (ConfigurationId), "CreatorRequestId" :: Maybe (String), "DeploymentMode" :: Maybe (DeploymentMode), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "HostInstanceType" :: Maybe (String), "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime), "PubliclyAccessible" :: Maybe (Boolean), "SecurityGroups" :: Maybe (ListOf__string), "SubnetIds" :: Maybe (ListOf__string), "Users" :: Maybe (ListOfUser) }
 ```
 
 Creates a broker using the specified properties.
@@ -411,7 +411,7 @@ Constructs CreateBrokerRequest from required parameters
 #### `newCreateBrokerRequest'`
 
 ``` purescript
-newCreateBrokerRequest' :: ({ "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "BrokerName" :: NullOrUndefined (String), "Configuration" :: NullOrUndefined (ConfigurationId), "CreatorRequestId" :: NullOrUndefined (String), "DeploymentMode" :: NullOrUndefined (DeploymentMode), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "HostInstanceType" :: NullOrUndefined (String), "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime), "PubliclyAccessible" :: NullOrUndefined (Boolean), "SecurityGroups" :: NullOrUndefined (ListOf__string), "SubnetIds" :: NullOrUndefined (ListOf__string), "Users" :: NullOrUndefined (ListOfUser) } -> { "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "BrokerName" :: NullOrUndefined (String), "Configuration" :: NullOrUndefined (ConfigurationId), "CreatorRequestId" :: NullOrUndefined (String), "DeploymentMode" :: NullOrUndefined (DeploymentMode), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "HostInstanceType" :: NullOrUndefined (String), "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime), "PubliclyAccessible" :: NullOrUndefined (Boolean), "SecurityGroups" :: NullOrUndefined (ListOf__string), "SubnetIds" :: NullOrUndefined (ListOf__string), "Users" :: NullOrUndefined (ListOfUser) }) -> CreateBrokerRequest
+newCreateBrokerRequest' :: ({ "AutoMinorVersionUpgrade" :: Maybe (Boolean), "BrokerName" :: Maybe (String), "Configuration" :: Maybe (ConfigurationId), "CreatorRequestId" :: Maybe (String), "DeploymentMode" :: Maybe (DeploymentMode), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "HostInstanceType" :: Maybe (String), "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime), "PubliclyAccessible" :: Maybe (Boolean), "SecurityGroups" :: Maybe (ListOf__string), "SubnetIds" :: Maybe (ListOf__string), "Users" :: Maybe (ListOfUser) } -> { "AutoMinorVersionUpgrade" :: Maybe (Boolean), "BrokerName" :: Maybe (String), "Configuration" :: Maybe (ConfigurationId), "CreatorRequestId" :: Maybe (String), "DeploymentMode" :: Maybe (DeploymentMode), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "HostInstanceType" :: Maybe (String), "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime), "PubliclyAccessible" :: Maybe (Boolean), "SecurityGroups" :: Maybe (ListOf__string), "SubnetIds" :: Maybe (ListOf__string), "Users" :: Maybe (ListOfUser) }) -> CreateBrokerRequest
 ```
 
 Constructs CreateBrokerRequest's fields from required parameters
@@ -420,7 +420,7 @@ Constructs CreateBrokerRequest's fields from required parameters
 
 ``` purescript
 newtype CreateBrokerResponse
-  = CreateBrokerResponse { "BrokerArn" :: NullOrUndefined (String), "BrokerId" :: NullOrUndefined (String) }
+  = CreateBrokerResponse { "BrokerArn" :: Maybe (String), "BrokerId" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -443,7 +443,7 @@ Constructs CreateBrokerResponse from required parameters
 #### `newCreateBrokerResponse'`
 
 ``` purescript
-newCreateBrokerResponse' :: ({ "BrokerArn" :: NullOrUndefined (String), "BrokerId" :: NullOrUndefined (String) } -> { "BrokerArn" :: NullOrUndefined (String), "BrokerId" :: NullOrUndefined (String) }) -> CreateBrokerResponse
+newCreateBrokerResponse' :: ({ "BrokerArn" :: Maybe (String), "BrokerId" :: Maybe (String) } -> { "BrokerArn" :: Maybe (String), "BrokerId" :: Maybe (String) }) -> CreateBrokerResponse
 ```
 
 Constructs CreateBrokerResponse's fields from required parameters
@@ -452,7 +452,7 @@ Constructs CreateBrokerResponse's fields from required parameters
 
 ``` purescript
 newtype CreateConfigurationInput
-  = CreateConfigurationInput { "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String) }
+  = CreateConfigurationInput { "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "Name" :: Maybe (String) }
 ```
 
 Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version). Note: If the configuration name already exists, Amazon MQ doesn't create a configuration.
@@ -477,7 +477,7 @@ Constructs CreateConfigurationInput from required parameters
 #### `newCreateConfigurationInput'`
 
 ``` purescript
-newCreateConfigurationInput' :: ({ "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String) } -> { "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String) }) -> CreateConfigurationInput
+newCreateConfigurationInput' :: ({ "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "Name" :: Maybe (String) } -> { "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "Name" :: Maybe (String) }) -> CreateConfigurationInput
 ```
 
 Constructs CreateConfigurationInput's fields from required parameters
@@ -486,7 +486,7 @@ Constructs CreateConfigurationInput's fields from required parameters
 
 ``` purescript
 newtype CreateConfigurationOutput
-  = CreateConfigurationOutput { "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String) }
+  = CreateConfigurationOutput { "Arn" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String) }
 ```
 
 Returns information about the created configuration.
@@ -511,7 +511,7 @@ Constructs CreateConfigurationOutput from required parameters
 #### `newCreateConfigurationOutput'`
 
 ``` purescript
-newCreateConfigurationOutput' :: ({ "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String) } -> { "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String) }) -> CreateConfigurationOutput
+newCreateConfigurationOutput' :: ({ "Arn" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String) } -> { "Arn" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String) }) -> CreateConfigurationOutput
 ```
 
 Constructs CreateConfigurationOutput's fields from required parameters
@@ -520,7 +520,7 @@ Constructs CreateConfigurationOutput's fields from required parameters
 
 ``` purescript
 newtype CreateConfigurationRequest
-  = CreateConfigurationRequest { "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String) }
+  = CreateConfigurationRequest { "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "Name" :: Maybe (String) }
 ```
 
 Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version). Note: If the configuration name already exists, Amazon MQ doesn't create a configuration.
@@ -545,7 +545,7 @@ Constructs CreateConfigurationRequest from required parameters
 #### `newCreateConfigurationRequest'`
 
 ``` purescript
-newCreateConfigurationRequest' :: ({ "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String) } -> { "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "Name" :: NullOrUndefined (String) }) -> CreateConfigurationRequest
+newCreateConfigurationRequest' :: ({ "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "Name" :: Maybe (String) } -> { "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "Name" :: Maybe (String) }) -> CreateConfigurationRequest
 ```
 
 Constructs CreateConfigurationRequest's fields from required parameters
@@ -554,7 +554,7 @@ Constructs CreateConfigurationRequest's fields from required parameters
 
 ``` purescript
 newtype CreateConfigurationResponse
-  = CreateConfigurationResponse { "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String) }
+  = CreateConfigurationResponse { "Arn" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -577,7 +577,7 @@ Constructs CreateConfigurationResponse from required parameters
 #### `newCreateConfigurationResponse'`
 
 ``` purescript
-newCreateConfigurationResponse' :: ({ "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String) } -> { "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String) }) -> CreateConfigurationResponse
+newCreateConfigurationResponse' :: ({ "Arn" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String) } -> { "Arn" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String) }) -> CreateConfigurationResponse
 ```
 
 Constructs CreateConfigurationResponse's fields from required parameters
@@ -586,7 +586,7 @@ Constructs CreateConfigurationResponse's fields from required parameters
 
 ``` purescript
 newtype CreateUserInput
-  = CreateUserInput { "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Password" :: NullOrUndefined (String) }
+  = CreateUserInput { "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Password" :: Maybe (String) }
 ```
 
 Creates a new ActiveMQ user.
@@ -611,7 +611,7 @@ Constructs CreateUserInput from required parameters
 #### `newCreateUserInput'`
 
 ``` purescript
-newCreateUserInput' :: ({ "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Password" :: NullOrUndefined (String) } -> { "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Password" :: NullOrUndefined (String) }) -> CreateUserInput
+newCreateUserInput' :: ({ "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Password" :: Maybe (String) } -> { "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Password" :: Maybe (String) }) -> CreateUserInput
 ```
 
 Constructs CreateUserInput's fields from required parameters
@@ -620,7 +620,7 @@ Constructs CreateUserInput's fields from required parameters
 
 ``` purescript
 newtype CreateUserRequest
-  = CreateUserRequest { "BrokerId" :: String, "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Password" :: NullOrUndefined (String), "Username" :: String }
+  = CreateUserRequest { "BrokerId" :: String, "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Password" :: Maybe (String), "Username" :: String }
 ```
 
 Creates a new ActiveMQ user.
@@ -645,7 +645,7 @@ Constructs CreateUserRequest from required parameters
 #### `newCreateUserRequest'`
 
 ``` purescript
-newCreateUserRequest' :: String -> String -> ({ "BrokerId" :: String, "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Password" :: NullOrUndefined (String), "Username" :: String } -> { "BrokerId" :: String, "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Password" :: NullOrUndefined (String), "Username" :: String }) -> CreateUserRequest
+newCreateUserRequest' :: String -> String -> ({ "BrokerId" :: String, "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Password" :: Maybe (String), "Username" :: String } -> { "BrokerId" :: String, "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Password" :: Maybe (String), "Username" :: String }) -> CreateUserRequest
 ```
 
 Constructs CreateUserRequest's fields from required parameters
@@ -686,7 +686,7 @@ Encode DayOfWeek
 
 ``` purescript
 newtype DeleteBrokerOutput
-  = DeleteBrokerOutput { "BrokerId" :: NullOrUndefined (String) }
+  = DeleteBrokerOutput { "BrokerId" :: Maybe (String) }
 ```
 
 Returns information about the deleted broker.
@@ -711,7 +711,7 @@ Constructs DeleteBrokerOutput from required parameters
 #### `newDeleteBrokerOutput'`
 
 ``` purescript
-newDeleteBrokerOutput' :: ({ "BrokerId" :: NullOrUndefined (String) } -> { "BrokerId" :: NullOrUndefined (String) }) -> DeleteBrokerOutput
+newDeleteBrokerOutput' :: ({ "BrokerId" :: Maybe (String) } -> { "BrokerId" :: Maybe (String) }) -> DeleteBrokerOutput
 ```
 
 Constructs DeleteBrokerOutput's fields from required parameters
@@ -752,7 +752,7 @@ Constructs DeleteBrokerRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteBrokerResponse
-  = DeleteBrokerResponse { "BrokerId" :: NullOrUndefined (String) }
+  = DeleteBrokerResponse { "BrokerId" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -775,7 +775,7 @@ Constructs DeleteBrokerResponse from required parameters
 #### `newDeleteBrokerResponse'`
 
 ``` purescript
-newDeleteBrokerResponse' :: ({ "BrokerId" :: NullOrUndefined (String) } -> { "BrokerId" :: NullOrUndefined (String) }) -> DeleteBrokerResponse
+newDeleteBrokerResponse' :: ({ "BrokerId" :: Maybe (String) } -> { "BrokerId" :: Maybe (String) }) -> DeleteBrokerResponse
 ```
 
 Constructs DeleteBrokerResponse's fields from required parameters
@@ -850,7 +850,7 @@ Encode DeploymentMode
 
 ``` purescript
 newtype DescribeBrokerOutput
-  = DescribeBrokerOutput { "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "BrokerArn" :: NullOrUndefined (String), "BrokerId" :: NullOrUndefined (String), "BrokerInstances" :: NullOrUndefined (ListOfBrokerInstance), "BrokerName" :: NullOrUndefined (String), "BrokerState" :: NullOrUndefined (BrokerState), "Configurations" :: NullOrUndefined (Configurations), "DeploymentMode" :: NullOrUndefined (DeploymentMode), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "HostInstanceType" :: NullOrUndefined (String), "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime), "PubliclyAccessible" :: NullOrUndefined (Boolean), "SecurityGroups" :: NullOrUndefined (ListOf__string), "SubnetIds" :: NullOrUndefined (ListOf__string), "Users" :: NullOrUndefined (ListOfUserSummary) }
+  = DescribeBrokerOutput { "AutoMinorVersionUpgrade" :: Maybe (Boolean), "BrokerArn" :: Maybe (String), "BrokerId" :: Maybe (String), "BrokerInstances" :: Maybe (ListOfBrokerInstance), "BrokerName" :: Maybe (String), "BrokerState" :: Maybe (BrokerState), "Configurations" :: Maybe (Configurations), "DeploymentMode" :: Maybe (DeploymentMode), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "HostInstanceType" :: Maybe (String), "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime), "PubliclyAccessible" :: Maybe (Boolean), "SecurityGroups" :: Maybe (ListOf__string), "SubnetIds" :: Maybe (ListOf__string), "Users" :: Maybe (ListOfUserSummary) }
 ```
 
 The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0.
@@ -875,7 +875,7 @@ Constructs DescribeBrokerOutput from required parameters
 #### `newDescribeBrokerOutput'`
 
 ``` purescript
-newDescribeBrokerOutput' :: ({ "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "BrokerArn" :: NullOrUndefined (String), "BrokerId" :: NullOrUndefined (String), "BrokerInstances" :: NullOrUndefined (ListOfBrokerInstance), "BrokerName" :: NullOrUndefined (String), "BrokerState" :: NullOrUndefined (BrokerState), "Configurations" :: NullOrUndefined (Configurations), "DeploymentMode" :: NullOrUndefined (DeploymentMode), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "HostInstanceType" :: NullOrUndefined (String), "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime), "PubliclyAccessible" :: NullOrUndefined (Boolean), "SecurityGroups" :: NullOrUndefined (ListOf__string), "SubnetIds" :: NullOrUndefined (ListOf__string), "Users" :: NullOrUndefined (ListOfUserSummary) } -> { "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "BrokerArn" :: NullOrUndefined (String), "BrokerId" :: NullOrUndefined (String), "BrokerInstances" :: NullOrUndefined (ListOfBrokerInstance), "BrokerName" :: NullOrUndefined (String), "BrokerState" :: NullOrUndefined (BrokerState), "Configurations" :: NullOrUndefined (Configurations), "DeploymentMode" :: NullOrUndefined (DeploymentMode), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "HostInstanceType" :: NullOrUndefined (String), "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime), "PubliclyAccessible" :: NullOrUndefined (Boolean), "SecurityGroups" :: NullOrUndefined (ListOf__string), "SubnetIds" :: NullOrUndefined (ListOf__string), "Users" :: NullOrUndefined (ListOfUserSummary) }) -> DescribeBrokerOutput
+newDescribeBrokerOutput' :: ({ "AutoMinorVersionUpgrade" :: Maybe (Boolean), "BrokerArn" :: Maybe (String), "BrokerId" :: Maybe (String), "BrokerInstances" :: Maybe (ListOfBrokerInstance), "BrokerName" :: Maybe (String), "BrokerState" :: Maybe (BrokerState), "Configurations" :: Maybe (Configurations), "DeploymentMode" :: Maybe (DeploymentMode), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "HostInstanceType" :: Maybe (String), "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime), "PubliclyAccessible" :: Maybe (Boolean), "SecurityGroups" :: Maybe (ListOf__string), "SubnetIds" :: Maybe (ListOf__string), "Users" :: Maybe (ListOfUserSummary) } -> { "AutoMinorVersionUpgrade" :: Maybe (Boolean), "BrokerArn" :: Maybe (String), "BrokerId" :: Maybe (String), "BrokerInstances" :: Maybe (ListOfBrokerInstance), "BrokerName" :: Maybe (String), "BrokerState" :: Maybe (BrokerState), "Configurations" :: Maybe (Configurations), "DeploymentMode" :: Maybe (DeploymentMode), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "HostInstanceType" :: Maybe (String), "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime), "PubliclyAccessible" :: Maybe (Boolean), "SecurityGroups" :: Maybe (ListOf__string), "SubnetIds" :: Maybe (ListOf__string), "Users" :: Maybe (ListOfUserSummary) }) -> DescribeBrokerOutput
 ```
 
 Constructs DescribeBrokerOutput's fields from required parameters
@@ -916,7 +916,7 @@ Constructs DescribeBrokerRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeBrokerResponse
-  = DescribeBrokerResponse { "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "BrokerArn" :: NullOrUndefined (String), "BrokerId" :: NullOrUndefined (String), "BrokerInstances" :: NullOrUndefined (ListOfBrokerInstance), "BrokerName" :: NullOrUndefined (String), "BrokerState" :: NullOrUndefined (BrokerState), "Configurations" :: NullOrUndefined (Configurations), "DeploymentMode" :: NullOrUndefined (DeploymentMode), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "HostInstanceType" :: NullOrUndefined (String), "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime), "PubliclyAccessible" :: NullOrUndefined (Boolean), "SecurityGroups" :: NullOrUndefined (ListOf__string), "SubnetIds" :: NullOrUndefined (ListOf__string), "Users" :: NullOrUndefined (ListOfUserSummary) }
+  = DescribeBrokerResponse { "AutoMinorVersionUpgrade" :: Maybe (Boolean), "BrokerArn" :: Maybe (String), "BrokerId" :: Maybe (String), "BrokerInstances" :: Maybe (ListOfBrokerInstance), "BrokerName" :: Maybe (String), "BrokerState" :: Maybe (BrokerState), "Configurations" :: Maybe (Configurations), "DeploymentMode" :: Maybe (DeploymentMode), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "HostInstanceType" :: Maybe (String), "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime), "PubliclyAccessible" :: Maybe (Boolean), "SecurityGroups" :: Maybe (ListOf__string), "SubnetIds" :: Maybe (ListOf__string), "Users" :: Maybe (ListOfUserSummary) }
 ```
 
 ##### Instances
@@ -939,7 +939,7 @@ Constructs DescribeBrokerResponse from required parameters
 #### `newDescribeBrokerResponse'`
 
 ``` purescript
-newDescribeBrokerResponse' :: ({ "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "BrokerArn" :: NullOrUndefined (String), "BrokerId" :: NullOrUndefined (String), "BrokerInstances" :: NullOrUndefined (ListOfBrokerInstance), "BrokerName" :: NullOrUndefined (String), "BrokerState" :: NullOrUndefined (BrokerState), "Configurations" :: NullOrUndefined (Configurations), "DeploymentMode" :: NullOrUndefined (DeploymentMode), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "HostInstanceType" :: NullOrUndefined (String), "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime), "PubliclyAccessible" :: NullOrUndefined (Boolean), "SecurityGroups" :: NullOrUndefined (ListOf__string), "SubnetIds" :: NullOrUndefined (ListOf__string), "Users" :: NullOrUndefined (ListOfUserSummary) } -> { "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean), "BrokerArn" :: NullOrUndefined (String), "BrokerId" :: NullOrUndefined (String), "BrokerInstances" :: NullOrUndefined (ListOfBrokerInstance), "BrokerName" :: NullOrUndefined (String), "BrokerState" :: NullOrUndefined (BrokerState), "Configurations" :: NullOrUndefined (Configurations), "DeploymentMode" :: NullOrUndefined (DeploymentMode), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "HostInstanceType" :: NullOrUndefined (String), "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime), "PubliclyAccessible" :: NullOrUndefined (Boolean), "SecurityGroups" :: NullOrUndefined (ListOf__string), "SubnetIds" :: NullOrUndefined (ListOf__string), "Users" :: NullOrUndefined (ListOfUserSummary) }) -> DescribeBrokerResponse
+newDescribeBrokerResponse' :: ({ "AutoMinorVersionUpgrade" :: Maybe (Boolean), "BrokerArn" :: Maybe (String), "BrokerId" :: Maybe (String), "BrokerInstances" :: Maybe (ListOfBrokerInstance), "BrokerName" :: Maybe (String), "BrokerState" :: Maybe (BrokerState), "Configurations" :: Maybe (Configurations), "DeploymentMode" :: Maybe (DeploymentMode), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "HostInstanceType" :: Maybe (String), "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime), "PubliclyAccessible" :: Maybe (Boolean), "SecurityGroups" :: Maybe (ListOf__string), "SubnetIds" :: Maybe (ListOf__string), "Users" :: Maybe (ListOfUserSummary) } -> { "AutoMinorVersionUpgrade" :: Maybe (Boolean), "BrokerArn" :: Maybe (String), "BrokerId" :: Maybe (String), "BrokerInstances" :: Maybe (ListOfBrokerInstance), "BrokerName" :: Maybe (String), "BrokerState" :: Maybe (BrokerState), "Configurations" :: Maybe (Configurations), "DeploymentMode" :: Maybe (DeploymentMode), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "HostInstanceType" :: Maybe (String), "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime), "PubliclyAccessible" :: Maybe (Boolean), "SecurityGroups" :: Maybe (ListOf__string), "SubnetIds" :: Maybe (ListOf__string), "Users" :: Maybe (ListOfUserSummary) }) -> DescribeBrokerResponse
 ```
 
 Constructs DescribeBrokerResponse's fields from required parameters
@@ -980,7 +980,7 @@ Constructs DescribeConfigurationRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeConfigurationResponse
-  = DescribeConfigurationResponse { "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String) }
+  = DescribeConfigurationResponse { "Arn" :: Maybe (String), "Description" :: Maybe (String), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1003,7 +1003,7 @@ Constructs DescribeConfigurationResponse from required parameters
 #### `newDescribeConfigurationResponse'`
 
 ``` purescript
-newDescribeConfigurationResponse' :: ({ "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String) } -> { "Arn" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "EngineType" :: NullOrUndefined (EngineType), "EngineVersion" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String) }) -> DescribeConfigurationResponse
+newDescribeConfigurationResponse' :: ({ "Arn" :: Maybe (String), "Description" :: Maybe (String), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String) } -> { "Arn" :: Maybe (String), "Description" :: Maybe (String), "EngineType" :: Maybe (EngineType), "EngineVersion" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String) }) -> DescribeConfigurationResponse
 ```
 
 Constructs DescribeConfigurationResponse's fields from required parameters
@@ -1012,7 +1012,7 @@ Constructs DescribeConfigurationResponse's fields from required parameters
 
 ``` purescript
 newtype DescribeConfigurationRevisionOutput
-  = DescribeConfigurationRevisionOutput { "ConfigurationId" :: NullOrUndefined (String), "Data" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) }
+  = DescribeConfigurationRevisionOutput { "ConfigurationId" :: Maybe (String), "Data" :: Maybe (String), "Description" :: Maybe (String) }
 ```
 
 Returns the specified configuration revision for the specified configuration.
@@ -1037,7 +1037,7 @@ Constructs DescribeConfigurationRevisionOutput from required parameters
 #### `newDescribeConfigurationRevisionOutput'`
 
 ``` purescript
-newDescribeConfigurationRevisionOutput' :: ({ "ConfigurationId" :: NullOrUndefined (String), "Data" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) } -> { "ConfigurationId" :: NullOrUndefined (String), "Data" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) }) -> DescribeConfigurationRevisionOutput
+newDescribeConfigurationRevisionOutput' :: ({ "ConfigurationId" :: Maybe (String), "Data" :: Maybe (String), "Description" :: Maybe (String) } -> { "ConfigurationId" :: Maybe (String), "Data" :: Maybe (String), "Description" :: Maybe (String) }) -> DescribeConfigurationRevisionOutput
 ```
 
 Constructs DescribeConfigurationRevisionOutput's fields from required parameters
@@ -1078,7 +1078,7 @@ Constructs DescribeConfigurationRevisionRequest's fields from required parameter
 
 ``` purescript
 newtype DescribeConfigurationRevisionResponse
-  = DescribeConfigurationRevisionResponse { "ConfigurationId" :: NullOrUndefined (String), "Data" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) }
+  = DescribeConfigurationRevisionResponse { "ConfigurationId" :: Maybe (String), "Data" :: Maybe (String), "Description" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1101,7 +1101,7 @@ Constructs DescribeConfigurationRevisionResponse from required parameters
 #### `newDescribeConfigurationRevisionResponse'`
 
 ``` purescript
-newDescribeConfigurationRevisionResponse' :: ({ "ConfigurationId" :: NullOrUndefined (String), "Data" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) } -> { "ConfigurationId" :: NullOrUndefined (String), "Data" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) }) -> DescribeConfigurationRevisionResponse
+newDescribeConfigurationRevisionResponse' :: ({ "ConfigurationId" :: Maybe (String), "Data" :: Maybe (String), "Description" :: Maybe (String) } -> { "ConfigurationId" :: Maybe (String), "Data" :: Maybe (String), "Description" :: Maybe (String) }) -> DescribeConfigurationRevisionResponse
 ```
 
 Constructs DescribeConfigurationRevisionResponse's fields from required parameters
@@ -1110,7 +1110,7 @@ Constructs DescribeConfigurationRevisionResponse's fields from required paramete
 
 ``` purescript
 newtype DescribeUserOutput
-  = DescribeUserOutput { "BrokerId" :: NullOrUndefined (String), "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Pending" :: NullOrUndefined (UserPendingChanges), "Username" :: NullOrUndefined (String) }
+  = DescribeUserOutput { "BrokerId" :: Maybe (String), "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Pending" :: Maybe (UserPendingChanges), "Username" :: Maybe (String) }
 ```
 
 Returns information about an ActiveMQ user.
@@ -1135,7 +1135,7 @@ Constructs DescribeUserOutput from required parameters
 #### `newDescribeUserOutput'`
 
 ``` purescript
-newDescribeUserOutput' :: ({ "BrokerId" :: NullOrUndefined (String), "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Pending" :: NullOrUndefined (UserPendingChanges), "Username" :: NullOrUndefined (String) } -> { "BrokerId" :: NullOrUndefined (String), "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Pending" :: NullOrUndefined (UserPendingChanges), "Username" :: NullOrUndefined (String) }) -> DescribeUserOutput
+newDescribeUserOutput' :: ({ "BrokerId" :: Maybe (String), "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Pending" :: Maybe (UserPendingChanges), "Username" :: Maybe (String) } -> { "BrokerId" :: Maybe (String), "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Pending" :: Maybe (UserPendingChanges), "Username" :: Maybe (String) }) -> DescribeUserOutput
 ```
 
 Constructs DescribeUserOutput's fields from required parameters
@@ -1176,7 +1176,7 @@ Constructs DescribeUserRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeUserResponse
-  = DescribeUserResponse { "BrokerId" :: NullOrUndefined (String), "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Pending" :: NullOrUndefined (UserPendingChanges), "Username" :: NullOrUndefined (String) }
+  = DescribeUserResponse { "BrokerId" :: Maybe (String), "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Pending" :: Maybe (UserPendingChanges), "Username" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1199,7 +1199,7 @@ Constructs DescribeUserResponse from required parameters
 #### `newDescribeUserResponse'`
 
 ``` purescript
-newDescribeUserResponse' :: ({ "BrokerId" :: NullOrUndefined (String), "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Pending" :: NullOrUndefined (UserPendingChanges), "Username" :: NullOrUndefined (String) } -> { "BrokerId" :: NullOrUndefined (String), "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Pending" :: NullOrUndefined (UserPendingChanges), "Username" :: NullOrUndefined (String) }) -> DescribeUserResponse
+newDescribeUserResponse' :: ({ "BrokerId" :: Maybe (String), "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Pending" :: Maybe (UserPendingChanges), "Username" :: Maybe (String) } -> { "BrokerId" :: Maybe (String), "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Pending" :: Maybe (UserPendingChanges), "Username" :: Maybe (String) }) -> DescribeUserResponse
 ```
 
 Constructs DescribeUserResponse's fields from required parameters
@@ -1226,7 +1226,7 @@ Encode EngineType
 
 ``` purescript
 newtype Error
-  = Error { "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) }
+  = Error { "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) }
 ```
 
 Returns information about an error.
@@ -1251,7 +1251,7 @@ Constructs Error from required parameters
 #### `newError'`
 
 ``` purescript
-newError' :: ({ "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) } -> { "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) }) -> Error
+newError' :: ({ "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) } -> { "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) }) -> Error
 ```
 
 Constructs Error's fields from required parameters
@@ -1260,7 +1260,7 @@ Constructs Error's fields from required parameters
 
 ``` purescript
 newtype ForbiddenException
-  = ForbiddenException { "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) }
+  = ForbiddenException { "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) }
 ```
 
 Returns information about an error.
@@ -1285,7 +1285,7 @@ Constructs ForbiddenException from required parameters
 #### `newForbiddenException'`
 
 ``` purescript
-newForbiddenException' :: ({ "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) } -> { "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) }) -> ForbiddenException
+newForbiddenException' :: ({ "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) } -> { "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) }) -> ForbiddenException
 ```
 
 Constructs ForbiddenException's fields from required parameters
@@ -1294,7 +1294,7 @@ Constructs ForbiddenException's fields from required parameters
 
 ``` purescript
 newtype InternalServerErrorException
-  = InternalServerErrorException { "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) }
+  = InternalServerErrorException { "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) }
 ```
 
 Returns information about an error.
@@ -1319,7 +1319,7 @@ Constructs InternalServerErrorException from required parameters
 #### `newInternalServerErrorException'`
 
 ``` purescript
-newInternalServerErrorException' :: ({ "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) } -> { "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) }) -> InternalServerErrorException
+newInternalServerErrorException' :: ({ "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) } -> { "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) }) -> InternalServerErrorException
 ```
 
 Constructs InternalServerErrorException's fields from required parameters
@@ -1328,7 +1328,7 @@ Constructs InternalServerErrorException's fields from required parameters
 
 ``` purescript
 newtype ListBrokersOutput
-  = ListBrokersOutput { "BrokerSummaries" :: NullOrUndefined (ListOfBrokerSummary), "NextToken" :: NullOrUndefined (String) }
+  = ListBrokersOutput { "BrokerSummaries" :: Maybe (ListOfBrokerSummary), "NextToken" :: Maybe (String) }
 ```
 
 A list of information about all brokers.
@@ -1353,7 +1353,7 @@ Constructs ListBrokersOutput from required parameters
 #### `newListBrokersOutput'`
 
 ``` purescript
-newListBrokersOutput' :: ({ "BrokerSummaries" :: NullOrUndefined (ListOfBrokerSummary), "NextToken" :: NullOrUndefined (String) } -> { "BrokerSummaries" :: NullOrUndefined (ListOfBrokerSummary), "NextToken" :: NullOrUndefined (String) }) -> ListBrokersOutput
+newListBrokersOutput' :: ({ "BrokerSummaries" :: Maybe (ListOfBrokerSummary), "NextToken" :: Maybe (String) } -> { "BrokerSummaries" :: Maybe (ListOfBrokerSummary), "NextToken" :: Maybe (String) }) -> ListBrokersOutput
 ```
 
 Constructs ListBrokersOutput's fields from required parameters
@@ -1362,7 +1362,7 @@ Constructs ListBrokersOutput's fields from required parameters
 
 ``` purescript
 newtype ListBrokersRequest
-  = ListBrokersRequest { "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }
+  = ListBrokersRequest { "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1385,7 +1385,7 @@ Constructs ListBrokersRequest from required parameters
 #### `newListBrokersRequest'`
 
 ``` purescript
-newListBrokersRequest' :: ({ "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) } -> { "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }) -> ListBrokersRequest
+newListBrokersRequest' :: ({ "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) } -> { "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }) -> ListBrokersRequest
 ```
 
 Constructs ListBrokersRequest's fields from required parameters
@@ -1394,7 +1394,7 @@ Constructs ListBrokersRequest's fields from required parameters
 
 ``` purescript
 newtype ListBrokersResponse
-  = ListBrokersResponse { "BrokerSummaries" :: NullOrUndefined (ListOfBrokerSummary), "NextToken" :: NullOrUndefined (String) }
+  = ListBrokersResponse { "BrokerSummaries" :: Maybe (ListOfBrokerSummary), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1417,7 +1417,7 @@ Constructs ListBrokersResponse from required parameters
 #### `newListBrokersResponse'`
 
 ``` purescript
-newListBrokersResponse' :: ({ "BrokerSummaries" :: NullOrUndefined (ListOfBrokerSummary), "NextToken" :: NullOrUndefined (String) } -> { "BrokerSummaries" :: NullOrUndefined (ListOfBrokerSummary), "NextToken" :: NullOrUndefined (String) }) -> ListBrokersResponse
+newListBrokersResponse' :: ({ "BrokerSummaries" :: Maybe (ListOfBrokerSummary), "NextToken" :: Maybe (String) } -> { "BrokerSummaries" :: Maybe (ListOfBrokerSummary), "NextToken" :: Maybe (String) }) -> ListBrokersResponse
 ```
 
 Constructs ListBrokersResponse's fields from required parameters
@@ -1426,7 +1426,7 @@ Constructs ListBrokersResponse's fields from required parameters
 
 ``` purescript
 newtype ListConfigurationRevisionsOutput
-  = ListConfigurationRevisionsOutput { "ConfigurationId" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String), "Revisions" :: NullOrUndefined (ListOfConfigurationRevision) }
+  = ListConfigurationRevisionsOutput { "ConfigurationId" :: Maybe (String), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String), "Revisions" :: Maybe (ListOfConfigurationRevision) }
 ```
 
 Returns a list of all revisions for the specified configuration.
@@ -1451,7 +1451,7 @@ Constructs ListConfigurationRevisionsOutput from required parameters
 #### `newListConfigurationRevisionsOutput'`
 
 ``` purescript
-newListConfigurationRevisionsOutput' :: ({ "ConfigurationId" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String), "Revisions" :: NullOrUndefined (ListOfConfigurationRevision) } -> { "ConfigurationId" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String), "Revisions" :: NullOrUndefined (ListOfConfigurationRevision) }) -> ListConfigurationRevisionsOutput
+newListConfigurationRevisionsOutput' :: ({ "ConfigurationId" :: Maybe (String), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String), "Revisions" :: Maybe (ListOfConfigurationRevision) } -> { "ConfigurationId" :: Maybe (String), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String), "Revisions" :: Maybe (ListOfConfigurationRevision) }) -> ListConfigurationRevisionsOutput
 ```
 
 Constructs ListConfigurationRevisionsOutput's fields from required parameters
@@ -1460,7 +1460,7 @@ Constructs ListConfigurationRevisionsOutput's fields from required parameters
 
 ``` purescript
 newtype ListConfigurationRevisionsRequest
-  = ListConfigurationRevisionsRequest { "ConfigurationId" :: String, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }
+  = ListConfigurationRevisionsRequest { "ConfigurationId" :: String, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1483,7 +1483,7 @@ Constructs ListConfigurationRevisionsRequest from required parameters
 #### `newListConfigurationRevisionsRequest'`
 
 ``` purescript
-newListConfigurationRevisionsRequest' :: String -> ({ "ConfigurationId" :: String, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) } -> { "ConfigurationId" :: String, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }) -> ListConfigurationRevisionsRequest
+newListConfigurationRevisionsRequest' :: String -> ({ "ConfigurationId" :: String, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) } -> { "ConfigurationId" :: String, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }) -> ListConfigurationRevisionsRequest
 ```
 
 Constructs ListConfigurationRevisionsRequest's fields from required parameters
@@ -1492,7 +1492,7 @@ Constructs ListConfigurationRevisionsRequest's fields from required parameters
 
 ``` purescript
 newtype ListConfigurationRevisionsResponse
-  = ListConfigurationRevisionsResponse { "ConfigurationId" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String), "Revisions" :: NullOrUndefined (ListOfConfigurationRevision) }
+  = ListConfigurationRevisionsResponse { "ConfigurationId" :: Maybe (String), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String), "Revisions" :: Maybe (ListOfConfigurationRevision) }
 ```
 
 ##### Instances
@@ -1515,7 +1515,7 @@ Constructs ListConfigurationRevisionsResponse from required parameters
 #### `newListConfigurationRevisionsResponse'`
 
 ``` purescript
-newListConfigurationRevisionsResponse' :: ({ "ConfigurationId" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String), "Revisions" :: NullOrUndefined (ListOfConfigurationRevision) } -> { "ConfigurationId" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String), "Revisions" :: NullOrUndefined (ListOfConfigurationRevision) }) -> ListConfigurationRevisionsResponse
+newListConfigurationRevisionsResponse' :: ({ "ConfigurationId" :: Maybe (String), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String), "Revisions" :: Maybe (ListOfConfigurationRevision) } -> { "ConfigurationId" :: Maybe (String), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String), "Revisions" :: Maybe (ListOfConfigurationRevision) }) -> ListConfigurationRevisionsResponse
 ```
 
 Constructs ListConfigurationRevisionsResponse's fields from required parameters
@@ -1524,7 +1524,7 @@ Constructs ListConfigurationRevisionsResponse's fields from required parameters
 
 ``` purescript
 newtype ListConfigurationsOutput
-  = ListConfigurationsOutput { "Configurations" :: NullOrUndefined (ListOfConfiguration), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String) }
+  = ListConfigurationsOutput { "Configurations" :: Maybe (ListOfConfiguration), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String) }
 ```
 
 Returns a list of all configurations.
@@ -1549,7 +1549,7 @@ Constructs ListConfigurationsOutput from required parameters
 #### `newListConfigurationsOutput'`
 
 ``` purescript
-newListConfigurationsOutput' :: ({ "Configurations" :: NullOrUndefined (ListOfConfiguration), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String) } -> { "Configurations" :: NullOrUndefined (ListOfConfiguration), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String) }) -> ListConfigurationsOutput
+newListConfigurationsOutput' :: ({ "Configurations" :: Maybe (ListOfConfiguration), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String) } -> { "Configurations" :: Maybe (ListOfConfiguration), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String) }) -> ListConfigurationsOutput
 ```
 
 Constructs ListConfigurationsOutput's fields from required parameters
@@ -1558,7 +1558,7 @@ Constructs ListConfigurationsOutput's fields from required parameters
 
 ``` purescript
 newtype ListConfigurationsRequest
-  = ListConfigurationsRequest { "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }
+  = ListConfigurationsRequest { "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1581,7 +1581,7 @@ Constructs ListConfigurationsRequest from required parameters
 #### `newListConfigurationsRequest'`
 
 ``` purescript
-newListConfigurationsRequest' :: ({ "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) } -> { "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }) -> ListConfigurationsRequest
+newListConfigurationsRequest' :: ({ "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) } -> { "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }) -> ListConfigurationsRequest
 ```
 
 Constructs ListConfigurationsRequest's fields from required parameters
@@ -1590,7 +1590,7 @@ Constructs ListConfigurationsRequest's fields from required parameters
 
 ``` purescript
 newtype ListConfigurationsResponse
-  = ListConfigurationsResponse { "Configurations" :: NullOrUndefined (ListOfConfiguration), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String) }
+  = ListConfigurationsResponse { "Configurations" :: Maybe (ListOfConfiguration), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1613,7 +1613,7 @@ Constructs ListConfigurationsResponse from required parameters
 #### `newListConfigurationsResponse'`
 
 ``` purescript
-newListConfigurationsResponse' :: ({ "Configurations" :: NullOrUndefined (ListOfConfiguration), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String) } -> { "Configurations" :: NullOrUndefined (ListOfConfiguration), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String) }) -> ListConfigurationsResponse
+newListConfigurationsResponse' :: ({ "Configurations" :: Maybe (ListOfConfiguration), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String) } -> { "Configurations" :: Maybe (ListOfConfiguration), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String) }) -> ListConfigurationsResponse
 ```
 
 Constructs ListConfigurationsResponse's fields from required parameters
@@ -1766,7 +1766,7 @@ Encode ListOf__string
 
 ``` purescript
 newtype ListUsersOutput
-  = ListUsersOutput { "BrokerId" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String), "Users" :: NullOrUndefined (ListOfUserSummary) }
+  = ListUsersOutput { "BrokerId" :: Maybe (String), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String), "Users" :: Maybe (ListOfUserSummary) }
 ```
 
 Returns a list of all ActiveMQ users.
@@ -1791,7 +1791,7 @@ Constructs ListUsersOutput from required parameters
 #### `newListUsersOutput'`
 
 ``` purescript
-newListUsersOutput' :: ({ "BrokerId" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String), "Users" :: NullOrUndefined (ListOfUserSummary) } -> { "BrokerId" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String), "Users" :: NullOrUndefined (ListOfUserSummary) }) -> ListUsersOutput
+newListUsersOutput' :: ({ "BrokerId" :: Maybe (String), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String), "Users" :: Maybe (ListOfUserSummary) } -> { "BrokerId" :: Maybe (String), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String), "Users" :: Maybe (ListOfUserSummary) }) -> ListUsersOutput
 ```
 
 Constructs ListUsersOutput's fields from required parameters
@@ -1800,7 +1800,7 @@ Constructs ListUsersOutput's fields from required parameters
 
 ``` purescript
 newtype ListUsersRequest
-  = ListUsersRequest { "BrokerId" :: String, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }
+  = ListUsersRequest { "BrokerId" :: String, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1823,7 +1823,7 @@ Constructs ListUsersRequest from required parameters
 #### `newListUsersRequest'`
 
 ``` purescript
-newListUsersRequest' :: String -> ({ "BrokerId" :: String, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) } -> { "BrokerId" :: String, "MaxResults" :: NullOrUndefined (MaxResults), "NextToken" :: NullOrUndefined (String) }) -> ListUsersRequest
+newListUsersRequest' :: String -> ({ "BrokerId" :: String, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) } -> { "BrokerId" :: String, "MaxResults" :: Maybe (MaxResults), "NextToken" :: Maybe (String) }) -> ListUsersRequest
 ```
 
 Constructs ListUsersRequest's fields from required parameters
@@ -1832,7 +1832,7 @@ Constructs ListUsersRequest's fields from required parameters
 
 ``` purescript
 newtype ListUsersResponse
-  = ListUsersResponse { "BrokerId" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String), "Users" :: NullOrUndefined (ListOfUserSummary) }
+  = ListUsersResponse { "BrokerId" :: Maybe (String), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String), "Users" :: Maybe (ListOfUserSummary) }
 ```
 
 ##### Instances
@@ -1855,7 +1855,7 @@ Constructs ListUsersResponse from required parameters
 #### `newListUsersResponse'`
 
 ``` purescript
-newListUsersResponse' :: ({ "BrokerId" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String), "Users" :: NullOrUndefined (ListOfUserSummary) } -> { "BrokerId" :: NullOrUndefined (String), "MaxResults" :: NullOrUndefined (Int), "NextToken" :: NullOrUndefined (String), "Users" :: NullOrUndefined (ListOfUserSummary) }) -> ListUsersResponse
+newListUsersResponse' :: ({ "BrokerId" :: Maybe (String), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String), "Users" :: Maybe (ListOfUserSummary) } -> { "BrokerId" :: Maybe (String), "MaxResults" :: Maybe (Int), "NextToken" :: Maybe (String), "Users" :: Maybe (ListOfUserSummary) }) -> ListUsersResponse
 ```
 
 Constructs ListUsersResponse's fields from required parameters
@@ -1880,7 +1880,7 @@ Encode MaxResults
 
 ``` purescript
 newtype NotFoundException
-  = NotFoundException { "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) }
+  = NotFoundException { "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) }
 ```
 
 Returns information about an error.
@@ -1905,7 +1905,7 @@ Constructs NotFoundException from required parameters
 #### `newNotFoundException'`
 
 ``` purescript
-newNotFoundException' :: ({ "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) } -> { "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) }) -> NotFoundException
+newNotFoundException' :: ({ "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) } -> { "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) }) -> NotFoundException
 ```
 
 Constructs NotFoundException's fields from required parameters
@@ -1962,7 +1962,7 @@ Encode RebootBrokerResponse
 
 ``` purescript
 newtype SanitizationWarning
-  = SanitizationWarning { "AttributeName" :: NullOrUndefined (String), "ElementName" :: NullOrUndefined (String), "Reason" :: NullOrUndefined (SanitizationWarningReason) }
+  = SanitizationWarning { "AttributeName" :: Maybe (String), "ElementName" :: Maybe (String), "Reason" :: Maybe (SanitizationWarningReason) }
 ```
 
 Returns information about the XML element or attribute that was sanitized in the configuration.
@@ -1987,7 +1987,7 @@ Constructs SanitizationWarning from required parameters
 #### `newSanitizationWarning'`
 
 ``` purescript
-newSanitizationWarning' :: ({ "AttributeName" :: NullOrUndefined (String), "ElementName" :: NullOrUndefined (String), "Reason" :: NullOrUndefined (SanitizationWarningReason) } -> { "AttributeName" :: NullOrUndefined (String), "ElementName" :: NullOrUndefined (String), "Reason" :: NullOrUndefined (SanitizationWarningReason) }) -> SanitizationWarning
+newSanitizationWarning' :: ({ "AttributeName" :: Maybe (String), "ElementName" :: Maybe (String), "Reason" :: Maybe (SanitizationWarningReason) } -> { "AttributeName" :: Maybe (String), "ElementName" :: Maybe (String), "Reason" :: Maybe (SanitizationWarningReason) }) -> SanitizationWarning
 ```
 
 Constructs SanitizationWarning's fields from required parameters
@@ -2014,7 +2014,7 @@ Encode SanitizationWarningReason
 
 ``` purescript
 newtype UnauthorizedException
-  = UnauthorizedException { "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) }
+  = UnauthorizedException { "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) }
 ```
 
 Returns information about an error.
@@ -2039,7 +2039,7 @@ Constructs UnauthorizedException from required parameters
 #### `newUnauthorizedException'`
 
 ``` purescript
-newUnauthorizedException' :: ({ "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) } -> { "ErrorAttribute" :: NullOrUndefined (String), "Message" :: NullOrUndefined (String) }) -> UnauthorizedException
+newUnauthorizedException' :: ({ "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) } -> { "ErrorAttribute" :: Maybe (String), "Message" :: Maybe (String) }) -> UnauthorizedException
 ```
 
 Constructs UnauthorizedException's fields from required parameters
@@ -2048,7 +2048,7 @@ Constructs UnauthorizedException's fields from required parameters
 
 ``` purescript
 newtype UpdateBrokerInput
-  = UpdateBrokerInput { "Configuration" :: NullOrUndefined (ConfigurationId) }
+  = UpdateBrokerInput { "Configuration" :: Maybe (ConfigurationId) }
 ```
 
 Updates the broker using the specified properties.
@@ -2073,7 +2073,7 @@ Constructs UpdateBrokerInput from required parameters
 #### `newUpdateBrokerInput'`
 
 ``` purescript
-newUpdateBrokerInput' :: ({ "Configuration" :: NullOrUndefined (ConfigurationId) } -> { "Configuration" :: NullOrUndefined (ConfigurationId) }) -> UpdateBrokerInput
+newUpdateBrokerInput' :: ({ "Configuration" :: Maybe (ConfigurationId) } -> { "Configuration" :: Maybe (ConfigurationId) }) -> UpdateBrokerInput
 ```
 
 Constructs UpdateBrokerInput's fields from required parameters
@@ -2082,7 +2082,7 @@ Constructs UpdateBrokerInput's fields from required parameters
 
 ``` purescript
 newtype UpdateBrokerOutput
-  = UpdateBrokerOutput { "BrokerId" :: NullOrUndefined (String), "Configuration" :: NullOrUndefined (ConfigurationId) }
+  = UpdateBrokerOutput { "BrokerId" :: Maybe (String), "Configuration" :: Maybe (ConfigurationId) }
 ```
 
 Returns information about the updated broker.
@@ -2107,7 +2107,7 @@ Constructs UpdateBrokerOutput from required parameters
 #### `newUpdateBrokerOutput'`
 
 ``` purescript
-newUpdateBrokerOutput' :: ({ "BrokerId" :: NullOrUndefined (String), "Configuration" :: NullOrUndefined (ConfigurationId) } -> { "BrokerId" :: NullOrUndefined (String), "Configuration" :: NullOrUndefined (ConfigurationId) }) -> UpdateBrokerOutput
+newUpdateBrokerOutput' :: ({ "BrokerId" :: Maybe (String), "Configuration" :: Maybe (ConfigurationId) } -> { "BrokerId" :: Maybe (String), "Configuration" :: Maybe (ConfigurationId) }) -> UpdateBrokerOutput
 ```
 
 Constructs UpdateBrokerOutput's fields from required parameters
@@ -2116,7 +2116,7 @@ Constructs UpdateBrokerOutput's fields from required parameters
 
 ``` purescript
 newtype UpdateBrokerRequest
-  = UpdateBrokerRequest { "BrokerId" :: String, "Configuration" :: NullOrUndefined (ConfigurationId) }
+  = UpdateBrokerRequest { "BrokerId" :: String, "Configuration" :: Maybe (ConfigurationId) }
 ```
 
 Updates the broker using the specified properties.
@@ -2141,7 +2141,7 @@ Constructs UpdateBrokerRequest from required parameters
 #### `newUpdateBrokerRequest'`
 
 ``` purescript
-newUpdateBrokerRequest' :: String -> ({ "BrokerId" :: String, "Configuration" :: NullOrUndefined (ConfigurationId) } -> { "BrokerId" :: String, "Configuration" :: NullOrUndefined (ConfigurationId) }) -> UpdateBrokerRequest
+newUpdateBrokerRequest' :: String -> ({ "BrokerId" :: String, "Configuration" :: Maybe (ConfigurationId) } -> { "BrokerId" :: String, "Configuration" :: Maybe (ConfigurationId) }) -> UpdateBrokerRequest
 ```
 
 Constructs UpdateBrokerRequest's fields from required parameters
@@ -2150,7 +2150,7 @@ Constructs UpdateBrokerRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateBrokerResponse
-  = UpdateBrokerResponse { "BrokerId" :: NullOrUndefined (String), "Configuration" :: NullOrUndefined (ConfigurationId) }
+  = UpdateBrokerResponse { "BrokerId" :: Maybe (String), "Configuration" :: Maybe (ConfigurationId) }
 ```
 
 ##### Instances
@@ -2173,7 +2173,7 @@ Constructs UpdateBrokerResponse from required parameters
 #### `newUpdateBrokerResponse'`
 
 ``` purescript
-newUpdateBrokerResponse' :: ({ "BrokerId" :: NullOrUndefined (String), "Configuration" :: NullOrUndefined (ConfigurationId) } -> { "BrokerId" :: NullOrUndefined (String), "Configuration" :: NullOrUndefined (ConfigurationId) }) -> UpdateBrokerResponse
+newUpdateBrokerResponse' :: ({ "BrokerId" :: Maybe (String), "Configuration" :: Maybe (ConfigurationId) } -> { "BrokerId" :: Maybe (String), "Configuration" :: Maybe (ConfigurationId) }) -> UpdateBrokerResponse
 ```
 
 Constructs UpdateBrokerResponse's fields from required parameters
@@ -2182,7 +2182,7 @@ Constructs UpdateBrokerResponse's fields from required parameters
 
 ``` purescript
 newtype UpdateConfigurationInput
-  = UpdateConfigurationInput { "Data" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) }
+  = UpdateConfigurationInput { "Data" :: Maybe (String), "Description" :: Maybe (String) }
 ```
 
 Updates the specified configuration.
@@ -2207,7 +2207,7 @@ Constructs UpdateConfigurationInput from required parameters
 #### `newUpdateConfigurationInput'`
 
 ``` purescript
-newUpdateConfigurationInput' :: ({ "Data" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) } -> { "Data" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) }) -> UpdateConfigurationInput
+newUpdateConfigurationInput' :: ({ "Data" :: Maybe (String), "Description" :: Maybe (String) } -> { "Data" :: Maybe (String), "Description" :: Maybe (String) }) -> UpdateConfigurationInput
 ```
 
 Constructs UpdateConfigurationInput's fields from required parameters
@@ -2216,7 +2216,7 @@ Constructs UpdateConfigurationInput's fields from required parameters
 
 ``` purescript
 newtype UpdateConfigurationOutput
-  = UpdateConfigurationOutput { "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String), "Warnings" :: NullOrUndefined (ListOfSanitizationWarning) }
+  = UpdateConfigurationOutput { "Arn" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String), "Warnings" :: Maybe (ListOfSanitizationWarning) }
 ```
 
 Returns information about the updated configuration.
@@ -2241,7 +2241,7 @@ Constructs UpdateConfigurationOutput from required parameters
 #### `newUpdateConfigurationOutput'`
 
 ``` purescript
-newUpdateConfigurationOutput' :: ({ "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String), "Warnings" :: NullOrUndefined (ListOfSanitizationWarning) } -> { "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String), "Warnings" :: NullOrUndefined (ListOfSanitizationWarning) }) -> UpdateConfigurationOutput
+newUpdateConfigurationOutput' :: ({ "Arn" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String), "Warnings" :: Maybe (ListOfSanitizationWarning) } -> { "Arn" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String), "Warnings" :: Maybe (ListOfSanitizationWarning) }) -> UpdateConfigurationOutput
 ```
 
 Constructs UpdateConfigurationOutput's fields from required parameters
@@ -2250,7 +2250,7 @@ Constructs UpdateConfigurationOutput's fields from required parameters
 
 ``` purescript
 newtype UpdateConfigurationRequest
-  = UpdateConfigurationRequest { "ConfigurationId" :: String, "Data" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) }
+  = UpdateConfigurationRequest { "ConfigurationId" :: String, "Data" :: Maybe (String), "Description" :: Maybe (String) }
 ```
 
 Updates the specified configuration.
@@ -2275,7 +2275,7 @@ Constructs UpdateConfigurationRequest from required parameters
 #### `newUpdateConfigurationRequest'`
 
 ``` purescript
-newUpdateConfigurationRequest' :: String -> ({ "ConfigurationId" :: String, "Data" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) } -> { "ConfigurationId" :: String, "Data" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String) }) -> UpdateConfigurationRequest
+newUpdateConfigurationRequest' :: String -> ({ "ConfigurationId" :: String, "Data" :: Maybe (String), "Description" :: Maybe (String) } -> { "ConfigurationId" :: String, "Data" :: Maybe (String), "Description" :: Maybe (String) }) -> UpdateConfigurationRequest
 ```
 
 Constructs UpdateConfigurationRequest's fields from required parameters
@@ -2284,7 +2284,7 @@ Constructs UpdateConfigurationRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateConfigurationResponse
-  = UpdateConfigurationResponse { "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String), "Warnings" :: NullOrUndefined (ListOfSanitizationWarning) }
+  = UpdateConfigurationResponse { "Arn" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String), "Warnings" :: Maybe (ListOfSanitizationWarning) }
 ```
 
 ##### Instances
@@ -2307,7 +2307,7 @@ Constructs UpdateConfigurationResponse from required parameters
 #### `newUpdateConfigurationResponse'`
 
 ``` purescript
-newUpdateConfigurationResponse' :: ({ "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String), "Warnings" :: NullOrUndefined (ListOfSanitizationWarning) } -> { "Arn" :: NullOrUndefined (String), "Id" :: NullOrUndefined (String), "LatestRevision" :: NullOrUndefined (ConfigurationRevision), "Name" :: NullOrUndefined (String), "Warnings" :: NullOrUndefined (ListOfSanitizationWarning) }) -> UpdateConfigurationResponse
+newUpdateConfigurationResponse' :: ({ "Arn" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String), "Warnings" :: Maybe (ListOfSanitizationWarning) } -> { "Arn" :: Maybe (String), "Id" :: Maybe (String), "LatestRevision" :: Maybe (ConfigurationRevision), "Name" :: Maybe (String), "Warnings" :: Maybe (ListOfSanitizationWarning) }) -> UpdateConfigurationResponse
 ```
 
 Constructs UpdateConfigurationResponse's fields from required parameters
@@ -2316,7 +2316,7 @@ Constructs UpdateConfigurationResponse's fields from required parameters
 
 ``` purescript
 newtype UpdateUserInput
-  = UpdateUserInput { "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Password" :: NullOrUndefined (String) }
+  = UpdateUserInput { "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Password" :: Maybe (String) }
 ```
 
 Updates the information for an ActiveMQ user.
@@ -2341,7 +2341,7 @@ Constructs UpdateUserInput from required parameters
 #### `newUpdateUserInput'`
 
 ``` purescript
-newUpdateUserInput' :: ({ "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Password" :: NullOrUndefined (String) } -> { "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Password" :: NullOrUndefined (String) }) -> UpdateUserInput
+newUpdateUserInput' :: ({ "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Password" :: Maybe (String) } -> { "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Password" :: Maybe (String) }) -> UpdateUserInput
 ```
 
 Constructs UpdateUserInput's fields from required parameters
@@ -2350,7 +2350,7 @@ Constructs UpdateUserInput's fields from required parameters
 
 ``` purescript
 newtype UpdateUserRequest
-  = UpdateUserRequest { "BrokerId" :: String, "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Password" :: NullOrUndefined (String), "Username" :: String }
+  = UpdateUserRequest { "BrokerId" :: String, "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Password" :: Maybe (String), "Username" :: String }
 ```
 
 Updates the information for an ActiveMQ user.
@@ -2375,7 +2375,7 @@ Constructs UpdateUserRequest from required parameters
 #### `newUpdateUserRequest'`
 
 ``` purescript
-newUpdateUserRequest' :: String -> String -> ({ "BrokerId" :: String, "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Password" :: NullOrUndefined (String), "Username" :: String } -> { "BrokerId" :: String, "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Password" :: NullOrUndefined (String), "Username" :: String }) -> UpdateUserRequest
+newUpdateUserRequest' :: String -> String -> ({ "BrokerId" :: String, "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Password" :: Maybe (String), "Username" :: String } -> { "BrokerId" :: String, "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Password" :: Maybe (String), "Username" :: String }) -> UpdateUserRequest
 ```
 
 Constructs UpdateUserRequest's fields from required parameters
@@ -2400,7 +2400,7 @@ Encode UpdateUserResponse
 
 ``` purescript
 newtype User
-  = User { "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Password" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String) }
+  = User { "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Password" :: Maybe (String), "Username" :: Maybe (String) }
 ```
 
 An ActiveMQ user associated with the broker.
@@ -2425,7 +2425,7 @@ Constructs User from required parameters
 #### `newUser'`
 
 ``` purescript
-newUser' :: ({ "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Password" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String) } -> { "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "Password" :: NullOrUndefined (String), "Username" :: NullOrUndefined (String) }) -> User
+newUser' :: ({ "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Password" :: Maybe (String), "Username" :: Maybe (String) } -> { "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "Password" :: Maybe (String), "Username" :: Maybe (String) }) -> User
 ```
 
 Constructs User's fields from required parameters
@@ -2434,7 +2434,7 @@ Constructs User's fields from required parameters
 
 ``` purescript
 newtype UserPendingChanges
-  = UserPendingChanges { "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "PendingChange" :: NullOrUndefined (ChangeType) }
+  = UserPendingChanges { "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "PendingChange" :: Maybe (ChangeType) }
 ```
 
 Returns information about the status of the changes pending for the ActiveMQ user.
@@ -2459,7 +2459,7 @@ Constructs UserPendingChanges from required parameters
 #### `newUserPendingChanges'`
 
 ``` purescript
-newUserPendingChanges' :: ({ "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "PendingChange" :: NullOrUndefined (ChangeType) } -> { "ConsoleAccess" :: NullOrUndefined (Boolean), "Groups" :: NullOrUndefined (ListOf__string), "PendingChange" :: NullOrUndefined (ChangeType) }) -> UserPendingChanges
+newUserPendingChanges' :: ({ "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "PendingChange" :: Maybe (ChangeType) } -> { "ConsoleAccess" :: Maybe (Boolean), "Groups" :: Maybe (ListOf__string), "PendingChange" :: Maybe (ChangeType) }) -> UserPendingChanges
 ```
 
 Constructs UserPendingChanges's fields from required parameters
@@ -2468,7 +2468,7 @@ Constructs UserPendingChanges's fields from required parameters
 
 ``` purescript
 newtype UserSummary
-  = UserSummary { "PendingChange" :: NullOrUndefined (ChangeType), "Username" :: NullOrUndefined (String) }
+  = UserSummary { "PendingChange" :: Maybe (ChangeType), "Username" :: Maybe (String) }
 ```
 
 Returns a list of all ActiveMQ users.
@@ -2493,7 +2493,7 @@ Constructs UserSummary from required parameters
 #### `newUserSummary'`
 
 ``` purescript
-newUserSummary' :: ({ "PendingChange" :: NullOrUndefined (ChangeType), "Username" :: NullOrUndefined (String) } -> { "PendingChange" :: NullOrUndefined (ChangeType), "Username" :: NullOrUndefined (String) }) -> UserSummary
+newUserSummary' :: ({ "PendingChange" :: Maybe (ChangeType), "Username" :: Maybe (String) } -> { "PendingChange" :: Maybe (ChangeType), "Username" :: Maybe (String) }) -> UserSummary
 ```
 
 Constructs UserSummary's fields from required parameters
@@ -2502,7 +2502,7 @@ Constructs UserSummary's fields from required parameters
 
 ``` purescript
 newtype WeeklyStartTime
-  = WeeklyStartTime { "DayOfWeek" :: NullOrUndefined (DayOfWeek), "TimeOfDay" :: NullOrUndefined (String), "TimeZone" :: NullOrUndefined (String) }
+  = WeeklyStartTime { "DayOfWeek" :: Maybe (DayOfWeek), "TimeOfDay" :: Maybe (String), "TimeZone" :: Maybe (String) }
 ```
 
 The scheduled time period relative to UTC during which Amazon MQ begins to apply pending updates or patches to the broker.
@@ -2527,7 +2527,7 @@ Constructs WeeklyStartTime from required parameters
 #### `newWeeklyStartTime'`
 
 ``` purescript
-newWeeklyStartTime' :: ({ "DayOfWeek" :: NullOrUndefined (DayOfWeek), "TimeOfDay" :: NullOrUndefined (String), "TimeZone" :: NullOrUndefined (String) } -> { "DayOfWeek" :: NullOrUndefined (DayOfWeek), "TimeOfDay" :: NullOrUndefined (String), "TimeZone" :: NullOrUndefined (String) }) -> WeeklyStartTime
+newWeeklyStartTime' :: ({ "DayOfWeek" :: Maybe (DayOfWeek), "TimeOfDay" :: Maybe (String), "TimeZone" :: Maybe (String) } -> { "DayOfWeek" :: Maybe (DayOfWeek), "TimeOfDay" :: Maybe (String), "TimeZone" :: Maybe (String) }) -> WeeklyStartTime
 ```
 
 Constructs WeeklyStartTime's fields from required parameters

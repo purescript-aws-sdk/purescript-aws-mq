@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -20,8 +19,8 @@ options = defaultOptions { unwrapSingleConstructors = true }
 
 -- | Returns information about an error.
 newtype BadRequestException = BadRequestException 
-  { "ErrorAttribute" :: NullOrUndefined (String)
-  , "Message" :: NullOrUndefined (String)
+  { "ErrorAttribute" :: Maybe (String)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeBadRequestException :: Newtype BadRequestException _
 derive instance repGenericBadRequestException :: Generic BadRequestException _
@@ -31,19 +30,19 @@ instance encodeBadRequestException :: Encode BadRequestException where encode = 
 
 -- | Constructs BadRequestException from required parameters
 newBadRequestException :: BadRequestException
-newBadRequestException  = BadRequestException { "ErrorAttribute": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newBadRequestException  = BadRequestException { "ErrorAttribute": Nothing, "Message": Nothing }
 
 -- | Constructs BadRequestException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBadRequestException' :: ( { "ErrorAttribute" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) } -> {"ErrorAttribute" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) } ) -> BadRequestException
-newBadRequestException'  customize = (BadRequestException <<< customize) { "ErrorAttribute": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newBadRequestException' :: ( { "ErrorAttribute" :: Maybe (String) , "Message" :: Maybe (String) } -> {"ErrorAttribute" :: Maybe (String) , "Message" :: Maybe (String) } ) -> BadRequestException
+newBadRequestException'  customize = (BadRequestException <<< customize) { "ErrorAttribute": Nothing, "Message": Nothing }
 
 
 
 -- | Returns information about all brokers.
 newtype BrokerInstance = BrokerInstance 
-  { "ConsoleURL" :: NullOrUndefined (String)
-  , "Endpoints" :: NullOrUndefined (ListOf__string)
+  { "ConsoleURL" :: Maybe (String)
+  , "Endpoints" :: Maybe (ListOf__string)
   }
 derive instance newtypeBrokerInstance :: Newtype BrokerInstance _
 derive instance repGenericBrokerInstance :: Generic BrokerInstance _
@@ -53,12 +52,12 @@ instance encodeBrokerInstance :: Encode BrokerInstance where encode = genericEnc
 
 -- | Constructs BrokerInstance from required parameters
 newBrokerInstance :: BrokerInstance
-newBrokerInstance  = BrokerInstance { "ConsoleURL": (NullOrUndefined Nothing), "Endpoints": (NullOrUndefined Nothing) }
+newBrokerInstance  = BrokerInstance { "ConsoleURL": Nothing, "Endpoints": Nothing }
 
 -- | Constructs BrokerInstance's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBrokerInstance' :: ( { "ConsoleURL" :: NullOrUndefined (String) , "Endpoints" :: NullOrUndefined (ListOf__string) } -> {"ConsoleURL" :: NullOrUndefined (String) , "Endpoints" :: NullOrUndefined (ListOf__string) } ) -> BrokerInstance
-newBrokerInstance'  customize = (BrokerInstance <<< customize) { "ConsoleURL": (NullOrUndefined Nothing), "Endpoints": (NullOrUndefined Nothing) }
+newBrokerInstance' :: ( { "ConsoleURL" :: Maybe (String) , "Endpoints" :: Maybe (ListOf__string) } -> {"ConsoleURL" :: Maybe (String) , "Endpoints" :: Maybe (ListOf__string) } ) -> BrokerInstance
+newBrokerInstance'  customize = (BrokerInstance <<< customize) { "ConsoleURL": Nothing, "Endpoints": Nothing }
 
 
 
@@ -74,12 +73,12 @@ instance encodeBrokerState :: Encode BrokerState where encode = genericEncode op
 
 -- | The Amazon Resource Name (ARN) of the broker.
 newtype BrokerSummary = BrokerSummary 
-  { "BrokerArn" :: NullOrUndefined (String)
-  , "BrokerId" :: NullOrUndefined (String)
-  , "BrokerName" :: NullOrUndefined (String)
-  , "BrokerState" :: NullOrUndefined (BrokerState)
-  , "DeploymentMode" :: NullOrUndefined (DeploymentMode)
-  , "HostInstanceType" :: NullOrUndefined (String)
+  { "BrokerArn" :: Maybe (String)
+  , "BrokerId" :: Maybe (String)
+  , "BrokerName" :: Maybe (String)
+  , "BrokerState" :: Maybe (BrokerState)
+  , "DeploymentMode" :: Maybe (DeploymentMode)
+  , "HostInstanceType" :: Maybe (String)
   }
 derive instance newtypeBrokerSummary :: Newtype BrokerSummary _
 derive instance repGenericBrokerSummary :: Generic BrokerSummary _
@@ -89,12 +88,12 @@ instance encodeBrokerSummary :: Encode BrokerSummary where encode = genericEncod
 
 -- | Constructs BrokerSummary from required parameters
 newBrokerSummary :: BrokerSummary
-newBrokerSummary  = BrokerSummary { "BrokerArn": (NullOrUndefined Nothing), "BrokerId": (NullOrUndefined Nothing), "BrokerName": (NullOrUndefined Nothing), "BrokerState": (NullOrUndefined Nothing), "DeploymentMode": (NullOrUndefined Nothing), "HostInstanceType": (NullOrUndefined Nothing) }
+newBrokerSummary  = BrokerSummary { "BrokerArn": Nothing, "BrokerId": Nothing, "BrokerName": Nothing, "BrokerState": Nothing, "DeploymentMode": Nothing, "HostInstanceType": Nothing }
 
 -- | Constructs BrokerSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBrokerSummary' :: ( { "BrokerArn" :: NullOrUndefined (String) , "BrokerId" :: NullOrUndefined (String) , "BrokerName" :: NullOrUndefined (String) , "BrokerState" :: NullOrUndefined (BrokerState) , "DeploymentMode" :: NullOrUndefined (DeploymentMode) , "HostInstanceType" :: NullOrUndefined (String) } -> {"BrokerArn" :: NullOrUndefined (String) , "BrokerId" :: NullOrUndefined (String) , "BrokerName" :: NullOrUndefined (String) , "BrokerState" :: NullOrUndefined (BrokerState) , "DeploymentMode" :: NullOrUndefined (DeploymentMode) , "HostInstanceType" :: NullOrUndefined (String) } ) -> BrokerSummary
-newBrokerSummary'  customize = (BrokerSummary <<< customize) { "BrokerArn": (NullOrUndefined Nothing), "BrokerId": (NullOrUndefined Nothing), "BrokerName": (NullOrUndefined Nothing), "BrokerState": (NullOrUndefined Nothing), "DeploymentMode": (NullOrUndefined Nothing), "HostInstanceType": (NullOrUndefined Nothing) }
+newBrokerSummary' :: ( { "BrokerArn" :: Maybe (String) , "BrokerId" :: Maybe (String) , "BrokerName" :: Maybe (String) , "BrokerState" :: Maybe (BrokerState) , "DeploymentMode" :: Maybe (DeploymentMode) , "HostInstanceType" :: Maybe (String) } -> {"BrokerArn" :: Maybe (String) , "BrokerId" :: Maybe (String) , "BrokerName" :: Maybe (String) , "BrokerState" :: Maybe (BrokerState) , "DeploymentMode" :: Maybe (DeploymentMode) , "HostInstanceType" :: Maybe (String) } ) -> BrokerSummary
+newBrokerSummary'  customize = (BrokerSummary <<< customize) { "BrokerArn": Nothing, "BrokerId": Nothing, "BrokerName": Nothing, "BrokerState": Nothing, "DeploymentMode": Nothing, "HostInstanceType": Nothing }
 
 
 
@@ -110,13 +109,13 @@ instance encodeChangeType :: Encode ChangeType where encode = genericEncode opti
 
 -- | Returns information about all configurations.
 newtype Configuration = Configuration 
-  { "Arn" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "EngineType" :: NullOrUndefined (EngineType)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "Id" :: NullOrUndefined (String)
-  , "LatestRevision" :: NullOrUndefined (ConfigurationRevision)
-  , "Name" :: NullOrUndefined (String)
+  { "Arn" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "EngineType" :: Maybe (EngineType)
+  , "EngineVersion" :: Maybe (String)
+  , "Id" :: Maybe (String)
+  , "LatestRevision" :: Maybe (ConfigurationRevision)
+  , "Name" :: Maybe (String)
   }
 derive instance newtypeConfiguration :: Newtype Configuration _
 derive instance repGenericConfiguration :: Generic Configuration _
@@ -126,19 +125,19 @@ instance encodeConfiguration :: Encode Configuration where encode = genericEncod
 
 -- | Constructs Configuration from required parameters
 newConfiguration :: Configuration
-newConfiguration  = Configuration { "Arn": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "EngineType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "LatestRevision": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newConfiguration  = Configuration { "Arn": Nothing, "Description": Nothing, "EngineType": Nothing, "EngineVersion": Nothing, "Id": Nothing, "LatestRevision": Nothing, "Name": Nothing }
 
 -- | Constructs Configuration's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConfiguration' :: ( { "Arn" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "EngineType" :: NullOrUndefined (EngineType) , "EngineVersion" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "LatestRevision" :: NullOrUndefined (ConfigurationRevision) , "Name" :: NullOrUndefined (String) } -> {"Arn" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "EngineType" :: NullOrUndefined (EngineType) , "EngineVersion" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "LatestRevision" :: NullOrUndefined (ConfigurationRevision) , "Name" :: NullOrUndefined (String) } ) -> Configuration
-newConfiguration'  customize = (Configuration <<< customize) { "Arn": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "EngineType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "LatestRevision": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newConfiguration' :: ( { "Arn" :: Maybe (String) , "Description" :: Maybe (String) , "EngineType" :: Maybe (EngineType) , "EngineVersion" :: Maybe (String) , "Id" :: Maybe (String) , "LatestRevision" :: Maybe (ConfigurationRevision) , "Name" :: Maybe (String) } -> {"Arn" :: Maybe (String) , "Description" :: Maybe (String) , "EngineType" :: Maybe (EngineType) , "EngineVersion" :: Maybe (String) , "Id" :: Maybe (String) , "LatestRevision" :: Maybe (ConfigurationRevision) , "Name" :: Maybe (String) } ) -> Configuration
+newConfiguration'  customize = (Configuration <<< customize) { "Arn": Nothing, "Description": Nothing, "EngineType": Nothing, "EngineVersion": Nothing, "Id": Nothing, "LatestRevision": Nothing, "Name": Nothing }
 
 
 
 -- | A list of information about the configuration.
 newtype ConfigurationId = ConfigurationId 
-  { "Id" :: NullOrUndefined (String)
-  , "Revision" :: NullOrUndefined (Int)
+  { "Id" :: Maybe (String)
+  , "Revision" :: Maybe (Int)
   }
 derive instance newtypeConfigurationId :: Newtype ConfigurationId _
 derive instance repGenericConfigurationId :: Generic ConfigurationId _
@@ -148,19 +147,19 @@ instance encodeConfigurationId :: Encode ConfigurationId where encode = genericE
 
 -- | Constructs ConfigurationId from required parameters
 newConfigurationId :: ConfigurationId
-newConfigurationId  = ConfigurationId { "Id": (NullOrUndefined Nothing), "Revision": (NullOrUndefined Nothing) }
+newConfigurationId  = ConfigurationId { "Id": Nothing, "Revision": Nothing }
 
 -- | Constructs ConfigurationId's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConfigurationId' :: ( { "Id" :: NullOrUndefined (String) , "Revision" :: NullOrUndefined (Int) } -> {"Id" :: NullOrUndefined (String) , "Revision" :: NullOrUndefined (Int) } ) -> ConfigurationId
-newConfigurationId'  customize = (ConfigurationId <<< customize) { "Id": (NullOrUndefined Nothing), "Revision": (NullOrUndefined Nothing) }
+newConfigurationId' :: ( { "Id" :: Maybe (String) , "Revision" :: Maybe (Int) } -> {"Id" :: Maybe (String) , "Revision" :: Maybe (Int) } ) -> ConfigurationId
+newConfigurationId'  customize = (ConfigurationId <<< customize) { "Id": Nothing, "Revision": Nothing }
 
 
 
 -- | Returns information about the specified configuration revision.
 newtype ConfigurationRevision = ConfigurationRevision 
-  { "Description" :: NullOrUndefined (String)
-  , "Revision" :: NullOrUndefined (Int)
+  { "Description" :: Maybe (String)
+  , "Revision" :: Maybe (Int)
   }
 derive instance newtypeConfigurationRevision :: Newtype ConfigurationRevision _
 derive instance repGenericConfigurationRevision :: Generic ConfigurationRevision _
@@ -170,20 +169,20 @@ instance encodeConfigurationRevision :: Encode ConfigurationRevision where encod
 
 -- | Constructs ConfigurationRevision from required parameters
 newConfigurationRevision :: ConfigurationRevision
-newConfigurationRevision  = ConfigurationRevision { "Description": (NullOrUndefined Nothing), "Revision": (NullOrUndefined Nothing) }
+newConfigurationRevision  = ConfigurationRevision { "Description": Nothing, "Revision": Nothing }
 
 -- | Constructs ConfigurationRevision's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConfigurationRevision' :: ( { "Description" :: NullOrUndefined (String) , "Revision" :: NullOrUndefined (Int) } -> {"Description" :: NullOrUndefined (String) , "Revision" :: NullOrUndefined (Int) } ) -> ConfigurationRevision
-newConfigurationRevision'  customize = (ConfigurationRevision <<< customize) { "Description": (NullOrUndefined Nothing), "Revision": (NullOrUndefined Nothing) }
+newConfigurationRevision' :: ( { "Description" :: Maybe (String) , "Revision" :: Maybe (Int) } -> {"Description" :: Maybe (String) , "Revision" :: Maybe (Int) } ) -> ConfigurationRevision
+newConfigurationRevision'  customize = (ConfigurationRevision <<< customize) { "Description": Nothing, "Revision": Nothing }
 
 
 
 -- | Broker configuration information
 newtype Configurations = Configurations 
-  { "Current" :: NullOrUndefined (ConfigurationId)
-  , "History" :: NullOrUndefined (ListOfConfigurationId)
-  , "Pending" :: NullOrUndefined (ConfigurationId)
+  { "Current" :: Maybe (ConfigurationId)
+  , "History" :: Maybe (ListOfConfigurationId)
+  , "Pending" :: Maybe (ConfigurationId)
   }
 derive instance newtypeConfigurations :: Newtype Configurations _
 derive instance repGenericConfigurations :: Generic Configurations _
@@ -193,19 +192,19 @@ instance encodeConfigurations :: Encode Configurations where encode = genericEnc
 
 -- | Constructs Configurations from required parameters
 newConfigurations :: Configurations
-newConfigurations  = Configurations { "Current": (NullOrUndefined Nothing), "History": (NullOrUndefined Nothing), "Pending": (NullOrUndefined Nothing) }
+newConfigurations  = Configurations { "Current": Nothing, "History": Nothing, "Pending": Nothing }
 
 -- | Constructs Configurations's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConfigurations' :: ( { "Current" :: NullOrUndefined (ConfigurationId) , "History" :: NullOrUndefined (ListOfConfigurationId) , "Pending" :: NullOrUndefined (ConfigurationId) } -> {"Current" :: NullOrUndefined (ConfigurationId) , "History" :: NullOrUndefined (ListOfConfigurationId) , "Pending" :: NullOrUndefined (ConfigurationId) } ) -> Configurations
-newConfigurations'  customize = (Configurations <<< customize) { "Current": (NullOrUndefined Nothing), "History": (NullOrUndefined Nothing), "Pending": (NullOrUndefined Nothing) }
+newConfigurations' :: ( { "Current" :: Maybe (ConfigurationId) , "History" :: Maybe (ListOfConfigurationId) , "Pending" :: Maybe (ConfigurationId) } -> {"Current" :: Maybe (ConfigurationId) , "History" :: Maybe (ListOfConfigurationId) , "Pending" :: Maybe (ConfigurationId) } ) -> Configurations
+newConfigurations'  customize = (Configurations <<< customize) { "Current": Nothing, "History": Nothing, "Pending": Nothing }
 
 
 
 -- | Returns information about an error.
 newtype ConflictException = ConflictException 
-  { "ErrorAttribute" :: NullOrUndefined (String)
-  , "Message" :: NullOrUndefined (String)
+  { "ErrorAttribute" :: Maybe (String)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeConflictException :: Newtype ConflictException _
 derive instance repGenericConflictException :: Generic ConflictException _
@@ -215,30 +214,30 @@ instance encodeConflictException :: Encode ConflictException where encode = gene
 
 -- | Constructs ConflictException from required parameters
 newConflictException :: ConflictException
-newConflictException  = ConflictException { "ErrorAttribute": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newConflictException  = ConflictException { "ErrorAttribute": Nothing, "Message": Nothing }
 
 -- | Constructs ConflictException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newConflictException' :: ( { "ErrorAttribute" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) } -> {"ErrorAttribute" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) } ) -> ConflictException
-newConflictException'  customize = (ConflictException <<< customize) { "ErrorAttribute": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newConflictException' :: ( { "ErrorAttribute" :: Maybe (String) , "Message" :: Maybe (String) } -> {"ErrorAttribute" :: Maybe (String) , "Message" :: Maybe (String) } ) -> ConflictException
+newConflictException'  customize = (ConflictException <<< customize) { "ErrorAttribute": Nothing, "Message": Nothing }
 
 
 
 -- | Required. The time period during which Amazon MQ applies pending updates or patches to the broker.
 newtype CreateBrokerInput = CreateBrokerInput 
-  { "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean)
-  , "BrokerName" :: NullOrUndefined (String)
-  , "Configuration" :: NullOrUndefined (ConfigurationId)
-  , "CreatorRequestId" :: NullOrUndefined (String)
-  , "DeploymentMode" :: NullOrUndefined (DeploymentMode)
-  , "EngineType" :: NullOrUndefined (EngineType)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "HostInstanceType" :: NullOrUndefined (String)
-  , "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime)
-  , "PubliclyAccessible" :: NullOrUndefined (Boolean)
-  , "SecurityGroups" :: NullOrUndefined (ListOf__string)
-  , "SubnetIds" :: NullOrUndefined (ListOf__string)
-  , "Users" :: NullOrUndefined (ListOfUser)
+  { "AutoMinorVersionUpgrade" :: Maybe (Boolean)
+  , "BrokerName" :: Maybe (String)
+  , "Configuration" :: Maybe (ConfigurationId)
+  , "CreatorRequestId" :: Maybe (String)
+  , "DeploymentMode" :: Maybe (DeploymentMode)
+  , "EngineType" :: Maybe (EngineType)
+  , "EngineVersion" :: Maybe (String)
+  , "HostInstanceType" :: Maybe (String)
+  , "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime)
+  , "PubliclyAccessible" :: Maybe (Boolean)
+  , "SecurityGroups" :: Maybe (ListOf__string)
+  , "SubnetIds" :: Maybe (ListOf__string)
+  , "Users" :: Maybe (ListOfUser)
   }
 derive instance newtypeCreateBrokerInput :: Newtype CreateBrokerInput _
 derive instance repGenericCreateBrokerInput :: Generic CreateBrokerInput _
@@ -248,19 +247,19 @@ instance encodeCreateBrokerInput :: Encode CreateBrokerInput where encode = gene
 
 -- | Constructs CreateBrokerInput from required parameters
 newCreateBrokerInput :: CreateBrokerInput
-newCreateBrokerInput  = CreateBrokerInput { "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "BrokerName": (NullOrUndefined Nothing), "Configuration": (NullOrUndefined Nothing), "CreatorRequestId": (NullOrUndefined Nothing), "DeploymentMode": (NullOrUndefined Nothing), "EngineType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "HostInstanceType": (NullOrUndefined Nothing), "MaintenanceWindowStartTime": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newCreateBrokerInput  = CreateBrokerInput { "AutoMinorVersionUpgrade": Nothing, "BrokerName": Nothing, "Configuration": Nothing, "CreatorRequestId": Nothing, "DeploymentMode": Nothing, "EngineType": Nothing, "EngineVersion": Nothing, "HostInstanceType": Nothing, "MaintenanceWindowStartTime": Nothing, "PubliclyAccessible": Nothing, "SecurityGroups": Nothing, "SubnetIds": Nothing, "Users": Nothing }
 
 -- | Constructs CreateBrokerInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateBrokerInput' :: ( { "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean) , "BrokerName" :: NullOrUndefined (String) , "Configuration" :: NullOrUndefined (ConfigurationId) , "CreatorRequestId" :: NullOrUndefined (String) , "DeploymentMode" :: NullOrUndefined (DeploymentMode) , "EngineType" :: NullOrUndefined (EngineType) , "EngineVersion" :: NullOrUndefined (String) , "HostInstanceType" :: NullOrUndefined (String) , "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime) , "PubliclyAccessible" :: NullOrUndefined (Boolean) , "SecurityGroups" :: NullOrUndefined (ListOf__string) , "SubnetIds" :: NullOrUndefined (ListOf__string) , "Users" :: NullOrUndefined (ListOfUser) } -> {"AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean) , "BrokerName" :: NullOrUndefined (String) , "Configuration" :: NullOrUndefined (ConfigurationId) , "CreatorRequestId" :: NullOrUndefined (String) , "DeploymentMode" :: NullOrUndefined (DeploymentMode) , "EngineType" :: NullOrUndefined (EngineType) , "EngineVersion" :: NullOrUndefined (String) , "HostInstanceType" :: NullOrUndefined (String) , "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime) , "PubliclyAccessible" :: NullOrUndefined (Boolean) , "SecurityGroups" :: NullOrUndefined (ListOf__string) , "SubnetIds" :: NullOrUndefined (ListOf__string) , "Users" :: NullOrUndefined (ListOfUser) } ) -> CreateBrokerInput
-newCreateBrokerInput'  customize = (CreateBrokerInput <<< customize) { "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "BrokerName": (NullOrUndefined Nothing), "Configuration": (NullOrUndefined Nothing), "CreatorRequestId": (NullOrUndefined Nothing), "DeploymentMode": (NullOrUndefined Nothing), "EngineType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "HostInstanceType": (NullOrUndefined Nothing), "MaintenanceWindowStartTime": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newCreateBrokerInput' :: ( { "AutoMinorVersionUpgrade" :: Maybe (Boolean) , "BrokerName" :: Maybe (String) , "Configuration" :: Maybe (ConfigurationId) , "CreatorRequestId" :: Maybe (String) , "DeploymentMode" :: Maybe (DeploymentMode) , "EngineType" :: Maybe (EngineType) , "EngineVersion" :: Maybe (String) , "HostInstanceType" :: Maybe (String) , "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime) , "PubliclyAccessible" :: Maybe (Boolean) , "SecurityGroups" :: Maybe (ListOf__string) , "SubnetIds" :: Maybe (ListOf__string) , "Users" :: Maybe (ListOfUser) } -> {"AutoMinorVersionUpgrade" :: Maybe (Boolean) , "BrokerName" :: Maybe (String) , "Configuration" :: Maybe (ConfigurationId) , "CreatorRequestId" :: Maybe (String) , "DeploymentMode" :: Maybe (DeploymentMode) , "EngineType" :: Maybe (EngineType) , "EngineVersion" :: Maybe (String) , "HostInstanceType" :: Maybe (String) , "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime) , "PubliclyAccessible" :: Maybe (Boolean) , "SecurityGroups" :: Maybe (ListOf__string) , "SubnetIds" :: Maybe (ListOf__string) , "Users" :: Maybe (ListOfUser) } ) -> CreateBrokerInput
+newCreateBrokerInput'  customize = (CreateBrokerInput <<< customize) { "AutoMinorVersionUpgrade": Nothing, "BrokerName": Nothing, "Configuration": Nothing, "CreatorRequestId": Nothing, "DeploymentMode": Nothing, "EngineType": Nothing, "EngineVersion": Nothing, "HostInstanceType": Nothing, "MaintenanceWindowStartTime": Nothing, "PubliclyAccessible": Nothing, "SecurityGroups": Nothing, "SubnetIds": Nothing, "Users": Nothing }
 
 
 
 -- | Returns information about the created broker.
 newtype CreateBrokerOutput = CreateBrokerOutput 
-  { "BrokerArn" :: NullOrUndefined (String)
-  , "BrokerId" :: NullOrUndefined (String)
+  { "BrokerArn" :: Maybe (String)
+  , "BrokerId" :: Maybe (String)
   }
 derive instance newtypeCreateBrokerOutput :: Newtype CreateBrokerOutput _
 derive instance repGenericCreateBrokerOutput :: Generic CreateBrokerOutput _
@@ -270,30 +269,30 @@ instance encodeCreateBrokerOutput :: Encode CreateBrokerOutput where encode = ge
 
 -- | Constructs CreateBrokerOutput from required parameters
 newCreateBrokerOutput :: CreateBrokerOutput
-newCreateBrokerOutput  = CreateBrokerOutput { "BrokerArn": (NullOrUndefined Nothing), "BrokerId": (NullOrUndefined Nothing) }
+newCreateBrokerOutput  = CreateBrokerOutput { "BrokerArn": Nothing, "BrokerId": Nothing }
 
 -- | Constructs CreateBrokerOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateBrokerOutput' :: ( { "BrokerArn" :: NullOrUndefined (String) , "BrokerId" :: NullOrUndefined (String) } -> {"BrokerArn" :: NullOrUndefined (String) , "BrokerId" :: NullOrUndefined (String) } ) -> CreateBrokerOutput
-newCreateBrokerOutput'  customize = (CreateBrokerOutput <<< customize) { "BrokerArn": (NullOrUndefined Nothing), "BrokerId": (NullOrUndefined Nothing) }
+newCreateBrokerOutput' :: ( { "BrokerArn" :: Maybe (String) , "BrokerId" :: Maybe (String) } -> {"BrokerArn" :: Maybe (String) , "BrokerId" :: Maybe (String) } ) -> CreateBrokerOutput
+newCreateBrokerOutput'  customize = (CreateBrokerOutput <<< customize) { "BrokerArn": Nothing, "BrokerId": Nothing }
 
 
 
 -- | Creates a broker using the specified properties.
 newtype CreateBrokerRequest = CreateBrokerRequest 
-  { "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean)
-  , "BrokerName" :: NullOrUndefined (String)
-  , "Configuration" :: NullOrUndefined (ConfigurationId)
-  , "CreatorRequestId" :: NullOrUndefined (String)
-  , "DeploymentMode" :: NullOrUndefined (DeploymentMode)
-  , "EngineType" :: NullOrUndefined (EngineType)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "HostInstanceType" :: NullOrUndefined (String)
-  , "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime)
-  , "PubliclyAccessible" :: NullOrUndefined (Boolean)
-  , "SecurityGroups" :: NullOrUndefined (ListOf__string)
-  , "SubnetIds" :: NullOrUndefined (ListOf__string)
-  , "Users" :: NullOrUndefined (ListOfUser)
+  { "AutoMinorVersionUpgrade" :: Maybe (Boolean)
+  , "BrokerName" :: Maybe (String)
+  , "Configuration" :: Maybe (ConfigurationId)
+  , "CreatorRequestId" :: Maybe (String)
+  , "DeploymentMode" :: Maybe (DeploymentMode)
+  , "EngineType" :: Maybe (EngineType)
+  , "EngineVersion" :: Maybe (String)
+  , "HostInstanceType" :: Maybe (String)
+  , "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime)
+  , "PubliclyAccessible" :: Maybe (Boolean)
+  , "SecurityGroups" :: Maybe (ListOf__string)
+  , "SubnetIds" :: Maybe (ListOf__string)
+  , "Users" :: Maybe (ListOfUser)
   }
 derive instance newtypeCreateBrokerRequest :: Newtype CreateBrokerRequest _
 derive instance repGenericCreateBrokerRequest :: Generic CreateBrokerRequest _
@@ -303,18 +302,18 @@ instance encodeCreateBrokerRequest :: Encode CreateBrokerRequest where encode = 
 
 -- | Constructs CreateBrokerRequest from required parameters
 newCreateBrokerRequest :: CreateBrokerRequest
-newCreateBrokerRequest  = CreateBrokerRequest { "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "BrokerName": (NullOrUndefined Nothing), "Configuration": (NullOrUndefined Nothing), "CreatorRequestId": (NullOrUndefined Nothing), "DeploymentMode": (NullOrUndefined Nothing), "EngineType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "HostInstanceType": (NullOrUndefined Nothing), "MaintenanceWindowStartTime": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newCreateBrokerRequest  = CreateBrokerRequest { "AutoMinorVersionUpgrade": Nothing, "BrokerName": Nothing, "Configuration": Nothing, "CreatorRequestId": Nothing, "DeploymentMode": Nothing, "EngineType": Nothing, "EngineVersion": Nothing, "HostInstanceType": Nothing, "MaintenanceWindowStartTime": Nothing, "PubliclyAccessible": Nothing, "SecurityGroups": Nothing, "SubnetIds": Nothing, "Users": Nothing }
 
 -- | Constructs CreateBrokerRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateBrokerRequest' :: ( { "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean) , "BrokerName" :: NullOrUndefined (String) , "Configuration" :: NullOrUndefined (ConfigurationId) , "CreatorRequestId" :: NullOrUndefined (String) , "DeploymentMode" :: NullOrUndefined (DeploymentMode) , "EngineType" :: NullOrUndefined (EngineType) , "EngineVersion" :: NullOrUndefined (String) , "HostInstanceType" :: NullOrUndefined (String) , "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime) , "PubliclyAccessible" :: NullOrUndefined (Boolean) , "SecurityGroups" :: NullOrUndefined (ListOf__string) , "SubnetIds" :: NullOrUndefined (ListOf__string) , "Users" :: NullOrUndefined (ListOfUser) } -> {"AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean) , "BrokerName" :: NullOrUndefined (String) , "Configuration" :: NullOrUndefined (ConfigurationId) , "CreatorRequestId" :: NullOrUndefined (String) , "DeploymentMode" :: NullOrUndefined (DeploymentMode) , "EngineType" :: NullOrUndefined (EngineType) , "EngineVersion" :: NullOrUndefined (String) , "HostInstanceType" :: NullOrUndefined (String) , "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime) , "PubliclyAccessible" :: NullOrUndefined (Boolean) , "SecurityGroups" :: NullOrUndefined (ListOf__string) , "SubnetIds" :: NullOrUndefined (ListOf__string) , "Users" :: NullOrUndefined (ListOfUser) } ) -> CreateBrokerRequest
-newCreateBrokerRequest'  customize = (CreateBrokerRequest <<< customize) { "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "BrokerName": (NullOrUndefined Nothing), "Configuration": (NullOrUndefined Nothing), "CreatorRequestId": (NullOrUndefined Nothing), "DeploymentMode": (NullOrUndefined Nothing), "EngineType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "HostInstanceType": (NullOrUndefined Nothing), "MaintenanceWindowStartTime": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newCreateBrokerRequest' :: ( { "AutoMinorVersionUpgrade" :: Maybe (Boolean) , "BrokerName" :: Maybe (String) , "Configuration" :: Maybe (ConfigurationId) , "CreatorRequestId" :: Maybe (String) , "DeploymentMode" :: Maybe (DeploymentMode) , "EngineType" :: Maybe (EngineType) , "EngineVersion" :: Maybe (String) , "HostInstanceType" :: Maybe (String) , "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime) , "PubliclyAccessible" :: Maybe (Boolean) , "SecurityGroups" :: Maybe (ListOf__string) , "SubnetIds" :: Maybe (ListOf__string) , "Users" :: Maybe (ListOfUser) } -> {"AutoMinorVersionUpgrade" :: Maybe (Boolean) , "BrokerName" :: Maybe (String) , "Configuration" :: Maybe (ConfigurationId) , "CreatorRequestId" :: Maybe (String) , "DeploymentMode" :: Maybe (DeploymentMode) , "EngineType" :: Maybe (EngineType) , "EngineVersion" :: Maybe (String) , "HostInstanceType" :: Maybe (String) , "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime) , "PubliclyAccessible" :: Maybe (Boolean) , "SecurityGroups" :: Maybe (ListOf__string) , "SubnetIds" :: Maybe (ListOf__string) , "Users" :: Maybe (ListOfUser) } ) -> CreateBrokerRequest
+newCreateBrokerRequest'  customize = (CreateBrokerRequest <<< customize) { "AutoMinorVersionUpgrade": Nothing, "BrokerName": Nothing, "Configuration": Nothing, "CreatorRequestId": Nothing, "DeploymentMode": Nothing, "EngineType": Nothing, "EngineVersion": Nothing, "HostInstanceType": Nothing, "MaintenanceWindowStartTime": Nothing, "PubliclyAccessible": Nothing, "SecurityGroups": Nothing, "SubnetIds": Nothing, "Users": Nothing }
 
 
 
 newtype CreateBrokerResponse = CreateBrokerResponse 
-  { "BrokerArn" :: NullOrUndefined (String)
-  , "BrokerId" :: NullOrUndefined (String)
+  { "BrokerArn" :: Maybe (String)
+  , "BrokerId" :: Maybe (String)
   }
 derive instance newtypeCreateBrokerResponse :: Newtype CreateBrokerResponse _
 derive instance repGenericCreateBrokerResponse :: Generic CreateBrokerResponse _
@@ -324,20 +323,20 @@ instance encodeCreateBrokerResponse :: Encode CreateBrokerResponse where encode 
 
 -- | Constructs CreateBrokerResponse from required parameters
 newCreateBrokerResponse :: CreateBrokerResponse
-newCreateBrokerResponse  = CreateBrokerResponse { "BrokerArn": (NullOrUndefined Nothing), "BrokerId": (NullOrUndefined Nothing) }
+newCreateBrokerResponse  = CreateBrokerResponse { "BrokerArn": Nothing, "BrokerId": Nothing }
 
 -- | Constructs CreateBrokerResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateBrokerResponse' :: ( { "BrokerArn" :: NullOrUndefined (String) , "BrokerId" :: NullOrUndefined (String) } -> {"BrokerArn" :: NullOrUndefined (String) , "BrokerId" :: NullOrUndefined (String) } ) -> CreateBrokerResponse
-newCreateBrokerResponse'  customize = (CreateBrokerResponse <<< customize) { "BrokerArn": (NullOrUndefined Nothing), "BrokerId": (NullOrUndefined Nothing) }
+newCreateBrokerResponse' :: ( { "BrokerArn" :: Maybe (String) , "BrokerId" :: Maybe (String) } -> {"BrokerArn" :: Maybe (String) , "BrokerId" :: Maybe (String) } ) -> CreateBrokerResponse
+newCreateBrokerResponse'  customize = (CreateBrokerResponse <<< customize) { "BrokerArn": Nothing, "BrokerId": Nothing }
 
 
 
 -- | Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version). Note: If the configuration name already exists, Amazon MQ doesn't create a configuration.
 newtype CreateConfigurationInput = CreateConfigurationInput 
-  { "EngineType" :: NullOrUndefined (EngineType)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "Name" :: NullOrUndefined (String)
+  { "EngineType" :: Maybe (EngineType)
+  , "EngineVersion" :: Maybe (String)
+  , "Name" :: Maybe (String)
   }
 derive instance newtypeCreateConfigurationInput :: Newtype CreateConfigurationInput _
 derive instance repGenericCreateConfigurationInput :: Generic CreateConfigurationInput _
@@ -347,21 +346,21 @@ instance encodeCreateConfigurationInput :: Encode CreateConfigurationInput where
 
 -- | Constructs CreateConfigurationInput from required parameters
 newCreateConfigurationInput :: CreateConfigurationInput
-newCreateConfigurationInput  = CreateConfigurationInput { "EngineType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newCreateConfigurationInput  = CreateConfigurationInput { "EngineType": Nothing, "EngineVersion": Nothing, "Name": Nothing }
 
 -- | Constructs CreateConfigurationInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateConfigurationInput' :: ( { "EngineType" :: NullOrUndefined (EngineType) , "EngineVersion" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) } -> {"EngineType" :: NullOrUndefined (EngineType) , "EngineVersion" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) } ) -> CreateConfigurationInput
-newCreateConfigurationInput'  customize = (CreateConfigurationInput <<< customize) { "EngineType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newCreateConfigurationInput' :: ( { "EngineType" :: Maybe (EngineType) , "EngineVersion" :: Maybe (String) , "Name" :: Maybe (String) } -> {"EngineType" :: Maybe (EngineType) , "EngineVersion" :: Maybe (String) , "Name" :: Maybe (String) } ) -> CreateConfigurationInput
+newCreateConfigurationInput'  customize = (CreateConfigurationInput <<< customize) { "EngineType": Nothing, "EngineVersion": Nothing, "Name": Nothing }
 
 
 
 -- | Returns information about the created configuration.
 newtype CreateConfigurationOutput = CreateConfigurationOutput 
-  { "Arn" :: NullOrUndefined (String)
-  , "Id" :: NullOrUndefined (String)
-  , "LatestRevision" :: NullOrUndefined (ConfigurationRevision)
-  , "Name" :: NullOrUndefined (String)
+  { "Arn" :: Maybe (String)
+  , "Id" :: Maybe (String)
+  , "LatestRevision" :: Maybe (ConfigurationRevision)
+  , "Name" :: Maybe (String)
   }
 derive instance newtypeCreateConfigurationOutput :: Newtype CreateConfigurationOutput _
 derive instance repGenericCreateConfigurationOutput :: Generic CreateConfigurationOutput _
@@ -371,20 +370,20 @@ instance encodeCreateConfigurationOutput :: Encode CreateConfigurationOutput whe
 
 -- | Constructs CreateConfigurationOutput from required parameters
 newCreateConfigurationOutput :: CreateConfigurationOutput
-newCreateConfigurationOutput  = CreateConfigurationOutput { "Arn": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "LatestRevision": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newCreateConfigurationOutput  = CreateConfigurationOutput { "Arn": Nothing, "Id": Nothing, "LatestRevision": Nothing, "Name": Nothing }
 
 -- | Constructs CreateConfigurationOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateConfigurationOutput' :: ( { "Arn" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "LatestRevision" :: NullOrUndefined (ConfigurationRevision) , "Name" :: NullOrUndefined (String) } -> {"Arn" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "LatestRevision" :: NullOrUndefined (ConfigurationRevision) , "Name" :: NullOrUndefined (String) } ) -> CreateConfigurationOutput
-newCreateConfigurationOutput'  customize = (CreateConfigurationOutput <<< customize) { "Arn": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "LatestRevision": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newCreateConfigurationOutput' :: ( { "Arn" :: Maybe (String) , "Id" :: Maybe (String) , "LatestRevision" :: Maybe (ConfigurationRevision) , "Name" :: Maybe (String) } -> {"Arn" :: Maybe (String) , "Id" :: Maybe (String) , "LatestRevision" :: Maybe (ConfigurationRevision) , "Name" :: Maybe (String) } ) -> CreateConfigurationOutput
+newCreateConfigurationOutput'  customize = (CreateConfigurationOutput <<< customize) { "Arn": Nothing, "Id": Nothing, "LatestRevision": Nothing, "Name": Nothing }
 
 
 
 -- | Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version). Note: If the configuration name already exists, Amazon MQ doesn't create a configuration.
 newtype CreateConfigurationRequest = CreateConfigurationRequest 
-  { "EngineType" :: NullOrUndefined (EngineType)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "Name" :: NullOrUndefined (String)
+  { "EngineType" :: Maybe (EngineType)
+  , "EngineVersion" :: Maybe (String)
+  , "Name" :: Maybe (String)
   }
 derive instance newtypeCreateConfigurationRequest :: Newtype CreateConfigurationRequest _
 derive instance repGenericCreateConfigurationRequest :: Generic CreateConfigurationRequest _
@@ -394,20 +393,20 @@ instance encodeCreateConfigurationRequest :: Encode CreateConfigurationRequest w
 
 -- | Constructs CreateConfigurationRequest from required parameters
 newCreateConfigurationRequest :: CreateConfigurationRequest
-newCreateConfigurationRequest  = CreateConfigurationRequest { "EngineType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newCreateConfigurationRequest  = CreateConfigurationRequest { "EngineType": Nothing, "EngineVersion": Nothing, "Name": Nothing }
 
 -- | Constructs CreateConfigurationRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateConfigurationRequest' :: ( { "EngineType" :: NullOrUndefined (EngineType) , "EngineVersion" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) } -> {"EngineType" :: NullOrUndefined (EngineType) , "EngineVersion" :: NullOrUndefined (String) , "Name" :: NullOrUndefined (String) } ) -> CreateConfigurationRequest
-newCreateConfigurationRequest'  customize = (CreateConfigurationRequest <<< customize) { "EngineType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newCreateConfigurationRequest' :: ( { "EngineType" :: Maybe (EngineType) , "EngineVersion" :: Maybe (String) , "Name" :: Maybe (String) } -> {"EngineType" :: Maybe (EngineType) , "EngineVersion" :: Maybe (String) , "Name" :: Maybe (String) } ) -> CreateConfigurationRequest
+newCreateConfigurationRequest'  customize = (CreateConfigurationRequest <<< customize) { "EngineType": Nothing, "EngineVersion": Nothing, "Name": Nothing }
 
 
 
 newtype CreateConfigurationResponse = CreateConfigurationResponse 
-  { "Arn" :: NullOrUndefined (String)
-  , "Id" :: NullOrUndefined (String)
-  , "LatestRevision" :: NullOrUndefined (ConfigurationRevision)
-  , "Name" :: NullOrUndefined (String)
+  { "Arn" :: Maybe (String)
+  , "Id" :: Maybe (String)
+  , "LatestRevision" :: Maybe (ConfigurationRevision)
+  , "Name" :: Maybe (String)
   }
 derive instance newtypeCreateConfigurationResponse :: Newtype CreateConfigurationResponse _
 derive instance repGenericCreateConfigurationResponse :: Generic CreateConfigurationResponse _
@@ -417,20 +416,20 @@ instance encodeCreateConfigurationResponse :: Encode CreateConfigurationResponse
 
 -- | Constructs CreateConfigurationResponse from required parameters
 newCreateConfigurationResponse :: CreateConfigurationResponse
-newCreateConfigurationResponse  = CreateConfigurationResponse { "Arn": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "LatestRevision": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newCreateConfigurationResponse  = CreateConfigurationResponse { "Arn": Nothing, "Id": Nothing, "LatestRevision": Nothing, "Name": Nothing }
 
 -- | Constructs CreateConfigurationResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateConfigurationResponse' :: ( { "Arn" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "LatestRevision" :: NullOrUndefined (ConfigurationRevision) , "Name" :: NullOrUndefined (String) } -> {"Arn" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "LatestRevision" :: NullOrUndefined (ConfigurationRevision) , "Name" :: NullOrUndefined (String) } ) -> CreateConfigurationResponse
-newCreateConfigurationResponse'  customize = (CreateConfigurationResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "LatestRevision": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newCreateConfigurationResponse' :: ( { "Arn" :: Maybe (String) , "Id" :: Maybe (String) , "LatestRevision" :: Maybe (ConfigurationRevision) , "Name" :: Maybe (String) } -> {"Arn" :: Maybe (String) , "Id" :: Maybe (String) , "LatestRevision" :: Maybe (ConfigurationRevision) , "Name" :: Maybe (String) } ) -> CreateConfigurationResponse
+newCreateConfigurationResponse'  customize = (CreateConfigurationResponse <<< customize) { "Arn": Nothing, "Id": Nothing, "LatestRevision": Nothing, "Name": Nothing }
 
 
 
 -- | Creates a new ActiveMQ user.
 newtype CreateUserInput = CreateUserInput 
-  { "ConsoleAccess" :: NullOrUndefined (Boolean)
-  , "Groups" :: NullOrUndefined (ListOf__string)
-  , "Password" :: NullOrUndefined (String)
+  { "ConsoleAccess" :: Maybe (Boolean)
+  , "Groups" :: Maybe (ListOf__string)
+  , "Password" :: Maybe (String)
   }
 derive instance newtypeCreateUserInput :: Newtype CreateUserInput _
 derive instance repGenericCreateUserInput :: Generic CreateUserInput _
@@ -440,21 +439,21 @@ instance encodeCreateUserInput :: Encode CreateUserInput where encode = genericE
 
 -- | Constructs CreateUserInput from required parameters
 newCreateUserInput :: CreateUserInput
-newCreateUserInput  = CreateUserInput { "ConsoleAccess": (NullOrUndefined Nothing), "Groups": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing) }
+newCreateUserInput  = CreateUserInput { "ConsoleAccess": Nothing, "Groups": Nothing, "Password": Nothing }
 
 -- | Constructs CreateUserInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateUserInput' :: ( { "ConsoleAccess" :: NullOrUndefined (Boolean) , "Groups" :: NullOrUndefined (ListOf__string) , "Password" :: NullOrUndefined (String) } -> {"ConsoleAccess" :: NullOrUndefined (Boolean) , "Groups" :: NullOrUndefined (ListOf__string) , "Password" :: NullOrUndefined (String) } ) -> CreateUserInput
-newCreateUserInput'  customize = (CreateUserInput <<< customize) { "ConsoleAccess": (NullOrUndefined Nothing), "Groups": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing) }
+newCreateUserInput' :: ( { "ConsoleAccess" :: Maybe (Boolean) , "Groups" :: Maybe (ListOf__string) , "Password" :: Maybe (String) } -> {"ConsoleAccess" :: Maybe (Boolean) , "Groups" :: Maybe (ListOf__string) , "Password" :: Maybe (String) } ) -> CreateUserInput
+newCreateUserInput'  customize = (CreateUserInput <<< customize) { "ConsoleAccess": Nothing, "Groups": Nothing, "Password": Nothing }
 
 
 
 -- | Creates a new ActiveMQ user.
 newtype CreateUserRequest = CreateUserRequest 
   { "BrokerId" :: (String)
-  , "ConsoleAccess" :: NullOrUndefined (Boolean)
-  , "Groups" :: NullOrUndefined (ListOf__string)
-  , "Password" :: NullOrUndefined (String)
+  , "ConsoleAccess" :: Maybe (Boolean)
+  , "Groups" :: Maybe (ListOf__string)
+  , "Password" :: Maybe (String)
   , "Username" :: (String)
   }
 derive instance newtypeCreateUserRequest :: Newtype CreateUserRequest _
@@ -465,12 +464,12 @@ instance encodeCreateUserRequest :: Encode CreateUserRequest where encode = gene
 
 -- | Constructs CreateUserRequest from required parameters
 newCreateUserRequest :: String -> String -> CreateUserRequest
-newCreateUserRequest _BrokerId _Username = CreateUserRequest { "BrokerId": _BrokerId, "Username": _Username, "ConsoleAccess": (NullOrUndefined Nothing), "Groups": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing) }
+newCreateUserRequest _BrokerId _Username = CreateUserRequest { "BrokerId": _BrokerId, "Username": _Username, "ConsoleAccess": Nothing, "Groups": Nothing, "Password": Nothing }
 
 -- | Constructs CreateUserRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateUserRequest' :: String -> String -> ( { "BrokerId" :: (String) , "ConsoleAccess" :: NullOrUndefined (Boolean) , "Groups" :: NullOrUndefined (ListOf__string) , "Password" :: NullOrUndefined (String) , "Username" :: (String) } -> {"BrokerId" :: (String) , "ConsoleAccess" :: NullOrUndefined (Boolean) , "Groups" :: NullOrUndefined (ListOf__string) , "Password" :: NullOrUndefined (String) , "Username" :: (String) } ) -> CreateUserRequest
-newCreateUserRequest' _BrokerId _Username customize = (CreateUserRequest <<< customize) { "BrokerId": _BrokerId, "Username": _Username, "ConsoleAccess": (NullOrUndefined Nothing), "Groups": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing) }
+newCreateUserRequest' :: String -> String -> ( { "BrokerId" :: (String) , "ConsoleAccess" :: Maybe (Boolean) , "Groups" :: Maybe (ListOf__string) , "Password" :: Maybe (String) , "Username" :: (String) } -> {"BrokerId" :: (String) , "ConsoleAccess" :: Maybe (Boolean) , "Groups" :: Maybe (ListOf__string) , "Password" :: Maybe (String) , "Username" :: (String) } ) -> CreateUserRequest
+newCreateUserRequest' _BrokerId _Username customize = (CreateUserRequest <<< customize) { "BrokerId": _BrokerId, "Username": _Username, "ConsoleAccess": Nothing, "Groups": Nothing, "Password": Nothing }
 
 
 
@@ -494,7 +493,7 @@ instance encodeDayOfWeek :: Encode DayOfWeek where encode = genericEncode option
 
 -- | Returns information about the deleted broker.
 newtype DeleteBrokerOutput = DeleteBrokerOutput 
-  { "BrokerId" :: NullOrUndefined (String)
+  { "BrokerId" :: Maybe (String)
   }
 derive instance newtypeDeleteBrokerOutput :: Newtype DeleteBrokerOutput _
 derive instance repGenericDeleteBrokerOutput :: Generic DeleteBrokerOutput _
@@ -504,12 +503,12 @@ instance encodeDeleteBrokerOutput :: Encode DeleteBrokerOutput where encode = ge
 
 -- | Constructs DeleteBrokerOutput from required parameters
 newDeleteBrokerOutput :: DeleteBrokerOutput
-newDeleteBrokerOutput  = DeleteBrokerOutput { "BrokerId": (NullOrUndefined Nothing) }
+newDeleteBrokerOutput  = DeleteBrokerOutput { "BrokerId": Nothing }
 
 -- | Constructs DeleteBrokerOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteBrokerOutput' :: ( { "BrokerId" :: NullOrUndefined (String) } -> {"BrokerId" :: NullOrUndefined (String) } ) -> DeleteBrokerOutput
-newDeleteBrokerOutput'  customize = (DeleteBrokerOutput <<< customize) { "BrokerId": (NullOrUndefined Nothing) }
+newDeleteBrokerOutput' :: ( { "BrokerId" :: Maybe (String) } -> {"BrokerId" :: Maybe (String) } ) -> DeleteBrokerOutput
+newDeleteBrokerOutput'  customize = (DeleteBrokerOutput <<< customize) { "BrokerId": Nothing }
 
 
 
@@ -534,7 +533,7 @@ newDeleteBrokerRequest' _BrokerId customize = (DeleteBrokerRequest <<< customize
 
 
 newtype DeleteBrokerResponse = DeleteBrokerResponse 
-  { "BrokerId" :: NullOrUndefined (String)
+  { "BrokerId" :: Maybe (String)
   }
 derive instance newtypeDeleteBrokerResponse :: Newtype DeleteBrokerResponse _
 derive instance repGenericDeleteBrokerResponse :: Generic DeleteBrokerResponse _
@@ -544,12 +543,12 @@ instance encodeDeleteBrokerResponse :: Encode DeleteBrokerResponse where encode 
 
 -- | Constructs DeleteBrokerResponse from required parameters
 newDeleteBrokerResponse :: DeleteBrokerResponse
-newDeleteBrokerResponse  = DeleteBrokerResponse { "BrokerId": (NullOrUndefined Nothing) }
+newDeleteBrokerResponse  = DeleteBrokerResponse { "BrokerId": Nothing }
 
 -- | Constructs DeleteBrokerResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteBrokerResponse' :: ( { "BrokerId" :: NullOrUndefined (String) } -> {"BrokerId" :: NullOrUndefined (String) } ) -> DeleteBrokerResponse
-newDeleteBrokerResponse'  customize = (DeleteBrokerResponse <<< customize) { "BrokerId": (NullOrUndefined Nothing) }
+newDeleteBrokerResponse' :: ( { "BrokerId" :: Maybe (String) } -> {"BrokerId" :: Maybe (String) } ) -> DeleteBrokerResponse
+newDeleteBrokerResponse'  customize = (DeleteBrokerResponse <<< customize) { "BrokerId": Nothing }
 
 
 
@@ -595,22 +594,22 @@ instance encodeDeploymentMode :: Encode DeploymentMode where encode = genericEnc
 
 -- | The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.0.
 newtype DescribeBrokerOutput = DescribeBrokerOutput 
-  { "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean)
-  , "BrokerArn" :: NullOrUndefined (String)
-  , "BrokerId" :: NullOrUndefined (String)
-  , "BrokerInstances" :: NullOrUndefined (ListOfBrokerInstance)
-  , "BrokerName" :: NullOrUndefined (String)
-  , "BrokerState" :: NullOrUndefined (BrokerState)
-  , "Configurations" :: NullOrUndefined (Configurations)
-  , "DeploymentMode" :: NullOrUndefined (DeploymentMode)
-  , "EngineType" :: NullOrUndefined (EngineType)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "HostInstanceType" :: NullOrUndefined (String)
-  , "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime)
-  , "PubliclyAccessible" :: NullOrUndefined (Boolean)
-  , "SecurityGroups" :: NullOrUndefined (ListOf__string)
-  , "SubnetIds" :: NullOrUndefined (ListOf__string)
-  , "Users" :: NullOrUndefined (ListOfUserSummary)
+  { "AutoMinorVersionUpgrade" :: Maybe (Boolean)
+  , "BrokerArn" :: Maybe (String)
+  , "BrokerId" :: Maybe (String)
+  , "BrokerInstances" :: Maybe (ListOfBrokerInstance)
+  , "BrokerName" :: Maybe (String)
+  , "BrokerState" :: Maybe (BrokerState)
+  , "Configurations" :: Maybe (Configurations)
+  , "DeploymentMode" :: Maybe (DeploymentMode)
+  , "EngineType" :: Maybe (EngineType)
+  , "EngineVersion" :: Maybe (String)
+  , "HostInstanceType" :: Maybe (String)
+  , "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime)
+  , "PubliclyAccessible" :: Maybe (Boolean)
+  , "SecurityGroups" :: Maybe (ListOf__string)
+  , "SubnetIds" :: Maybe (ListOf__string)
+  , "Users" :: Maybe (ListOfUserSummary)
   }
 derive instance newtypeDescribeBrokerOutput :: Newtype DescribeBrokerOutput _
 derive instance repGenericDescribeBrokerOutput :: Generic DescribeBrokerOutput _
@@ -620,12 +619,12 @@ instance encodeDescribeBrokerOutput :: Encode DescribeBrokerOutput where encode 
 
 -- | Constructs DescribeBrokerOutput from required parameters
 newDescribeBrokerOutput :: DescribeBrokerOutput
-newDescribeBrokerOutput  = DescribeBrokerOutput { "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "BrokerArn": (NullOrUndefined Nothing), "BrokerId": (NullOrUndefined Nothing), "BrokerInstances": (NullOrUndefined Nothing), "BrokerName": (NullOrUndefined Nothing), "BrokerState": (NullOrUndefined Nothing), "Configurations": (NullOrUndefined Nothing), "DeploymentMode": (NullOrUndefined Nothing), "EngineType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "HostInstanceType": (NullOrUndefined Nothing), "MaintenanceWindowStartTime": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newDescribeBrokerOutput  = DescribeBrokerOutput { "AutoMinorVersionUpgrade": Nothing, "BrokerArn": Nothing, "BrokerId": Nothing, "BrokerInstances": Nothing, "BrokerName": Nothing, "BrokerState": Nothing, "Configurations": Nothing, "DeploymentMode": Nothing, "EngineType": Nothing, "EngineVersion": Nothing, "HostInstanceType": Nothing, "MaintenanceWindowStartTime": Nothing, "PubliclyAccessible": Nothing, "SecurityGroups": Nothing, "SubnetIds": Nothing, "Users": Nothing }
 
 -- | Constructs DescribeBrokerOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeBrokerOutput' :: ( { "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean) , "BrokerArn" :: NullOrUndefined (String) , "BrokerId" :: NullOrUndefined (String) , "BrokerInstances" :: NullOrUndefined (ListOfBrokerInstance) , "BrokerName" :: NullOrUndefined (String) , "BrokerState" :: NullOrUndefined (BrokerState) , "Configurations" :: NullOrUndefined (Configurations) , "DeploymentMode" :: NullOrUndefined (DeploymentMode) , "EngineType" :: NullOrUndefined (EngineType) , "EngineVersion" :: NullOrUndefined (String) , "HostInstanceType" :: NullOrUndefined (String) , "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime) , "PubliclyAccessible" :: NullOrUndefined (Boolean) , "SecurityGroups" :: NullOrUndefined (ListOf__string) , "SubnetIds" :: NullOrUndefined (ListOf__string) , "Users" :: NullOrUndefined (ListOfUserSummary) } -> {"AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean) , "BrokerArn" :: NullOrUndefined (String) , "BrokerId" :: NullOrUndefined (String) , "BrokerInstances" :: NullOrUndefined (ListOfBrokerInstance) , "BrokerName" :: NullOrUndefined (String) , "BrokerState" :: NullOrUndefined (BrokerState) , "Configurations" :: NullOrUndefined (Configurations) , "DeploymentMode" :: NullOrUndefined (DeploymentMode) , "EngineType" :: NullOrUndefined (EngineType) , "EngineVersion" :: NullOrUndefined (String) , "HostInstanceType" :: NullOrUndefined (String) , "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime) , "PubliclyAccessible" :: NullOrUndefined (Boolean) , "SecurityGroups" :: NullOrUndefined (ListOf__string) , "SubnetIds" :: NullOrUndefined (ListOf__string) , "Users" :: NullOrUndefined (ListOfUserSummary) } ) -> DescribeBrokerOutput
-newDescribeBrokerOutput'  customize = (DescribeBrokerOutput <<< customize) { "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "BrokerArn": (NullOrUndefined Nothing), "BrokerId": (NullOrUndefined Nothing), "BrokerInstances": (NullOrUndefined Nothing), "BrokerName": (NullOrUndefined Nothing), "BrokerState": (NullOrUndefined Nothing), "Configurations": (NullOrUndefined Nothing), "DeploymentMode": (NullOrUndefined Nothing), "EngineType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "HostInstanceType": (NullOrUndefined Nothing), "MaintenanceWindowStartTime": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newDescribeBrokerOutput' :: ( { "AutoMinorVersionUpgrade" :: Maybe (Boolean) , "BrokerArn" :: Maybe (String) , "BrokerId" :: Maybe (String) , "BrokerInstances" :: Maybe (ListOfBrokerInstance) , "BrokerName" :: Maybe (String) , "BrokerState" :: Maybe (BrokerState) , "Configurations" :: Maybe (Configurations) , "DeploymentMode" :: Maybe (DeploymentMode) , "EngineType" :: Maybe (EngineType) , "EngineVersion" :: Maybe (String) , "HostInstanceType" :: Maybe (String) , "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime) , "PubliclyAccessible" :: Maybe (Boolean) , "SecurityGroups" :: Maybe (ListOf__string) , "SubnetIds" :: Maybe (ListOf__string) , "Users" :: Maybe (ListOfUserSummary) } -> {"AutoMinorVersionUpgrade" :: Maybe (Boolean) , "BrokerArn" :: Maybe (String) , "BrokerId" :: Maybe (String) , "BrokerInstances" :: Maybe (ListOfBrokerInstance) , "BrokerName" :: Maybe (String) , "BrokerState" :: Maybe (BrokerState) , "Configurations" :: Maybe (Configurations) , "DeploymentMode" :: Maybe (DeploymentMode) , "EngineType" :: Maybe (EngineType) , "EngineVersion" :: Maybe (String) , "HostInstanceType" :: Maybe (String) , "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime) , "PubliclyAccessible" :: Maybe (Boolean) , "SecurityGroups" :: Maybe (ListOf__string) , "SubnetIds" :: Maybe (ListOf__string) , "Users" :: Maybe (ListOfUserSummary) } ) -> DescribeBrokerOutput
+newDescribeBrokerOutput'  customize = (DescribeBrokerOutput <<< customize) { "AutoMinorVersionUpgrade": Nothing, "BrokerArn": Nothing, "BrokerId": Nothing, "BrokerInstances": Nothing, "BrokerName": Nothing, "BrokerState": Nothing, "Configurations": Nothing, "DeploymentMode": Nothing, "EngineType": Nothing, "EngineVersion": Nothing, "HostInstanceType": Nothing, "MaintenanceWindowStartTime": Nothing, "PubliclyAccessible": Nothing, "SecurityGroups": Nothing, "SubnetIds": Nothing, "Users": Nothing }
 
 
 
@@ -650,22 +649,22 @@ newDescribeBrokerRequest' _BrokerId customize = (DescribeBrokerRequest <<< custo
 
 
 newtype DescribeBrokerResponse = DescribeBrokerResponse 
-  { "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean)
-  , "BrokerArn" :: NullOrUndefined (String)
-  , "BrokerId" :: NullOrUndefined (String)
-  , "BrokerInstances" :: NullOrUndefined (ListOfBrokerInstance)
-  , "BrokerName" :: NullOrUndefined (String)
-  , "BrokerState" :: NullOrUndefined (BrokerState)
-  , "Configurations" :: NullOrUndefined (Configurations)
-  , "DeploymentMode" :: NullOrUndefined (DeploymentMode)
-  , "EngineType" :: NullOrUndefined (EngineType)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "HostInstanceType" :: NullOrUndefined (String)
-  , "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime)
-  , "PubliclyAccessible" :: NullOrUndefined (Boolean)
-  , "SecurityGroups" :: NullOrUndefined (ListOf__string)
-  , "SubnetIds" :: NullOrUndefined (ListOf__string)
-  , "Users" :: NullOrUndefined (ListOfUserSummary)
+  { "AutoMinorVersionUpgrade" :: Maybe (Boolean)
+  , "BrokerArn" :: Maybe (String)
+  , "BrokerId" :: Maybe (String)
+  , "BrokerInstances" :: Maybe (ListOfBrokerInstance)
+  , "BrokerName" :: Maybe (String)
+  , "BrokerState" :: Maybe (BrokerState)
+  , "Configurations" :: Maybe (Configurations)
+  , "DeploymentMode" :: Maybe (DeploymentMode)
+  , "EngineType" :: Maybe (EngineType)
+  , "EngineVersion" :: Maybe (String)
+  , "HostInstanceType" :: Maybe (String)
+  , "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime)
+  , "PubliclyAccessible" :: Maybe (Boolean)
+  , "SecurityGroups" :: Maybe (ListOf__string)
+  , "SubnetIds" :: Maybe (ListOf__string)
+  , "Users" :: Maybe (ListOfUserSummary)
   }
 derive instance newtypeDescribeBrokerResponse :: Newtype DescribeBrokerResponse _
 derive instance repGenericDescribeBrokerResponse :: Generic DescribeBrokerResponse _
@@ -675,12 +674,12 @@ instance encodeDescribeBrokerResponse :: Encode DescribeBrokerResponse where enc
 
 -- | Constructs DescribeBrokerResponse from required parameters
 newDescribeBrokerResponse :: DescribeBrokerResponse
-newDescribeBrokerResponse  = DescribeBrokerResponse { "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "BrokerArn": (NullOrUndefined Nothing), "BrokerId": (NullOrUndefined Nothing), "BrokerInstances": (NullOrUndefined Nothing), "BrokerName": (NullOrUndefined Nothing), "BrokerState": (NullOrUndefined Nothing), "Configurations": (NullOrUndefined Nothing), "DeploymentMode": (NullOrUndefined Nothing), "EngineType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "HostInstanceType": (NullOrUndefined Nothing), "MaintenanceWindowStartTime": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newDescribeBrokerResponse  = DescribeBrokerResponse { "AutoMinorVersionUpgrade": Nothing, "BrokerArn": Nothing, "BrokerId": Nothing, "BrokerInstances": Nothing, "BrokerName": Nothing, "BrokerState": Nothing, "Configurations": Nothing, "DeploymentMode": Nothing, "EngineType": Nothing, "EngineVersion": Nothing, "HostInstanceType": Nothing, "MaintenanceWindowStartTime": Nothing, "PubliclyAccessible": Nothing, "SecurityGroups": Nothing, "SubnetIds": Nothing, "Users": Nothing }
 
 -- | Constructs DescribeBrokerResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeBrokerResponse' :: ( { "AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean) , "BrokerArn" :: NullOrUndefined (String) , "BrokerId" :: NullOrUndefined (String) , "BrokerInstances" :: NullOrUndefined (ListOfBrokerInstance) , "BrokerName" :: NullOrUndefined (String) , "BrokerState" :: NullOrUndefined (BrokerState) , "Configurations" :: NullOrUndefined (Configurations) , "DeploymentMode" :: NullOrUndefined (DeploymentMode) , "EngineType" :: NullOrUndefined (EngineType) , "EngineVersion" :: NullOrUndefined (String) , "HostInstanceType" :: NullOrUndefined (String) , "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime) , "PubliclyAccessible" :: NullOrUndefined (Boolean) , "SecurityGroups" :: NullOrUndefined (ListOf__string) , "SubnetIds" :: NullOrUndefined (ListOf__string) , "Users" :: NullOrUndefined (ListOfUserSummary) } -> {"AutoMinorVersionUpgrade" :: NullOrUndefined (Boolean) , "BrokerArn" :: NullOrUndefined (String) , "BrokerId" :: NullOrUndefined (String) , "BrokerInstances" :: NullOrUndefined (ListOfBrokerInstance) , "BrokerName" :: NullOrUndefined (String) , "BrokerState" :: NullOrUndefined (BrokerState) , "Configurations" :: NullOrUndefined (Configurations) , "DeploymentMode" :: NullOrUndefined (DeploymentMode) , "EngineType" :: NullOrUndefined (EngineType) , "EngineVersion" :: NullOrUndefined (String) , "HostInstanceType" :: NullOrUndefined (String) , "MaintenanceWindowStartTime" :: NullOrUndefined (WeeklyStartTime) , "PubliclyAccessible" :: NullOrUndefined (Boolean) , "SecurityGroups" :: NullOrUndefined (ListOf__string) , "SubnetIds" :: NullOrUndefined (ListOf__string) , "Users" :: NullOrUndefined (ListOfUserSummary) } ) -> DescribeBrokerResponse
-newDescribeBrokerResponse'  customize = (DescribeBrokerResponse <<< customize) { "AutoMinorVersionUpgrade": (NullOrUndefined Nothing), "BrokerArn": (NullOrUndefined Nothing), "BrokerId": (NullOrUndefined Nothing), "BrokerInstances": (NullOrUndefined Nothing), "BrokerName": (NullOrUndefined Nothing), "BrokerState": (NullOrUndefined Nothing), "Configurations": (NullOrUndefined Nothing), "DeploymentMode": (NullOrUndefined Nothing), "EngineType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "HostInstanceType": (NullOrUndefined Nothing), "MaintenanceWindowStartTime": (NullOrUndefined Nothing), "PubliclyAccessible": (NullOrUndefined Nothing), "SecurityGroups": (NullOrUndefined Nothing), "SubnetIds": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newDescribeBrokerResponse' :: ( { "AutoMinorVersionUpgrade" :: Maybe (Boolean) , "BrokerArn" :: Maybe (String) , "BrokerId" :: Maybe (String) , "BrokerInstances" :: Maybe (ListOfBrokerInstance) , "BrokerName" :: Maybe (String) , "BrokerState" :: Maybe (BrokerState) , "Configurations" :: Maybe (Configurations) , "DeploymentMode" :: Maybe (DeploymentMode) , "EngineType" :: Maybe (EngineType) , "EngineVersion" :: Maybe (String) , "HostInstanceType" :: Maybe (String) , "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime) , "PubliclyAccessible" :: Maybe (Boolean) , "SecurityGroups" :: Maybe (ListOf__string) , "SubnetIds" :: Maybe (ListOf__string) , "Users" :: Maybe (ListOfUserSummary) } -> {"AutoMinorVersionUpgrade" :: Maybe (Boolean) , "BrokerArn" :: Maybe (String) , "BrokerId" :: Maybe (String) , "BrokerInstances" :: Maybe (ListOfBrokerInstance) , "BrokerName" :: Maybe (String) , "BrokerState" :: Maybe (BrokerState) , "Configurations" :: Maybe (Configurations) , "DeploymentMode" :: Maybe (DeploymentMode) , "EngineType" :: Maybe (EngineType) , "EngineVersion" :: Maybe (String) , "HostInstanceType" :: Maybe (String) , "MaintenanceWindowStartTime" :: Maybe (WeeklyStartTime) , "PubliclyAccessible" :: Maybe (Boolean) , "SecurityGroups" :: Maybe (ListOf__string) , "SubnetIds" :: Maybe (ListOf__string) , "Users" :: Maybe (ListOfUserSummary) } ) -> DescribeBrokerResponse
+newDescribeBrokerResponse'  customize = (DescribeBrokerResponse <<< customize) { "AutoMinorVersionUpgrade": Nothing, "BrokerArn": Nothing, "BrokerId": Nothing, "BrokerInstances": Nothing, "BrokerName": Nothing, "BrokerState": Nothing, "Configurations": Nothing, "DeploymentMode": Nothing, "EngineType": Nothing, "EngineVersion": Nothing, "HostInstanceType": Nothing, "MaintenanceWindowStartTime": Nothing, "PubliclyAccessible": Nothing, "SecurityGroups": Nothing, "SubnetIds": Nothing, "Users": Nothing }
 
 
 
@@ -705,13 +704,13 @@ newDescribeConfigurationRequest' _ConfigurationId customize = (DescribeConfigura
 
 
 newtype DescribeConfigurationResponse = DescribeConfigurationResponse 
-  { "Arn" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "EngineType" :: NullOrUndefined (EngineType)
-  , "EngineVersion" :: NullOrUndefined (String)
-  , "Id" :: NullOrUndefined (String)
-  , "LatestRevision" :: NullOrUndefined (ConfigurationRevision)
-  , "Name" :: NullOrUndefined (String)
+  { "Arn" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "EngineType" :: Maybe (EngineType)
+  , "EngineVersion" :: Maybe (String)
+  , "Id" :: Maybe (String)
+  , "LatestRevision" :: Maybe (ConfigurationRevision)
+  , "Name" :: Maybe (String)
   }
 derive instance newtypeDescribeConfigurationResponse :: Newtype DescribeConfigurationResponse _
 derive instance repGenericDescribeConfigurationResponse :: Generic DescribeConfigurationResponse _
@@ -721,20 +720,20 @@ instance encodeDescribeConfigurationResponse :: Encode DescribeConfigurationResp
 
 -- | Constructs DescribeConfigurationResponse from required parameters
 newDescribeConfigurationResponse :: DescribeConfigurationResponse
-newDescribeConfigurationResponse  = DescribeConfigurationResponse { "Arn": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "EngineType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "LatestRevision": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newDescribeConfigurationResponse  = DescribeConfigurationResponse { "Arn": Nothing, "Description": Nothing, "EngineType": Nothing, "EngineVersion": Nothing, "Id": Nothing, "LatestRevision": Nothing, "Name": Nothing }
 
 -- | Constructs DescribeConfigurationResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeConfigurationResponse' :: ( { "Arn" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "EngineType" :: NullOrUndefined (EngineType) , "EngineVersion" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "LatestRevision" :: NullOrUndefined (ConfigurationRevision) , "Name" :: NullOrUndefined (String) } -> {"Arn" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "EngineType" :: NullOrUndefined (EngineType) , "EngineVersion" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "LatestRevision" :: NullOrUndefined (ConfigurationRevision) , "Name" :: NullOrUndefined (String) } ) -> DescribeConfigurationResponse
-newDescribeConfigurationResponse'  customize = (DescribeConfigurationResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "EngineType": (NullOrUndefined Nothing), "EngineVersion": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "LatestRevision": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing) }
+newDescribeConfigurationResponse' :: ( { "Arn" :: Maybe (String) , "Description" :: Maybe (String) , "EngineType" :: Maybe (EngineType) , "EngineVersion" :: Maybe (String) , "Id" :: Maybe (String) , "LatestRevision" :: Maybe (ConfigurationRevision) , "Name" :: Maybe (String) } -> {"Arn" :: Maybe (String) , "Description" :: Maybe (String) , "EngineType" :: Maybe (EngineType) , "EngineVersion" :: Maybe (String) , "Id" :: Maybe (String) , "LatestRevision" :: Maybe (ConfigurationRevision) , "Name" :: Maybe (String) } ) -> DescribeConfigurationResponse
+newDescribeConfigurationResponse'  customize = (DescribeConfigurationResponse <<< customize) { "Arn": Nothing, "Description": Nothing, "EngineType": Nothing, "EngineVersion": Nothing, "Id": Nothing, "LatestRevision": Nothing, "Name": Nothing }
 
 
 
 -- | Returns the specified configuration revision for the specified configuration.
 newtype DescribeConfigurationRevisionOutput = DescribeConfigurationRevisionOutput 
-  { "ConfigurationId" :: NullOrUndefined (String)
-  , "Data" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
+  { "ConfigurationId" :: Maybe (String)
+  , "Data" :: Maybe (String)
+  , "Description" :: Maybe (String)
   }
 derive instance newtypeDescribeConfigurationRevisionOutput :: Newtype DescribeConfigurationRevisionOutput _
 derive instance repGenericDescribeConfigurationRevisionOutput :: Generic DescribeConfigurationRevisionOutput _
@@ -744,12 +743,12 @@ instance encodeDescribeConfigurationRevisionOutput :: Encode DescribeConfigurati
 
 -- | Constructs DescribeConfigurationRevisionOutput from required parameters
 newDescribeConfigurationRevisionOutput :: DescribeConfigurationRevisionOutput
-newDescribeConfigurationRevisionOutput  = DescribeConfigurationRevisionOutput { "ConfigurationId": (NullOrUndefined Nothing), "Data": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newDescribeConfigurationRevisionOutput  = DescribeConfigurationRevisionOutput { "ConfigurationId": Nothing, "Data": Nothing, "Description": Nothing }
 
 -- | Constructs DescribeConfigurationRevisionOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeConfigurationRevisionOutput' :: ( { "ConfigurationId" :: NullOrUndefined (String) , "Data" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) } -> {"ConfigurationId" :: NullOrUndefined (String) , "Data" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) } ) -> DescribeConfigurationRevisionOutput
-newDescribeConfigurationRevisionOutput'  customize = (DescribeConfigurationRevisionOutput <<< customize) { "ConfigurationId": (NullOrUndefined Nothing), "Data": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newDescribeConfigurationRevisionOutput' :: ( { "ConfigurationId" :: Maybe (String) , "Data" :: Maybe (String) , "Description" :: Maybe (String) } -> {"ConfigurationId" :: Maybe (String) , "Data" :: Maybe (String) , "Description" :: Maybe (String) } ) -> DescribeConfigurationRevisionOutput
+newDescribeConfigurationRevisionOutput'  customize = (DescribeConfigurationRevisionOutput <<< customize) { "ConfigurationId": Nothing, "Data": Nothing, "Description": Nothing }
 
 
 
@@ -775,9 +774,9 @@ newDescribeConfigurationRevisionRequest' _ConfigurationId _ConfigurationRevision
 
 
 newtype DescribeConfigurationRevisionResponse = DescribeConfigurationRevisionResponse 
-  { "ConfigurationId" :: NullOrUndefined (String)
-  , "Data" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
+  { "ConfigurationId" :: Maybe (String)
+  , "Data" :: Maybe (String)
+  , "Description" :: Maybe (String)
   }
 derive instance newtypeDescribeConfigurationRevisionResponse :: Newtype DescribeConfigurationRevisionResponse _
 derive instance repGenericDescribeConfigurationRevisionResponse :: Generic DescribeConfigurationRevisionResponse _
@@ -787,22 +786,22 @@ instance encodeDescribeConfigurationRevisionResponse :: Encode DescribeConfigura
 
 -- | Constructs DescribeConfigurationRevisionResponse from required parameters
 newDescribeConfigurationRevisionResponse :: DescribeConfigurationRevisionResponse
-newDescribeConfigurationRevisionResponse  = DescribeConfigurationRevisionResponse { "ConfigurationId": (NullOrUndefined Nothing), "Data": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newDescribeConfigurationRevisionResponse  = DescribeConfigurationRevisionResponse { "ConfigurationId": Nothing, "Data": Nothing, "Description": Nothing }
 
 -- | Constructs DescribeConfigurationRevisionResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeConfigurationRevisionResponse' :: ( { "ConfigurationId" :: NullOrUndefined (String) , "Data" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) } -> {"ConfigurationId" :: NullOrUndefined (String) , "Data" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) } ) -> DescribeConfigurationRevisionResponse
-newDescribeConfigurationRevisionResponse'  customize = (DescribeConfigurationRevisionResponse <<< customize) { "ConfigurationId": (NullOrUndefined Nothing), "Data": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newDescribeConfigurationRevisionResponse' :: ( { "ConfigurationId" :: Maybe (String) , "Data" :: Maybe (String) , "Description" :: Maybe (String) } -> {"ConfigurationId" :: Maybe (String) , "Data" :: Maybe (String) , "Description" :: Maybe (String) } ) -> DescribeConfigurationRevisionResponse
+newDescribeConfigurationRevisionResponse'  customize = (DescribeConfigurationRevisionResponse <<< customize) { "ConfigurationId": Nothing, "Data": Nothing, "Description": Nothing }
 
 
 
 -- | Returns information about an ActiveMQ user.
 newtype DescribeUserOutput = DescribeUserOutput 
-  { "BrokerId" :: NullOrUndefined (String)
-  , "ConsoleAccess" :: NullOrUndefined (Boolean)
-  , "Groups" :: NullOrUndefined (ListOf__string)
-  , "Pending" :: NullOrUndefined (UserPendingChanges)
-  , "Username" :: NullOrUndefined (String)
+  { "BrokerId" :: Maybe (String)
+  , "ConsoleAccess" :: Maybe (Boolean)
+  , "Groups" :: Maybe (ListOf__string)
+  , "Pending" :: Maybe (UserPendingChanges)
+  , "Username" :: Maybe (String)
   }
 derive instance newtypeDescribeUserOutput :: Newtype DescribeUserOutput _
 derive instance repGenericDescribeUserOutput :: Generic DescribeUserOutput _
@@ -812,12 +811,12 @@ instance encodeDescribeUserOutput :: Encode DescribeUserOutput where encode = ge
 
 -- | Constructs DescribeUserOutput from required parameters
 newDescribeUserOutput :: DescribeUserOutput
-newDescribeUserOutput  = DescribeUserOutput { "BrokerId": (NullOrUndefined Nothing), "ConsoleAccess": (NullOrUndefined Nothing), "Groups": (NullOrUndefined Nothing), "Pending": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newDescribeUserOutput  = DescribeUserOutput { "BrokerId": Nothing, "ConsoleAccess": Nothing, "Groups": Nothing, "Pending": Nothing, "Username": Nothing }
 
 -- | Constructs DescribeUserOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeUserOutput' :: ( { "BrokerId" :: NullOrUndefined (String) , "ConsoleAccess" :: NullOrUndefined (Boolean) , "Groups" :: NullOrUndefined (ListOf__string) , "Pending" :: NullOrUndefined (UserPendingChanges) , "Username" :: NullOrUndefined (String) } -> {"BrokerId" :: NullOrUndefined (String) , "ConsoleAccess" :: NullOrUndefined (Boolean) , "Groups" :: NullOrUndefined (ListOf__string) , "Pending" :: NullOrUndefined (UserPendingChanges) , "Username" :: NullOrUndefined (String) } ) -> DescribeUserOutput
-newDescribeUserOutput'  customize = (DescribeUserOutput <<< customize) { "BrokerId": (NullOrUndefined Nothing), "ConsoleAccess": (NullOrUndefined Nothing), "Groups": (NullOrUndefined Nothing), "Pending": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newDescribeUserOutput' :: ( { "BrokerId" :: Maybe (String) , "ConsoleAccess" :: Maybe (Boolean) , "Groups" :: Maybe (ListOf__string) , "Pending" :: Maybe (UserPendingChanges) , "Username" :: Maybe (String) } -> {"BrokerId" :: Maybe (String) , "ConsoleAccess" :: Maybe (Boolean) , "Groups" :: Maybe (ListOf__string) , "Pending" :: Maybe (UserPendingChanges) , "Username" :: Maybe (String) } ) -> DescribeUserOutput
+newDescribeUserOutput'  customize = (DescribeUserOutput <<< customize) { "BrokerId": Nothing, "ConsoleAccess": Nothing, "Groups": Nothing, "Pending": Nothing, "Username": Nothing }
 
 
 
@@ -843,11 +842,11 @@ newDescribeUserRequest' _BrokerId _Username customize = (DescribeUserRequest <<<
 
 
 newtype DescribeUserResponse = DescribeUserResponse 
-  { "BrokerId" :: NullOrUndefined (String)
-  , "ConsoleAccess" :: NullOrUndefined (Boolean)
-  , "Groups" :: NullOrUndefined (ListOf__string)
-  , "Pending" :: NullOrUndefined (UserPendingChanges)
-  , "Username" :: NullOrUndefined (String)
+  { "BrokerId" :: Maybe (String)
+  , "ConsoleAccess" :: Maybe (Boolean)
+  , "Groups" :: Maybe (ListOf__string)
+  , "Pending" :: Maybe (UserPendingChanges)
+  , "Username" :: Maybe (String)
   }
 derive instance newtypeDescribeUserResponse :: Newtype DescribeUserResponse _
 derive instance repGenericDescribeUserResponse :: Generic DescribeUserResponse _
@@ -857,12 +856,12 @@ instance encodeDescribeUserResponse :: Encode DescribeUserResponse where encode 
 
 -- | Constructs DescribeUserResponse from required parameters
 newDescribeUserResponse :: DescribeUserResponse
-newDescribeUserResponse  = DescribeUserResponse { "BrokerId": (NullOrUndefined Nothing), "ConsoleAccess": (NullOrUndefined Nothing), "Groups": (NullOrUndefined Nothing), "Pending": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newDescribeUserResponse  = DescribeUserResponse { "BrokerId": Nothing, "ConsoleAccess": Nothing, "Groups": Nothing, "Pending": Nothing, "Username": Nothing }
 
 -- | Constructs DescribeUserResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeUserResponse' :: ( { "BrokerId" :: NullOrUndefined (String) , "ConsoleAccess" :: NullOrUndefined (Boolean) , "Groups" :: NullOrUndefined (ListOf__string) , "Pending" :: NullOrUndefined (UserPendingChanges) , "Username" :: NullOrUndefined (String) } -> {"BrokerId" :: NullOrUndefined (String) , "ConsoleAccess" :: NullOrUndefined (Boolean) , "Groups" :: NullOrUndefined (ListOf__string) , "Pending" :: NullOrUndefined (UserPendingChanges) , "Username" :: NullOrUndefined (String) } ) -> DescribeUserResponse
-newDescribeUserResponse'  customize = (DescribeUserResponse <<< customize) { "BrokerId": (NullOrUndefined Nothing), "ConsoleAccess": (NullOrUndefined Nothing), "Groups": (NullOrUndefined Nothing), "Pending": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newDescribeUserResponse' :: ( { "BrokerId" :: Maybe (String) , "ConsoleAccess" :: Maybe (Boolean) , "Groups" :: Maybe (ListOf__string) , "Pending" :: Maybe (UserPendingChanges) , "Username" :: Maybe (String) } -> {"BrokerId" :: Maybe (String) , "ConsoleAccess" :: Maybe (Boolean) , "Groups" :: Maybe (ListOf__string) , "Pending" :: Maybe (UserPendingChanges) , "Username" :: Maybe (String) } ) -> DescribeUserResponse
+newDescribeUserResponse'  customize = (DescribeUserResponse <<< customize) { "BrokerId": Nothing, "ConsoleAccess": Nothing, "Groups": Nothing, "Pending": Nothing, "Username": Nothing }
 
 
 
@@ -878,8 +877,8 @@ instance encodeEngineType :: Encode EngineType where encode = genericEncode opti
 
 -- | Returns information about an error.
 newtype Error = Error 
-  { "ErrorAttribute" :: NullOrUndefined (String)
-  , "Message" :: NullOrUndefined (String)
+  { "ErrorAttribute" :: Maybe (String)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeError :: Newtype Error _
 derive instance repGenericError :: Generic Error _
@@ -889,19 +888,19 @@ instance encodeError :: Encode Error where encode = genericEncode options
 
 -- | Constructs Error from required parameters
 newError :: Error
-newError  = Error { "ErrorAttribute": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newError  = Error { "ErrorAttribute": Nothing, "Message": Nothing }
 
 -- | Constructs Error's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newError' :: ( { "ErrorAttribute" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) } -> {"ErrorAttribute" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) } ) -> Error
-newError'  customize = (Error <<< customize) { "ErrorAttribute": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newError' :: ( { "ErrorAttribute" :: Maybe (String) , "Message" :: Maybe (String) } -> {"ErrorAttribute" :: Maybe (String) , "Message" :: Maybe (String) } ) -> Error
+newError'  customize = (Error <<< customize) { "ErrorAttribute": Nothing, "Message": Nothing }
 
 
 
 -- | Returns information about an error.
 newtype ForbiddenException = ForbiddenException 
-  { "ErrorAttribute" :: NullOrUndefined (String)
-  , "Message" :: NullOrUndefined (String)
+  { "ErrorAttribute" :: Maybe (String)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeForbiddenException :: Newtype ForbiddenException _
 derive instance repGenericForbiddenException :: Generic ForbiddenException _
@@ -911,19 +910,19 @@ instance encodeForbiddenException :: Encode ForbiddenException where encode = ge
 
 -- | Constructs ForbiddenException from required parameters
 newForbiddenException :: ForbiddenException
-newForbiddenException  = ForbiddenException { "ErrorAttribute": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newForbiddenException  = ForbiddenException { "ErrorAttribute": Nothing, "Message": Nothing }
 
 -- | Constructs ForbiddenException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newForbiddenException' :: ( { "ErrorAttribute" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) } -> {"ErrorAttribute" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) } ) -> ForbiddenException
-newForbiddenException'  customize = (ForbiddenException <<< customize) { "ErrorAttribute": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newForbiddenException' :: ( { "ErrorAttribute" :: Maybe (String) , "Message" :: Maybe (String) } -> {"ErrorAttribute" :: Maybe (String) , "Message" :: Maybe (String) } ) -> ForbiddenException
+newForbiddenException'  customize = (ForbiddenException <<< customize) { "ErrorAttribute": Nothing, "Message": Nothing }
 
 
 
 -- | Returns information about an error.
 newtype InternalServerErrorException = InternalServerErrorException 
-  { "ErrorAttribute" :: NullOrUndefined (String)
-  , "Message" :: NullOrUndefined (String)
+  { "ErrorAttribute" :: Maybe (String)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeInternalServerErrorException :: Newtype InternalServerErrorException _
 derive instance repGenericInternalServerErrorException :: Generic InternalServerErrorException _
@@ -933,19 +932,19 @@ instance encodeInternalServerErrorException :: Encode InternalServerErrorExcepti
 
 -- | Constructs InternalServerErrorException from required parameters
 newInternalServerErrorException :: InternalServerErrorException
-newInternalServerErrorException  = InternalServerErrorException { "ErrorAttribute": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newInternalServerErrorException  = InternalServerErrorException { "ErrorAttribute": Nothing, "Message": Nothing }
 
 -- | Constructs InternalServerErrorException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalServerErrorException' :: ( { "ErrorAttribute" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) } -> {"ErrorAttribute" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) } ) -> InternalServerErrorException
-newInternalServerErrorException'  customize = (InternalServerErrorException <<< customize) { "ErrorAttribute": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newInternalServerErrorException' :: ( { "ErrorAttribute" :: Maybe (String) , "Message" :: Maybe (String) } -> {"ErrorAttribute" :: Maybe (String) , "Message" :: Maybe (String) } ) -> InternalServerErrorException
+newInternalServerErrorException'  customize = (InternalServerErrorException <<< customize) { "ErrorAttribute": Nothing, "Message": Nothing }
 
 
 
 -- | A list of information about all brokers.
 newtype ListBrokersOutput = ListBrokersOutput 
-  { "BrokerSummaries" :: NullOrUndefined (ListOfBrokerSummary)
-  , "NextToken" :: NullOrUndefined (String)
+  { "BrokerSummaries" :: Maybe (ListOfBrokerSummary)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListBrokersOutput :: Newtype ListBrokersOutput _
 derive instance repGenericListBrokersOutput :: Generic ListBrokersOutput _
@@ -955,18 +954,18 @@ instance encodeListBrokersOutput :: Encode ListBrokersOutput where encode = gene
 
 -- | Constructs ListBrokersOutput from required parameters
 newListBrokersOutput :: ListBrokersOutput
-newListBrokersOutput  = ListBrokersOutput { "BrokerSummaries": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListBrokersOutput  = ListBrokersOutput { "BrokerSummaries": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListBrokersOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBrokersOutput' :: ( { "BrokerSummaries" :: NullOrUndefined (ListOfBrokerSummary) , "NextToken" :: NullOrUndefined (String) } -> {"BrokerSummaries" :: NullOrUndefined (ListOfBrokerSummary) , "NextToken" :: NullOrUndefined (String) } ) -> ListBrokersOutput
-newListBrokersOutput'  customize = (ListBrokersOutput <<< customize) { "BrokerSummaries": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListBrokersOutput' :: ( { "BrokerSummaries" :: Maybe (ListOfBrokerSummary) , "NextToken" :: Maybe (String) } -> {"BrokerSummaries" :: Maybe (ListOfBrokerSummary) , "NextToken" :: Maybe (String) } ) -> ListBrokersOutput
+newListBrokersOutput'  customize = (ListBrokersOutput <<< customize) { "BrokerSummaries": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListBrokersRequest = ListBrokersRequest 
-  { "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (String)
+  { "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListBrokersRequest :: Newtype ListBrokersRequest _
 derive instance repGenericListBrokersRequest :: Generic ListBrokersRequest _
@@ -976,18 +975,18 @@ instance encodeListBrokersRequest :: Encode ListBrokersRequest where encode = ge
 
 -- | Constructs ListBrokersRequest from required parameters
 newListBrokersRequest :: ListBrokersRequest
-newListBrokersRequest  = ListBrokersRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListBrokersRequest  = ListBrokersRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListBrokersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBrokersRequest' :: ( { "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } -> {"MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } ) -> ListBrokersRequest
-newListBrokersRequest'  customize = (ListBrokersRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListBrokersRequest' :: ( { "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } -> {"MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } ) -> ListBrokersRequest
+newListBrokersRequest'  customize = (ListBrokersRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListBrokersResponse = ListBrokersResponse 
-  { "BrokerSummaries" :: NullOrUndefined (ListOfBrokerSummary)
-  , "NextToken" :: NullOrUndefined (String)
+  { "BrokerSummaries" :: Maybe (ListOfBrokerSummary)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListBrokersResponse :: Newtype ListBrokersResponse _
 derive instance repGenericListBrokersResponse :: Generic ListBrokersResponse _
@@ -997,21 +996,21 @@ instance encodeListBrokersResponse :: Encode ListBrokersResponse where encode = 
 
 -- | Constructs ListBrokersResponse from required parameters
 newListBrokersResponse :: ListBrokersResponse
-newListBrokersResponse  = ListBrokersResponse { "BrokerSummaries": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListBrokersResponse  = ListBrokersResponse { "BrokerSummaries": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListBrokersResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBrokersResponse' :: ( { "BrokerSummaries" :: NullOrUndefined (ListOfBrokerSummary) , "NextToken" :: NullOrUndefined (String) } -> {"BrokerSummaries" :: NullOrUndefined (ListOfBrokerSummary) , "NextToken" :: NullOrUndefined (String) } ) -> ListBrokersResponse
-newListBrokersResponse'  customize = (ListBrokersResponse <<< customize) { "BrokerSummaries": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListBrokersResponse' :: ( { "BrokerSummaries" :: Maybe (ListOfBrokerSummary) , "NextToken" :: Maybe (String) } -> {"BrokerSummaries" :: Maybe (ListOfBrokerSummary) , "NextToken" :: Maybe (String) } ) -> ListBrokersResponse
+newListBrokersResponse'  customize = (ListBrokersResponse <<< customize) { "BrokerSummaries": Nothing, "NextToken": Nothing }
 
 
 
 -- | Returns a list of all revisions for the specified configuration.
 newtype ListConfigurationRevisionsOutput = ListConfigurationRevisionsOutput 
-  { "ConfigurationId" :: NullOrUndefined (String)
-  , "MaxResults" :: NullOrUndefined (Int)
-  , "NextToken" :: NullOrUndefined (String)
-  , "Revisions" :: NullOrUndefined (ListOfConfigurationRevision)
+  { "ConfigurationId" :: Maybe (String)
+  , "MaxResults" :: Maybe (Int)
+  , "NextToken" :: Maybe (String)
+  , "Revisions" :: Maybe (ListOfConfigurationRevision)
   }
 derive instance newtypeListConfigurationRevisionsOutput :: Newtype ListConfigurationRevisionsOutput _
 derive instance repGenericListConfigurationRevisionsOutput :: Generic ListConfigurationRevisionsOutput _
@@ -1021,19 +1020,19 @@ instance encodeListConfigurationRevisionsOutput :: Encode ListConfigurationRevis
 
 -- | Constructs ListConfigurationRevisionsOutput from required parameters
 newListConfigurationRevisionsOutput :: ListConfigurationRevisionsOutput
-newListConfigurationRevisionsOutput  = ListConfigurationRevisionsOutput { "ConfigurationId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "Revisions": (NullOrUndefined Nothing) }
+newListConfigurationRevisionsOutput  = ListConfigurationRevisionsOutput { "ConfigurationId": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "Revisions": Nothing }
 
 -- | Constructs ListConfigurationRevisionsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListConfigurationRevisionsOutput' :: ( { "ConfigurationId" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (Int) , "NextToken" :: NullOrUndefined (String) , "Revisions" :: NullOrUndefined (ListOfConfigurationRevision) } -> {"ConfigurationId" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (Int) , "NextToken" :: NullOrUndefined (String) , "Revisions" :: NullOrUndefined (ListOfConfigurationRevision) } ) -> ListConfigurationRevisionsOutput
-newListConfigurationRevisionsOutput'  customize = (ListConfigurationRevisionsOutput <<< customize) { "ConfigurationId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "Revisions": (NullOrUndefined Nothing) }
+newListConfigurationRevisionsOutput' :: ( { "ConfigurationId" :: Maybe (String) , "MaxResults" :: Maybe (Int) , "NextToken" :: Maybe (String) , "Revisions" :: Maybe (ListOfConfigurationRevision) } -> {"ConfigurationId" :: Maybe (String) , "MaxResults" :: Maybe (Int) , "NextToken" :: Maybe (String) , "Revisions" :: Maybe (ListOfConfigurationRevision) } ) -> ListConfigurationRevisionsOutput
+newListConfigurationRevisionsOutput'  customize = (ListConfigurationRevisionsOutput <<< customize) { "ConfigurationId": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "Revisions": Nothing }
 
 
 
 newtype ListConfigurationRevisionsRequest = ListConfigurationRevisionsRequest 
   { "ConfigurationId" :: (String)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (String)
+  , "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListConfigurationRevisionsRequest :: Newtype ListConfigurationRevisionsRequest _
 derive instance repGenericListConfigurationRevisionsRequest :: Generic ListConfigurationRevisionsRequest _
@@ -1043,20 +1042,20 @@ instance encodeListConfigurationRevisionsRequest :: Encode ListConfigurationRevi
 
 -- | Constructs ListConfigurationRevisionsRequest from required parameters
 newListConfigurationRevisionsRequest :: String -> ListConfigurationRevisionsRequest
-newListConfigurationRevisionsRequest _ConfigurationId = ListConfigurationRevisionsRequest { "ConfigurationId": _ConfigurationId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListConfigurationRevisionsRequest _ConfigurationId = ListConfigurationRevisionsRequest { "ConfigurationId": _ConfigurationId, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListConfigurationRevisionsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListConfigurationRevisionsRequest' :: String -> ( { "ConfigurationId" :: (String) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } -> {"ConfigurationId" :: (String) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } ) -> ListConfigurationRevisionsRequest
-newListConfigurationRevisionsRequest' _ConfigurationId customize = (ListConfigurationRevisionsRequest <<< customize) { "ConfigurationId": _ConfigurationId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListConfigurationRevisionsRequest' :: String -> ( { "ConfigurationId" :: (String) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } -> {"ConfigurationId" :: (String) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } ) -> ListConfigurationRevisionsRequest
+newListConfigurationRevisionsRequest' _ConfigurationId customize = (ListConfigurationRevisionsRequest <<< customize) { "ConfigurationId": _ConfigurationId, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListConfigurationRevisionsResponse = ListConfigurationRevisionsResponse 
-  { "ConfigurationId" :: NullOrUndefined (String)
-  , "MaxResults" :: NullOrUndefined (Int)
-  , "NextToken" :: NullOrUndefined (String)
-  , "Revisions" :: NullOrUndefined (ListOfConfigurationRevision)
+  { "ConfigurationId" :: Maybe (String)
+  , "MaxResults" :: Maybe (Int)
+  , "NextToken" :: Maybe (String)
+  , "Revisions" :: Maybe (ListOfConfigurationRevision)
   }
 derive instance newtypeListConfigurationRevisionsResponse :: Newtype ListConfigurationRevisionsResponse _
 derive instance repGenericListConfigurationRevisionsResponse :: Generic ListConfigurationRevisionsResponse _
@@ -1066,20 +1065,20 @@ instance encodeListConfigurationRevisionsResponse :: Encode ListConfigurationRev
 
 -- | Constructs ListConfigurationRevisionsResponse from required parameters
 newListConfigurationRevisionsResponse :: ListConfigurationRevisionsResponse
-newListConfigurationRevisionsResponse  = ListConfigurationRevisionsResponse { "ConfigurationId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "Revisions": (NullOrUndefined Nothing) }
+newListConfigurationRevisionsResponse  = ListConfigurationRevisionsResponse { "ConfigurationId": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "Revisions": Nothing }
 
 -- | Constructs ListConfigurationRevisionsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListConfigurationRevisionsResponse' :: ( { "ConfigurationId" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (Int) , "NextToken" :: NullOrUndefined (String) , "Revisions" :: NullOrUndefined (ListOfConfigurationRevision) } -> {"ConfigurationId" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (Int) , "NextToken" :: NullOrUndefined (String) , "Revisions" :: NullOrUndefined (ListOfConfigurationRevision) } ) -> ListConfigurationRevisionsResponse
-newListConfigurationRevisionsResponse'  customize = (ListConfigurationRevisionsResponse <<< customize) { "ConfigurationId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "Revisions": (NullOrUndefined Nothing) }
+newListConfigurationRevisionsResponse' :: ( { "ConfigurationId" :: Maybe (String) , "MaxResults" :: Maybe (Int) , "NextToken" :: Maybe (String) , "Revisions" :: Maybe (ListOfConfigurationRevision) } -> {"ConfigurationId" :: Maybe (String) , "MaxResults" :: Maybe (Int) , "NextToken" :: Maybe (String) , "Revisions" :: Maybe (ListOfConfigurationRevision) } ) -> ListConfigurationRevisionsResponse
+newListConfigurationRevisionsResponse'  customize = (ListConfigurationRevisionsResponse <<< customize) { "ConfigurationId": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "Revisions": Nothing }
 
 
 
 -- | Returns a list of all configurations.
 newtype ListConfigurationsOutput = ListConfigurationsOutput 
-  { "Configurations" :: NullOrUndefined (ListOfConfiguration)
-  , "MaxResults" :: NullOrUndefined (Int)
-  , "NextToken" :: NullOrUndefined (String)
+  { "Configurations" :: Maybe (ListOfConfiguration)
+  , "MaxResults" :: Maybe (Int)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListConfigurationsOutput :: Newtype ListConfigurationsOutput _
 derive instance repGenericListConfigurationsOutput :: Generic ListConfigurationsOutput _
@@ -1089,18 +1088,18 @@ instance encodeListConfigurationsOutput :: Encode ListConfigurationsOutput where
 
 -- | Constructs ListConfigurationsOutput from required parameters
 newListConfigurationsOutput :: ListConfigurationsOutput
-newListConfigurationsOutput  = ListConfigurationsOutput { "Configurations": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListConfigurationsOutput  = ListConfigurationsOutput { "Configurations": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListConfigurationsOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListConfigurationsOutput' :: ( { "Configurations" :: NullOrUndefined (ListOfConfiguration) , "MaxResults" :: NullOrUndefined (Int) , "NextToken" :: NullOrUndefined (String) } -> {"Configurations" :: NullOrUndefined (ListOfConfiguration) , "MaxResults" :: NullOrUndefined (Int) , "NextToken" :: NullOrUndefined (String) } ) -> ListConfigurationsOutput
-newListConfigurationsOutput'  customize = (ListConfigurationsOutput <<< customize) { "Configurations": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListConfigurationsOutput' :: ( { "Configurations" :: Maybe (ListOfConfiguration) , "MaxResults" :: Maybe (Int) , "NextToken" :: Maybe (String) } -> {"Configurations" :: Maybe (ListOfConfiguration) , "MaxResults" :: Maybe (Int) , "NextToken" :: Maybe (String) } ) -> ListConfigurationsOutput
+newListConfigurationsOutput'  customize = (ListConfigurationsOutput <<< customize) { "Configurations": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListConfigurationsRequest = ListConfigurationsRequest 
-  { "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (String)
+  { "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListConfigurationsRequest :: Newtype ListConfigurationsRequest _
 derive instance repGenericListConfigurationsRequest :: Generic ListConfigurationsRequest _
@@ -1110,19 +1109,19 @@ instance encodeListConfigurationsRequest :: Encode ListConfigurationsRequest whe
 
 -- | Constructs ListConfigurationsRequest from required parameters
 newListConfigurationsRequest :: ListConfigurationsRequest
-newListConfigurationsRequest  = ListConfigurationsRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListConfigurationsRequest  = ListConfigurationsRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListConfigurationsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListConfigurationsRequest' :: ( { "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } -> {"MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } ) -> ListConfigurationsRequest
-newListConfigurationsRequest'  customize = (ListConfigurationsRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListConfigurationsRequest' :: ( { "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } -> {"MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } ) -> ListConfigurationsRequest
+newListConfigurationsRequest'  customize = (ListConfigurationsRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListConfigurationsResponse = ListConfigurationsResponse 
-  { "Configurations" :: NullOrUndefined (ListOfConfiguration)
-  , "MaxResults" :: NullOrUndefined (Int)
-  , "NextToken" :: NullOrUndefined (String)
+  { "Configurations" :: Maybe (ListOfConfiguration)
+  , "MaxResults" :: Maybe (Int)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListConfigurationsResponse :: Newtype ListConfigurationsResponse _
 derive instance repGenericListConfigurationsResponse :: Generic ListConfigurationsResponse _
@@ -1132,12 +1131,12 @@ instance encodeListConfigurationsResponse :: Encode ListConfigurationsResponse w
 
 -- | Constructs ListConfigurationsResponse from required parameters
 newListConfigurationsResponse :: ListConfigurationsResponse
-newListConfigurationsResponse  = ListConfigurationsResponse { "Configurations": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListConfigurationsResponse  = ListConfigurationsResponse { "Configurations": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListConfigurationsResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListConfigurationsResponse' :: ( { "Configurations" :: NullOrUndefined (ListOfConfiguration) , "MaxResults" :: NullOrUndefined (Int) , "NextToken" :: NullOrUndefined (String) } -> {"Configurations" :: NullOrUndefined (ListOfConfiguration) , "MaxResults" :: NullOrUndefined (Int) , "NextToken" :: NullOrUndefined (String) } ) -> ListConfigurationsResponse
-newListConfigurationsResponse'  customize = (ListConfigurationsResponse <<< customize) { "Configurations": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListConfigurationsResponse' :: ( { "Configurations" :: Maybe (ListOfConfiguration) , "MaxResults" :: Maybe (Int) , "NextToken" :: Maybe (String) } -> {"Configurations" :: Maybe (ListOfConfiguration) , "MaxResults" :: Maybe (Int) , "NextToken" :: Maybe (String) } ) -> ListConfigurationsResponse
+newListConfigurationsResponse'  customize = (ListConfigurationsResponse <<< customize) { "Configurations": Nothing, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
@@ -1224,10 +1223,10 @@ instance encodeListOf__string :: Encode ListOf__string where encode = genericEnc
 
 -- | Returns a list of all ActiveMQ users.
 newtype ListUsersOutput = ListUsersOutput 
-  { "BrokerId" :: NullOrUndefined (String)
-  , "MaxResults" :: NullOrUndefined (Int)
-  , "NextToken" :: NullOrUndefined (String)
-  , "Users" :: NullOrUndefined (ListOfUserSummary)
+  { "BrokerId" :: Maybe (String)
+  , "MaxResults" :: Maybe (Int)
+  , "NextToken" :: Maybe (String)
+  , "Users" :: Maybe (ListOfUserSummary)
   }
 derive instance newtypeListUsersOutput :: Newtype ListUsersOutput _
 derive instance repGenericListUsersOutput :: Generic ListUsersOutput _
@@ -1237,19 +1236,19 @@ instance encodeListUsersOutput :: Encode ListUsersOutput where encode = genericE
 
 -- | Constructs ListUsersOutput from required parameters
 newListUsersOutput :: ListUsersOutput
-newListUsersOutput  = ListUsersOutput { "BrokerId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newListUsersOutput  = ListUsersOutput { "BrokerId": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "Users": Nothing }
 
 -- | Constructs ListUsersOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListUsersOutput' :: ( { "BrokerId" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (Int) , "NextToken" :: NullOrUndefined (String) , "Users" :: NullOrUndefined (ListOfUserSummary) } -> {"BrokerId" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (Int) , "NextToken" :: NullOrUndefined (String) , "Users" :: NullOrUndefined (ListOfUserSummary) } ) -> ListUsersOutput
-newListUsersOutput'  customize = (ListUsersOutput <<< customize) { "BrokerId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newListUsersOutput' :: ( { "BrokerId" :: Maybe (String) , "MaxResults" :: Maybe (Int) , "NextToken" :: Maybe (String) , "Users" :: Maybe (ListOfUserSummary) } -> {"BrokerId" :: Maybe (String) , "MaxResults" :: Maybe (Int) , "NextToken" :: Maybe (String) , "Users" :: Maybe (ListOfUserSummary) } ) -> ListUsersOutput
+newListUsersOutput'  customize = (ListUsersOutput <<< customize) { "BrokerId": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "Users": Nothing }
 
 
 
 newtype ListUsersRequest = ListUsersRequest 
   { "BrokerId" :: (String)
-  , "MaxResults" :: NullOrUndefined (MaxResults)
-  , "NextToken" :: NullOrUndefined (String)
+  , "MaxResults" :: Maybe (MaxResults)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListUsersRequest :: Newtype ListUsersRequest _
 derive instance repGenericListUsersRequest :: Generic ListUsersRequest _
@@ -1259,20 +1258,20 @@ instance encodeListUsersRequest :: Encode ListUsersRequest where encode = generi
 
 -- | Constructs ListUsersRequest from required parameters
 newListUsersRequest :: String -> ListUsersRequest
-newListUsersRequest _BrokerId = ListUsersRequest { "BrokerId": _BrokerId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListUsersRequest _BrokerId = ListUsersRequest { "BrokerId": _BrokerId, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListUsersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListUsersRequest' :: String -> ( { "BrokerId" :: (String) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } -> {"BrokerId" :: (String) , "MaxResults" :: NullOrUndefined (MaxResults) , "NextToken" :: NullOrUndefined (String) } ) -> ListUsersRequest
-newListUsersRequest' _BrokerId customize = (ListUsersRequest <<< customize) { "BrokerId": _BrokerId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListUsersRequest' :: String -> ( { "BrokerId" :: (String) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } -> {"BrokerId" :: (String) , "MaxResults" :: Maybe (MaxResults) , "NextToken" :: Maybe (String) } ) -> ListUsersRequest
+newListUsersRequest' _BrokerId customize = (ListUsersRequest <<< customize) { "BrokerId": _BrokerId, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListUsersResponse = ListUsersResponse 
-  { "BrokerId" :: NullOrUndefined (String)
-  , "MaxResults" :: NullOrUndefined (Int)
-  , "NextToken" :: NullOrUndefined (String)
-  , "Users" :: NullOrUndefined (ListOfUserSummary)
+  { "BrokerId" :: Maybe (String)
+  , "MaxResults" :: Maybe (Int)
+  , "NextToken" :: Maybe (String)
+  , "Users" :: Maybe (ListOfUserSummary)
   }
 derive instance newtypeListUsersResponse :: Newtype ListUsersResponse _
 derive instance repGenericListUsersResponse :: Generic ListUsersResponse _
@@ -1282,12 +1281,12 @@ instance encodeListUsersResponse :: Encode ListUsersResponse where encode = gene
 
 -- | Constructs ListUsersResponse from required parameters
 newListUsersResponse :: ListUsersResponse
-newListUsersResponse  = ListUsersResponse { "BrokerId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newListUsersResponse  = ListUsersResponse { "BrokerId": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "Users": Nothing }
 
 -- | Constructs ListUsersResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListUsersResponse' :: ( { "BrokerId" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (Int) , "NextToken" :: NullOrUndefined (String) , "Users" :: NullOrUndefined (ListOfUserSummary) } -> {"BrokerId" :: NullOrUndefined (String) , "MaxResults" :: NullOrUndefined (Int) , "NextToken" :: NullOrUndefined (String) , "Users" :: NullOrUndefined (ListOfUserSummary) } ) -> ListUsersResponse
-newListUsersResponse'  customize = (ListUsersResponse <<< customize) { "BrokerId": (NullOrUndefined Nothing), "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing), "Users": (NullOrUndefined Nothing) }
+newListUsersResponse' :: ( { "BrokerId" :: Maybe (String) , "MaxResults" :: Maybe (Int) , "NextToken" :: Maybe (String) , "Users" :: Maybe (ListOfUserSummary) } -> {"BrokerId" :: Maybe (String) , "MaxResults" :: Maybe (Int) , "NextToken" :: Maybe (String) , "Users" :: Maybe (ListOfUserSummary) } ) -> ListUsersResponse
+newListUsersResponse'  customize = (ListUsersResponse <<< customize) { "BrokerId": Nothing, "MaxResults": Nothing, "NextToken": Nothing, "Users": Nothing }
 
 
 
@@ -1302,8 +1301,8 @@ instance encodeMaxResults :: Encode MaxResults where encode = genericEncode opti
 
 -- | Returns information about an error.
 newtype NotFoundException = NotFoundException 
-  { "ErrorAttribute" :: NullOrUndefined (String)
-  , "Message" :: NullOrUndefined (String)
+  { "ErrorAttribute" :: Maybe (String)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeNotFoundException :: Newtype NotFoundException _
 derive instance repGenericNotFoundException :: Generic NotFoundException _
@@ -1313,12 +1312,12 @@ instance encodeNotFoundException :: Encode NotFoundException where encode = gene
 
 -- | Constructs NotFoundException from required parameters
 newNotFoundException :: NotFoundException
-newNotFoundException  = NotFoundException { "ErrorAttribute": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newNotFoundException  = NotFoundException { "ErrorAttribute": Nothing, "Message": Nothing }
 
 -- | Constructs NotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotFoundException' :: ( { "ErrorAttribute" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) } -> {"ErrorAttribute" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) } ) -> NotFoundException
-newNotFoundException'  customize = (NotFoundException <<< customize) { "ErrorAttribute": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newNotFoundException' :: ( { "ErrorAttribute" :: Maybe (String) , "Message" :: Maybe (String) } -> {"ErrorAttribute" :: Maybe (String) , "Message" :: Maybe (String) } ) -> NotFoundException
+newNotFoundException'  customize = (NotFoundException <<< customize) { "ErrorAttribute": Nothing, "Message": Nothing }
 
 
 
@@ -1353,9 +1352,9 @@ instance encodeRebootBrokerResponse :: Encode RebootBrokerResponse where encode 
 
 -- | Returns information about the XML element or attribute that was sanitized in the configuration.
 newtype SanitizationWarning = SanitizationWarning 
-  { "AttributeName" :: NullOrUndefined (String)
-  , "ElementName" :: NullOrUndefined (String)
-  , "Reason" :: NullOrUndefined (SanitizationWarningReason)
+  { "AttributeName" :: Maybe (String)
+  , "ElementName" :: Maybe (String)
+  , "Reason" :: Maybe (SanitizationWarningReason)
   }
 derive instance newtypeSanitizationWarning :: Newtype SanitizationWarning _
 derive instance repGenericSanitizationWarning :: Generic SanitizationWarning _
@@ -1365,12 +1364,12 @@ instance encodeSanitizationWarning :: Encode SanitizationWarning where encode = 
 
 -- | Constructs SanitizationWarning from required parameters
 newSanitizationWarning :: SanitizationWarning
-newSanitizationWarning  = SanitizationWarning { "AttributeName": (NullOrUndefined Nothing), "ElementName": (NullOrUndefined Nothing), "Reason": (NullOrUndefined Nothing) }
+newSanitizationWarning  = SanitizationWarning { "AttributeName": Nothing, "ElementName": Nothing, "Reason": Nothing }
 
 -- | Constructs SanitizationWarning's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newSanitizationWarning' :: ( { "AttributeName" :: NullOrUndefined (String) , "ElementName" :: NullOrUndefined (String) , "Reason" :: NullOrUndefined (SanitizationWarningReason) } -> {"AttributeName" :: NullOrUndefined (String) , "ElementName" :: NullOrUndefined (String) , "Reason" :: NullOrUndefined (SanitizationWarningReason) } ) -> SanitizationWarning
-newSanitizationWarning'  customize = (SanitizationWarning <<< customize) { "AttributeName": (NullOrUndefined Nothing), "ElementName": (NullOrUndefined Nothing), "Reason": (NullOrUndefined Nothing) }
+newSanitizationWarning' :: ( { "AttributeName" :: Maybe (String) , "ElementName" :: Maybe (String) , "Reason" :: Maybe (SanitizationWarningReason) } -> {"AttributeName" :: Maybe (String) , "ElementName" :: Maybe (String) , "Reason" :: Maybe (SanitizationWarningReason) } ) -> SanitizationWarning
+newSanitizationWarning'  customize = (SanitizationWarning <<< customize) { "AttributeName": Nothing, "ElementName": Nothing, "Reason": Nothing }
 
 
 
@@ -1386,8 +1385,8 @@ instance encodeSanitizationWarningReason :: Encode SanitizationWarningReason whe
 
 -- | Returns information about an error.
 newtype UnauthorizedException = UnauthorizedException 
-  { "ErrorAttribute" :: NullOrUndefined (String)
-  , "Message" :: NullOrUndefined (String)
+  { "ErrorAttribute" :: Maybe (String)
+  , "Message" :: Maybe (String)
   }
 derive instance newtypeUnauthorizedException :: Newtype UnauthorizedException _
 derive instance repGenericUnauthorizedException :: Generic UnauthorizedException _
@@ -1397,18 +1396,18 @@ instance encodeUnauthorizedException :: Encode UnauthorizedException where encod
 
 -- | Constructs UnauthorizedException from required parameters
 newUnauthorizedException :: UnauthorizedException
-newUnauthorizedException  = UnauthorizedException { "ErrorAttribute": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newUnauthorizedException  = UnauthorizedException { "ErrorAttribute": Nothing, "Message": Nothing }
 
 -- | Constructs UnauthorizedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnauthorizedException' :: ( { "ErrorAttribute" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) } -> {"ErrorAttribute" :: NullOrUndefined (String) , "Message" :: NullOrUndefined (String) } ) -> UnauthorizedException
-newUnauthorizedException'  customize = (UnauthorizedException <<< customize) { "ErrorAttribute": (NullOrUndefined Nothing), "Message": (NullOrUndefined Nothing) }
+newUnauthorizedException' :: ( { "ErrorAttribute" :: Maybe (String) , "Message" :: Maybe (String) } -> {"ErrorAttribute" :: Maybe (String) , "Message" :: Maybe (String) } ) -> UnauthorizedException
+newUnauthorizedException'  customize = (UnauthorizedException <<< customize) { "ErrorAttribute": Nothing, "Message": Nothing }
 
 
 
 -- | Updates the broker using the specified properties.
 newtype UpdateBrokerInput = UpdateBrokerInput 
-  { "Configuration" :: NullOrUndefined (ConfigurationId)
+  { "Configuration" :: Maybe (ConfigurationId)
   }
 derive instance newtypeUpdateBrokerInput :: Newtype UpdateBrokerInput _
 derive instance repGenericUpdateBrokerInput :: Generic UpdateBrokerInput _
@@ -1418,19 +1417,19 @@ instance encodeUpdateBrokerInput :: Encode UpdateBrokerInput where encode = gene
 
 -- | Constructs UpdateBrokerInput from required parameters
 newUpdateBrokerInput :: UpdateBrokerInput
-newUpdateBrokerInput  = UpdateBrokerInput { "Configuration": (NullOrUndefined Nothing) }
+newUpdateBrokerInput  = UpdateBrokerInput { "Configuration": Nothing }
 
 -- | Constructs UpdateBrokerInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateBrokerInput' :: ( { "Configuration" :: NullOrUndefined (ConfigurationId) } -> {"Configuration" :: NullOrUndefined (ConfigurationId) } ) -> UpdateBrokerInput
-newUpdateBrokerInput'  customize = (UpdateBrokerInput <<< customize) { "Configuration": (NullOrUndefined Nothing) }
+newUpdateBrokerInput' :: ( { "Configuration" :: Maybe (ConfigurationId) } -> {"Configuration" :: Maybe (ConfigurationId) } ) -> UpdateBrokerInput
+newUpdateBrokerInput'  customize = (UpdateBrokerInput <<< customize) { "Configuration": Nothing }
 
 
 
 -- | Returns information about the updated broker.
 newtype UpdateBrokerOutput = UpdateBrokerOutput 
-  { "BrokerId" :: NullOrUndefined (String)
-  , "Configuration" :: NullOrUndefined (ConfigurationId)
+  { "BrokerId" :: Maybe (String)
+  , "Configuration" :: Maybe (ConfigurationId)
   }
 derive instance newtypeUpdateBrokerOutput :: Newtype UpdateBrokerOutput _
 derive instance repGenericUpdateBrokerOutput :: Generic UpdateBrokerOutput _
@@ -1440,19 +1439,19 @@ instance encodeUpdateBrokerOutput :: Encode UpdateBrokerOutput where encode = ge
 
 -- | Constructs UpdateBrokerOutput from required parameters
 newUpdateBrokerOutput :: UpdateBrokerOutput
-newUpdateBrokerOutput  = UpdateBrokerOutput { "BrokerId": (NullOrUndefined Nothing), "Configuration": (NullOrUndefined Nothing) }
+newUpdateBrokerOutput  = UpdateBrokerOutput { "BrokerId": Nothing, "Configuration": Nothing }
 
 -- | Constructs UpdateBrokerOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateBrokerOutput' :: ( { "BrokerId" :: NullOrUndefined (String) , "Configuration" :: NullOrUndefined (ConfigurationId) } -> {"BrokerId" :: NullOrUndefined (String) , "Configuration" :: NullOrUndefined (ConfigurationId) } ) -> UpdateBrokerOutput
-newUpdateBrokerOutput'  customize = (UpdateBrokerOutput <<< customize) { "BrokerId": (NullOrUndefined Nothing), "Configuration": (NullOrUndefined Nothing) }
+newUpdateBrokerOutput' :: ( { "BrokerId" :: Maybe (String) , "Configuration" :: Maybe (ConfigurationId) } -> {"BrokerId" :: Maybe (String) , "Configuration" :: Maybe (ConfigurationId) } ) -> UpdateBrokerOutput
+newUpdateBrokerOutput'  customize = (UpdateBrokerOutput <<< customize) { "BrokerId": Nothing, "Configuration": Nothing }
 
 
 
 -- | Updates the broker using the specified properties.
 newtype UpdateBrokerRequest = UpdateBrokerRequest 
   { "BrokerId" :: (String)
-  , "Configuration" :: NullOrUndefined (ConfigurationId)
+  , "Configuration" :: Maybe (ConfigurationId)
   }
 derive instance newtypeUpdateBrokerRequest :: Newtype UpdateBrokerRequest _
 derive instance repGenericUpdateBrokerRequest :: Generic UpdateBrokerRequest _
@@ -1462,18 +1461,18 @@ instance encodeUpdateBrokerRequest :: Encode UpdateBrokerRequest where encode = 
 
 -- | Constructs UpdateBrokerRequest from required parameters
 newUpdateBrokerRequest :: String -> UpdateBrokerRequest
-newUpdateBrokerRequest _BrokerId = UpdateBrokerRequest { "BrokerId": _BrokerId, "Configuration": (NullOrUndefined Nothing) }
+newUpdateBrokerRequest _BrokerId = UpdateBrokerRequest { "BrokerId": _BrokerId, "Configuration": Nothing }
 
 -- | Constructs UpdateBrokerRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateBrokerRequest' :: String -> ( { "BrokerId" :: (String) , "Configuration" :: NullOrUndefined (ConfigurationId) } -> {"BrokerId" :: (String) , "Configuration" :: NullOrUndefined (ConfigurationId) } ) -> UpdateBrokerRequest
-newUpdateBrokerRequest' _BrokerId customize = (UpdateBrokerRequest <<< customize) { "BrokerId": _BrokerId, "Configuration": (NullOrUndefined Nothing) }
+newUpdateBrokerRequest' :: String -> ( { "BrokerId" :: (String) , "Configuration" :: Maybe (ConfigurationId) } -> {"BrokerId" :: (String) , "Configuration" :: Maybe (ConfigurationId) } ) -> UpdateBrokerRequest
+newUpdateBrokerRequest' _BrokerId customize = (UpdateBrokerRequest <<< customize) { "BrokerId": _BrokerId, "Configuration": Nothing }
 
 
 
 newtype UpdateBrokerResponse = UpdateBrokerResponse 
-  { "BrokerId" :: NullOrUndefined (String)
-  , "Configuration" :: NullOrUndefined (ConfigurationId)
+  { "BrokerId" :: Maybe (String)
+  , "Configuration" :: Maybe (ConfigurationId)
   }
 derive instance newtypeUpdateBrokerResponse :: Newtype UpdateBrokerResponse _
 derive instance repGenericUpdateBrokerResponse :: Generic UpdateBrokerResponse _
@@ -1483,19 +1482,19 @@ instance encodeUpdateBrokerResponse :: Encode UpdateBrokerResponse where encode 
 
 -- | Constructs UpdateBrokerResponse from required parameters
 newUpdateBrokerResponse :: UpdateBrokerResponse
-newUpdateBrokerResponse  = UpdateBrokerResponse { "BrokerId": (NullOrUndefined Nothing), "Configuration": (NullOrUndefined Nothing) }
+newUpdateBrokerResponse  = UpdateBrokerResponse { "BrokerId": Nothing, "Configuration": Nothing }
 
 -- | Constructs UpdateBrokerResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateBrokerResponse' :: ( { "BrokerId" :: NullOrUndefined (String) , "Configuration" :: NullOrUndefined (ConfigurationId) } -> {"BrokerId" :: NullOrUndefined (String) , "Configuration" :: NullOrUndefined (ConfigurationId) } ) -> UpdateBrokerResponse
-newUpdateBrokerResponse'  customize = (UpdateBrokerResponse <<< customize) { "BrokerId": (NullOrUndefined Nothing), "Configuration": (NullOrUndefined Nothing) }
+newUpdateBrokerResponse' :: ( { "BrokerId" :: Maybe (String) , "Configuration" :: Maybe (ConfigurationId) } -> {"BrokerId" :: Maybe (String) , "Configuration" :: Maybe (ConfigurationId) } ) -> UpdateBrokerResponse
+newUpdateBrokerResponse'  customize = (UpdateBrokerResponse <<< customize) { "BrokerId": Nothing, "Configuration": Nothing }
 
 
 
 -- | Updates the specified configuration.
 newtype UpdateConfigurationInput = UpdateConfigurationInput 
-  { "Data" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
+  { "Data" :: Maybe (String)
+  , "Description" :: Maybe (String)
   }
 derive instance newtypeUpdateConfigurationInput :: Newtype UpdateConfigurationInput _
 derive instance repGenericUpdateConfigurationInput :: Generic UpdateConfigurationInput _
@@ -1505,22 +1504,22 @@ instance encodeUpdateConfigurationInput :: Encode UpdateConfigurationInput where
 
 -- | Constructs UpdateConfigurationInput from required parameters
 newUpdateConfigurationInput :: UpdateConfigurationInput
-newUpdateConfigurationInput  = UpdateConfigurationInput { "Data": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newUpdateConfigurationInput  = UpdateConfigurationInput { "Data": Nothing, "Description": Nothing }
 
 -- | Constructs UpdateConfigurationInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateConfigurationInput' :: ( { "Data" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) } -> {"Data" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) } ) -> UpdateConfigurationInput
-newUpdateConfigurationInput'  customize = (UpdateConfigurationInput <<< customize) { "Data": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newUpdateConfigurationInput' :: ( { "Data" :: Maybe (String) , "Description" :: Maybe (String) } -> {"Data" :: Maybe (String) , "Description" :: Maybe (String) } ) -> UpdateConfigurationInput
+newUpdateConfigurationInput'  customize = (UpdateConfigurationInput <<< customize) { "Data": Nothing, "Description": Nothing }
 
 
 
 -- | Returns information about the updated configuration.
 newtype UpdateConfigurationOutput = UpdateConfigurationOutput 
-  { "Arn" :: NullOrUndefined (String)
-  , "Id" :: NullOrUndefined (String)
-  , "LatestRevision" :: NullOrUndefined (ConfigurationRevision)
-  , "Name" :: NullOrUndefined (String)
-  , "Warnings" :: NullOrUndefined (ListOfSanitizationWarning)
+  { "Arn" :: Maybe (String)
+  , "Id" :: Maybe (String)
+  , "LatestRevision" :: Maybe (ConfigurationRevision)
+  , "Name" :: Maybe (String)
+  , "Warnings" :: Maybe (ListOfSanitizationWarning)
   }
 derive instance newtypeUpdateConfigurationOutput :: Newtype UpdateConfigurationOutput _
 derive instance repGenericUpdateConfigurationOutput :: Generic UpdateConfigurationOutput _
@@ -1530,20 +1529,20 @@ instance encodeUpdateConfigurationOutput :: Encode UpdateConfigurationOutput whe
 
 -- | Constructs UpdateConfigurationOutput from required parameters
 newUpdateConfigurationOutput :: UpdateConfigurationOutput
-newUpdateConfigurationOutput  = UpdateConfigurationOutput { "Arn": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "LatestRevision": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Warnings": (NullOrUndefined Nothing) }
+newUpdateConfigurationOutput  = UpdateConfigurationOutput { "Arn": Nothing, "Id": Nothing, "LatestRevision": Nothing, "Name": Nothing, "Warnings": Nothing }
 
 -- | Constructs UpdateConfigurationOutput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateConfigurationOutput' :: ( { "Arn" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "LatestRevision" :: NullOrUndefined (ConfigurationRevision) , "Name" :: NullOrUndefined (String) , "Warnings" :: NullOrUndefined (ListOfSanitizationWarning) } -> {"Arn" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "LatestRevision" :: NullOrUndefined (ConfigurationRevision) , "Name" :: NullOrUndefined (String) , "Warnings" :: NullOrUndefined (ListOfSanitizationWarning) } ) -> UpdateConfigurationOutput
-newUpdateConfigurationOutput'  customize = (UpdateConfigurationOutput <<< customize) { "Arn": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "LatestRevision": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Warnings": (NullOrUndefined Nothing) }
+newUpdateConfigurationOutput' :: ( { "Arn" :: Maybe (String) , "Id" :: Maybe (String) , "LatestRevision" :: Maybe (ConfigurationRevision) , "Name" :: Maybe (String) , "Warnings" :: Maybe (ListOfSanitizationWarning) } -> {"Arn" :: Maybe (String) , "Id" :: Maybe (String) , "LatestRevision" :: Maybe (ConfigurationRevision) , "Name" :: Maybe (String) , "Warnings" :: Maybe (ListOfSanitizationWarning) } ) -> UpdateConfigurationOutput
+newUpdateConfigurationOutput'  customize = (UpdateConfigurationOutput <<< customize) { "Arn": Nothing, "Id": Nothing, "LatestRevision": Nothing, "Name": Nothing, "Warnings": Nothing }
 
 
 
 -- | Updates the specified configuration.
 newtype UpdateConfigurationRequest = UpdateConfigurationRequest 
   { "ConfigurationId" :: (String)
-  , "Data" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
+  , "Data" :: Maybe (String)
+  , "Description" :: Maybe (String)
   }
 derive instance newtypeUpdateConfigurationRequest :: Newtype UpdateConfigurationRequest _
 derive instance repGenericUpdateConfigurationRequest :: Generic UpdateConfigurationRequest _
@@ -1553,21 +1552,21 @@ instance encodeUpdateConfigurationRequest :: Encode UpdateConfigurationRequest w
 
 -- | Constructs UpdateConfigurationRequest from required parameters
 newUpdateConfigurationRequest :: String -> UpdateConfigurationRequest
-newUpdateConfigurationRequest _ConfigurationId = UpdateConfigurationRequest { "ConfigurationId": _ConfigurationId, "Data": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newUpdateConfigurationRequest _ConfigurationId = UpdateConfigurationRequest { "ConfigurationId": _ConfigurationId, "Data": Nothing, "Description": Nothing }
 
 -- | Constructs UpdateConfigurationRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateConfigurationRequest' :: String -> ( { "ConfigurationId" :: (String) , "Data" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) } -> {"ConfigurationId" :: (String) , "Data" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) } ) -> UpdateConfigurationRequest
-newUpdateConfigurationRequest' _ConfigurationId customize = (UpdateConfigurationRequest <<< customize) { "ConfigurationId": _ConfigurationId, "Data": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newUpdateConfigurationRequest' :: String -> ( { "ConfigurationId" :: (String) , "Data" :: Maybe (String) , "Description" :: Maybe (String) } -> {"ConfigurationId" :: (String) , "Data" :: Maybe (String) , "Description" :: Maybe (String) } ) -> UpdateConfigurationRequest
+newUpdateConfigurationRequest' _ConfigurationId customize = (UpdateConfigurationRequest <<< customize) { "ConfigurationId": _ConfigurationId, "Data": Nothing, "Description": Nothing }
 
 
 
 newtype UpdateConfigurationResponse = UpdateConfigurationResponse 
-  { "Arn" :: NullOrUndefined (String)
-  , "Id" :: NullOrUndefined (String)
-  , "LatestRevision" :: NullOrUndefined (ConfigurationRevision)
-  , "Name" :: NullOrUndefined (String)
-  , "Warnings" :: NullOrUndefined (ListOfSanitizationWarning)
+  { "Arn" :: Maybe (String)
+  , "Id" :: Maybe (String)
+  , "LatestRevision" :: Maybe (ConfigurationRevision)
+  , "Name" :: Maybe (String)
+  , "Warnings" :: Maybe (ListOfSanitizationWarning)
   }
 derive instance newtypeUpdateConfigurationResponse :: Newtype UpdateConfigurationResponse _
 derive instance repGenericUpdateConfigurationResponse :: Generic UpdateConfigurationResponse _
@@ -1577,20 +1576,20 @@ instance encodeUpdateConfigurationResponse :: Encode UpdateConfigurationResponse
 
 -- | Constructs UpdateConfigurationResponse from required parameters
 newUpdateConfigurationResponse :: UpdateConfigurationResponse
-newUpdateConfigurationResponse  = UpdateConfigurationResponse { "Arn": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "LatestRevision": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Warnings": (NullOrUndefined Nothing) }
+newUpdateConfigurationResponse  = UpdateConfigurationResponse { "Arn": Nothing, "Id": Nothing, "LatestRevision": Nothing, "Name": Nothing, "Warnings": Nothing }
 
 -- | Constructs UpdateConfigurationResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateConfigurationResponse' :: ( { "Arn" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "LatestRevision" :: NullOrUndefined (ConfigurationRevision) , "Name" :: NullOrUndefined (String) , "Warnings" :: NullOrUndefined (ListOfSanitizationWarning) } -> {"Arn" :: NullOrUndefined (String) , "Id" :: NullOrUndefined (String) , "LatestRevision" :: NullOrUndefined (ConfigurationRevision) , "Name" :: NullOrUndefined (String) , "Warnings" :: NullOrUndefined (ListOfSanitizationWarning) } ) -> UpdateConfigurationResponse
-newUpdateConfigurationResponse'  customize = (UpdateConfigurationResponse <<< customize) { "Arn": (NullOrUndefined Nothing), "Id": (NullOrUndefined Nothing), "LatestRevision": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "Warnings": (NullOrUndefined Nothing) }
+newUpdateConfigurationResponse' :: ( { "Arn" :: Maybe (String) , "Id" :: Maybe (String) , "LatestRevision" :: Maybe (ConfigurationRevision) , "Name" :: Maybe (String) , "Warnings" :: Maybe (ListOfSanitizationWarning) } -> {"Arn" :: Maybe (String) , "Id" :: Maybe (String) , "LatestRevision" :: Maybe (ConfigurationRevision) , "Name" :: Maybe (String) , "Warnings" :: Maybe (ListOfSanitizationWarning) } ) -> UpdateConfigurationResponse
+newUpdateConfigurationResponse'  customize = (UpdateConfigurationResponse <<< customize) { "Arn": Nothing, "Id": Nothing, "LatestRevision": Nothing, "Name": Nothing, "Warnings": Nothing }
 
 
 
 -- | Updates the information for an ActiveMQ user.
 newtype UpdateUserInput = UpdateUserInput 
-  { "ConsoleAccess" :: NullOrUndefined (Boolean)
-  , "Groups" :: NullOrUndefined (ListOf__string)
-  , "Password" :: NullOrUndefined (String)
+  { "ConsoleAccess" :: Maybe (Boolean)
+  , "Groups" :: Maybe (ListOf__string)
+  , "Password" :: Maybe (String)
   }
 derive instance newtypeUpdateUserInput :: Newtype UpdateUserInput _
 derive instance repGenericUpdateUserInput :: Generic UpdateUserInput _
@@ -1600,21 +1599,21 @@ instance encodeUpdateUserInput :: Encode UpdateUserInput where encode = genericE
 
 -- | Constructs UpdateUserInput from required parameters
 newUpdateUserInput :: UpdateUserInput
-newUpdateUserInput  = UpdateUserInput { "ConsoleAccess": (NullOrUndefined Nothing), "Groups": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing) }
+newUpdateUserInput  = UpdateUserInput { "ConsoleAccess": Nothing, "Groups": Nothing, "Password": Nothing }
 
 -- | Constructs UpdateUserInput's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateUserInput' :: ( { "ConsoleAccess" :: NullOrUndefined (Boolean) , "Groups" :: NullOrUndefined (ListOf__string) , "Password" :: NullOrUndefined (String) } -> {"ConsoleAccess" :: NullOrUndefined (Boolean) , "Groups" :: NullOrUndefined (ListOf__string) , "Password" :: NullOrUndefined (String) } ) -> UpdateUserInput
-newUpdateUserInput'  customize = (UpdateUserInput <<< customize) { "ConsoleAccess": (NullOrUndefined Nothing), "Groups": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing) }
+newUpdateUserInput' :: ( { "ConsoleAccess" :: Maybe (Boolean) , "Groups" :: Maybe (ListOf__string) , "Password" :: Maybe (String) } -> {"ConsoleAccess" :: Maybe (Boolean) , "Groups" :: Maybe (ListOf__string) , "Password" :: Maybe (String) } ) -> UpdateUserInput
+newUpdateUserInput'  customize = (UpdateUserInput <<< customize) { "ConsoleAccess": Nothing, "Groups": Nothing, "Password": Nothing }
 
 
 
 -- | Updates the information for an ActiveMQ user.
 newtype UpdateUserRequest = UpdateUserRequest 
   { "BrokerId" :: (String)
-  , "ConsoleAccess" :: NullOrUndefined (Boolean)
-  , "Groups" :: NullOrUndefined (ListOf__string)
-  , "Password" :: NullOrUndefined (String)
+  , "ConsoleAccess" :: Maybe (Boolean)
+  , "Groups" :: Maybe (ListOf__string)
+  , "Password" :: Maybe (String)
   , "Username" :: (String)
   }
 derive instance newtypeUpdateUserRequest :: Newtype UpdateUserRequest _
@@ -1625,12 +1624,12 @@ instance encodeUpdateUserRequest :: Encode UpdateUserRequest where encode = gene
 
 -- | Constructs UpdateUserRequest from required parameters
 newUpdateUserRequest :: String -> String -> UpdateUserRequest
-newUpdateUserRequest _BrokerId _Username = UpdateUserRequest { "BrokerId": _BrokerId, "Username": _Username, "ConsoleAccess": (NullOrUndefined Nothing), "Groups": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing) }
+newUpdateUserRequest _BrokerId _Username = UpdateUserRequest { "BrokerId": _BrokerId, "Username": _Username, "ConsoleAccess": Nothing, "Groups": Nothing, "Password": Nothing }
 
 -- | Constructs UpdateUserRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateUserRequest' :: String -> String -> ( { "BrokerId" :: (String) , "ConsoleAccess" :: NullOrUndefined (Boolean) , "Groups" :: NullOrUndefined (ListOf__string) , "Password" :: NullOrUndefined (String) , "Username" :: (String) } -> {"BrokerId" :: (String) , "ConsoleAccess" :: NullOrUndefined (Boolean) , "Groups" :: NullOrUndefined (ListOf__string) , "Password" :: NullOrUndefined (String) , "Username" :: (String) } ) -> UpdateUserRequest
-newUpdateUserRequest' _BrokerId _Username customize = (UpdateUserRequest <<< customize) { "BrokerId": _BrokerId, "Username": _Username, "ConsoleAccess": (NullOrUndefined Nothing), "Groups": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing) }
+newUpdateUserRequest' :: String -> String -> ( { "BrokerId" :: (String) , "ConsoleAccess" :: Maybe (Boolean) , "Groups" :: Maybe (ListOf__string) , "Password" :: Maybe (String) , "Username" :: (String) } -> {"BrokerId" :: (String) , "ConsoleAccess" :: Maybe (Boolean) , "Groups" :: Maybe (ListOf__string) , "Password" :: Maybe (String) , "Username" :: (String) } ) -> UpdateUserRequest
+newUpdateUserRequest' _BrokerId _Username customize = (UpdateUserRequest <<< customize) { "BrokerId": _BrokerId, "Username": _Username, "ConsoleAccess": Nothing, "Groups": Nothing, "Password": Nothing }
 
 
 
@@ -1645,10 +1644,10 @@ instance encodeUpdateUserResponse :: Encode UpdateUserResponse where encode = ge
 
 -- | An ActiveMQ user associated with the broker.
 newtype User = User 
-  { "ConsoleAccess" :: NullOrUndefined (Boolean)
-  , "Groups" :: NullOrUndefined (ListOf__string)
-  , "Password" :: NullOrUndefined (String)
-  , "Username" :: NullOrUndefined (String)
+  { "ConsoleAccess" :: Maybe (Boolean)
+  , "Groups" :: Maybe (ListOf__string)
+  , "Password" :: Maybe (String)
+  , "Username" :: Maybe (String)
   }
 derive instance newtypeUser :: Newtype User _
 derive instance repGenericUser :: Generic User _
@@ -1658,20 +1657,20 @@ instance encodeUser :: Encode User where encode = genericEncode options
 
 -- | Constructs User from required parameters
 newUser :: User
-newUser  = User { "ConsoleAccess": (NullOrUndefined Nothing), "Groups": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newUser  = User { "ConsoleAccess": Nothing, "Groups": Nothing, "Password": Nothing, "Username": Nothing }
 
 -- | Constructs User's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUser' :: ( { "ConsoleAccess" :: NullOrUndefined (Boolean) , "Groups" :: NullOrUndefined (ListOf__string) , "Password" :: NullOrUndefined (String) , "Username" :: NullOrUndefined (String) } -> {"ConsoleAccess" :: NullOrUndefined (Boolean) , "Groups" :: NullOrUndefined (ListOf__string) , "Password" :: NullOrUndefined (String) , "Username" :: NullOrUndefined (String) } ) -> User
-newUser'  customize = (User <<< customize) { "ConsoleAccess": (NullOrUndefined Nothing), "Groups": (NullOrUndefined Nothing), "Password": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newUser' :: ( { "ConsoleAccess" :: Maybe (Boolean) , "Groups" :: Maybe (ListOf__string) , "Password" :: Maybe (String) , "Username" :: Maybe (String) } -> {"ConsoleAccess" :: Maybe (Boolean) , "Groups" :: Maybe (ListOf__string) , "Password" :: Maybe (String) , "Username" :: Maybe (String) } ) -> User
+newUser'  customize = (User <<< customize) { "ConsoleAccess": Nothing, "Groups": Nothing, "Password": Nothing, "Username": Nothing }
 
 
 
 -- | Returns information about the status of the changes pending for the ActiveMQ user.
 newtype UserPendingChanges = UserPendingChanges 
-  { "ConsoleAccess" :: NullOrUndefined (Boolean)
-  , "Groups" :: NullOrUndefined (ListOf__string)
-  , "PendingChange" :: NullOrUndefined (ChangeType)
+  { "ConsoleAccess" :: Maybe (Boolean)
+  , "Groups" :: Maybe (ListOf__string)
+  , "PendingChange" :: Maybe (ChangeType)
   }
 derive instance newtypeUserPendingChanges :: Newtype UserPendingChanges _
 derive instance repGenericUserPendingChanges :: Generic UserPendingChanges _
@@ -1681,19 +1680,19 @@ instance encodeUserPendingChanges :: Encode UserPendingChanges where encode = ge
 
 -- | Constructs UserPendingChanges from required parameters
 newUserPendingChanges :: UserPendingChanges
-newUserPendingChanges  = UserPendingChanges { "ConsoleAccess": (NullOrUndefined Nothing), "Groups": (NullOrUndefined Nothing), "PendingChange": (NullOrUndefined Nothing) }
+newUserPendingChanges  = UserPendingChanges { "ConsoleAccess": Nothing, "Groups": Nothing, "PendingChange": Nothing }
 
 -- | Constructs UserPendingChanges's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUserPendingChanges' :: ( { "ConsoleAccess" :: NullOrUndefined (Boolean) , "Groups" :: NullOrUndefined (ListOf__string) , "PendingChange" :: NullOrUndefined (ChangeType) } -> {"ConsoleAccess" :: NullOrUndefined (Boolean) , "Groups" :: NullOrUndefined (ListOf__string) , "PendingChange" :: NullOrUndefined (ChangeType) } ) -> UserPendingChanges
-newUserPendingChanges'  customize = (UserPendingChanges <<< customize) { "ConsoleAccess": (NullOrUndefined Nothing), "Groups": (NullOrUndefined Nothing), "PendingChange": (NullOrUndefined Nothing) }
+newUserPendingChanges' :: ( { "ConsoleAccess" :: Maybe (Boolean) , "Groups" :: Maybe (ListOf__string) , "PendingChange" :: Maybe (ChangeType) } -> {"ConsoleAccess" :: Maybe (Boolean) , "Groups" :: Maybe (ListOf__string) , "PendingChange" :: Maybe (ChangeType) } ) -> UserPendingChanges
+newUserPendingChanges'  customize = (UserPendingChanges <<< customize) { "ConsoleAccess": Nothing, "Groups": Nothing, "PendingChange": Nothing }
 
 
 
 -- | Returns a list of all ActiveMQ users.
 newtype UserSummary = UserSummary 
-  { "PendingChange" :: NullOrUndefined (ChangeType)
-  , "Username" :: NullOrUndefined (String)
+  { "PendingChange" :: Maybe (ChangeType)
+  , "Username" :: Maybe (String)
   }
 derive instance newtypeUserSummary :: Newtype UserSummary _
 derive instance repGenericUserSummary :: Generic UserSummary _
@@ -1703,20 +1702,20 @@ instance encodeUserSummary :: Encode UserSummary where encode = genericEncode op
 
 -- | Constructs UserSummary from required parameters
 newUserSummary :: UserSummary
-newUserSummary  = UserSummary { "PendingChange": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newUserSummary  = UserSummary { "PendingChange": Nothing, "Username": Nothing }
 
 -- | Constructs UserSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUserSummary' :: ( { "PendingChange" :: NullOrUndefined (ChangeType) , "Username" :: NullOrUndefined (String) } -> {"PendingChange" :: NullOrUndefined (ChangeType) , "Username" :: NullOrUndefined (String) } ) -> UserSummary
-newUserSummary'  customize = (UserSummary <<< customize) { "PendingChange": (NullOrUndefined Nothing), "Username": (NullOrUndefined Nothing) }
+newUserSummary' :: ( { "PendingChange" :: Maybe (ChangeType) , "Username" :: Maybe (String) } -> {"PendingChange" :: Maybe (ChangeType) , "Username" :: Maybe (String) } ) -> UserSummary
+newUserSummary'  customize = (UserSummary <<< customize) { "PendingChange": Nothing, "Username": Nothing }
 
 
 
 -- | The scheduled time period relative to UTC during which Amazon MQ begins to apply pending updates or patches to the broker.
 newtype WeeklyStartTime = WeeklyStartTime 
-  { "DayOfWeek" :: NullOrUndefined (DayOfWeek)
-  , "TimeOfDay" :: NullOrUndefined (String)
-  , "TimeZone" :: NullOrUndefined (String)
+  { "DayOfWeek" :: Maybe (DayOfWeek)
+  , "TimeOfDay" :: Maybe (String)
+  , "TimeZone" :: Maybe (String)
   }
 derive instance newtypeWeeklyStartTime :: Newtype WeeklyStartTime _
 derive instance repGenericWeeklyStartTime :: Generic WeeklyStartTime _
@@ -1726,10 +1725,10 @@ instance encodeWeeklyStartTime :: Encode WeeklyStartTime where encode = genericE
 
 -- | Constructs WeeklyStartTime from required parameters
 newWeeklyStartTime :: WeeklyStartTime
-newWeeklyStartTime  = WeeklyStartTime { "DayOfWeek": (NullOrUndefined Nothing), "TimeOfDay": (NullOrUndefined Nothing), "TimeZone": (NullOrUndefined Nothing) }
+newWeeklyStartTime  = WeeklyStartTime { "DayOfWeek": Nothing, "TimeOfDay": Nothing, "TimeZone": Nothing }
 
 -- | Constructs WeeklyStartTime's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newWeeklyStartTime' :: ( { "DayOfWeek" :: NullOrUndefined (DayOfWeek) , "TimeOfDay" :: NullOrUndefined (String) , "TimeZone" :: NullOrUndefined (String) } -> {"DayOfWeek" :: NullOrUndefined (DayOfWeek) , "TimeOfDay" :: NullOrUndefined (String) , "TimeZone" :: NullOrUndefined (String) } ) -> WeeklyStartTime
-newWeeklyStartTime'  customize = (WeeklyStartTime <<< customize) { "DayOfWeek": (NullOrUndefined Nothing), "TimeOfDay": (NullOrUndefined Nothing), "TimeZone": (NullOrUndefined Nothing) }
+newWeeklyStartTime' :: ( { "DayOfWeek" :: Maybe (DayOfWeek) , "TimeOfDay" :: Maybe (String) , "TimeZone" :: Maybe (String) } -> {"DayOfWeek" :: Maybe (DayOfWeek) , "TimeOfDay" :: Maybe (String) , "TimeZone" :: Maybe (String) } ) -> WeeklyStartTime
+newWeeklyStartTime'  customize = (WeeklyStartTime <<< customize) { "DayOfWeek": Nothing, "TimeOfDay": Nothing, "TimeZone": Nothing }
 
